@@ -1,0 +1,21 @@
+
+{
+    "specs": [
+      {
+        "title": "DIF FAQ",
+        "spec_directory": "./docs",
+        "logo": "logo.svg",
+        "logo_link": "https://github.com/csuwildcat/spec-up",
+        "source": {
+          "host": "github",
+          "account": "decentralized-identity",
+          "repo": "faq"
+        },
+        "assets": [
+          { "path": "/custom-assets/custom.css" },
+          { "path": "/custom-assets/custom-head.js", "inject": "head" },
+          { "path": "/custom-assets/custom-body.js", "inject": "body" }
+        ]
+      }
+    ]
+  }
