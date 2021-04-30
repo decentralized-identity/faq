@@ -4,6 +4,7 @@
       {
         "title": "DIF FAQ",
         "spec_directory": "./docs",
+        "output_path": "./",
         "logo": "logo.svg",
         "logo_link": "https://github.com/csuwildcat/spec-up",
         "source": {
