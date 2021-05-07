@@ -50,7 +50,9 @@ to set up google forms to mirror both the W3C DID Rubric as well as
 prototype looks like
 [this](https://docs.google.com/forms/d/e/1FAIpQLSc0Dn9LrYBtqJ1t7eVHMzq2PsMGeJbYKfEYGuYEQXJeaFaGBQ/viewform).
 Similar and cooperative/synergistic efforts are also underway at [Legendary
-Requirements](http://legreq.com/).
+Requirements](http://legreq.com/). Also, researchers from [SBA Research](https://www.sba-research.org/)
+in collaboration with DIF Member [Danube Tech](https://danubetech.com/) have worked on evaluating 7
+DID methods using the W3C DID Rubric; a [draft report](https://docs.google.com/document/d/1jP-76ul0FZ3H8dChqT2hMtlzvL6B3famQbseZQ0AGS8/) is available.
 </details>
 
 <details><summary>
