@@ -1,5 +1,5 @@
 {
-  "name": "spec-up",
+  "name": "spec-up-faq-edition",
   "version": "0.10.2",
   "description": "Technical specification drafting tool that generates rich specification documents from markdown.",
   "main": "./index",
