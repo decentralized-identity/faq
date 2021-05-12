@@ -18,7 +18,7 @@ Participate:
 
 This is a general-purpose frequently-asked questions document,
 initiated/straw-manned by some regular contributors to the DIF Interoperability
-Working Group, DIF Staff, and volunteers organized on DIF's member Slack.
+Working Group, DIF Staff, and volunteers organized on DIF's member Slack. It was made using [Spec-Up](/decentralized-identity/spec-up/), DIF's in-house spec-authoring tool that consumes GitHub-flavored Markdown (with a few additional bells and whistles) and publishes JS-enabled HTML to a github pages branch. Please use issues to request minor changes or new sections, or PRs if you are proposing both questions AND respective answers.
 
 ## Layer 1: Identifiers and namespaces
 
