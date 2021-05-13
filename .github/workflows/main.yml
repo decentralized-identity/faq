@@ -31,8 +31,6 @@ jobs:
           USE_SSH: true
           GIT_USER: git
         run: 
-          git config --global user.email "actions@github.com"
-          git config --global user.name "bumblefudge"
           npm install spec-up
           npm run render
           \cp -r docs/index.html index.html
