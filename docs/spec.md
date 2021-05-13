@@ -53,7 +53,7 @@ See the simplified 4+1 layering diagram
 </summary>
 ![](assets/map.png)
 Src: [Hakan Yildiz, Technische Universität Berlin](https://github.com/decentralized-identity/interoperability/blob/master/assets/interop-mapping-version-by-Hakan-Yildiz(TUB).pdf); [more detailed version](https://github.com/decentralized-identity/interoperability/raw/master/assets/interoperability-mapping-exercise-10-12-20.pdf)
-<details>
+</details>
 
 
 This mini-site was made using [Spec-Up](/decentralized-identity/spec-up/), DIF's
