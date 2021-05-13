@@ -309,12 +309,19 @@ staggeringly complex. What can you put into a DID Doc? What are the tradeoffs?
 How do people protect or compensate for the privacy and security risks of
 putting more into the Doc? These are massive questions, way beyond an FAQ. A
 hopefully smaller question is whether the overhead and interoperability costs of
-creating a new method outweigh adapting an existing method: even if so, a
-thorough review of prior art can be eye-opening and fortify the design process
-anyways If you decide to design a new DID Method, DIF’s longest-running working
-group, Identifiers and Discovery, would be a good place to start. Skim the
-minutes of recent meetings for DID method design and specification topics, or
-just reach out to propose an agenda item at a future meeting.
+creating a new method outweigh adapting an existing method: whether you land on
+a yes or a no or somewhere in between, a thorough review of prior art is still
+the next step, whether to reuse or reimplement.  Such a review can be
+eye-opening and fortify the design process in a lot of unexpected ways. 
+ 
+ If you decide to design a new DID Method, DIF’s longest-running working group,
+[Identifiers and
+Discovery](https://identity.foundation/working-groups/identifiers-discovery.html),
+would be a good place to start. Skim the
+[minutes](https://github.com/decentralized-identity/identifiers-discovery/blob/main/agenda.md)
+of recent meetings for DID method design and specification topics, or just reach
+out to propose an agenda item at a future
+meeting.https://en.wikipedia.org/wiki/XACML
 </details>
 
 <details><summary>
