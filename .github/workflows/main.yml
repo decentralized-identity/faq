@@ -43,7 +43,7 @@ jobs:
           fi
           npm install spec-up
           npm run render
-          git checkout gh-pages
           git add docs/index.html
           git commit -a -m "to push index.html-->gh-pages (GH Action)"
+          git checkout gh-pages
           git push -u origin gh-pages
