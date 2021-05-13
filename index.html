@@ -62,10 +62,13 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 <h2 id="usage-guide-how-did-i-get-here-who-are-you"><a class="toc-anchor" href="#usage-guide-how-did-i-get-here-who-are-you" >§</a> Usage guide: How did I get here? Who are you?</h2>
 <p>This is a general-purpose collection of frequently-asked questions,
 initiated/straw-manned by some regular contributors to the DIF Interoperability
-Working Group, DIF Staff, and volunteers organized on DIF’s member Slack. It is
-not now and likely will never be an exhaustive reference, but rather a resource
-to help people find what they’re looking for and level-set.</p>
-<p>Speaking of level-setting, questions are marked with 1, 2, or 3 stars based on
+Working Group, DIF Staff, and volunteers organized on DIF’s member Slack. Each
+question can be clicked on to expand and contract its answer. It is not now and
+likely will never be an exhaustive reference, but rather a broadly-useful
+resource to help people understand what they don’t understand, find their
+people, get involved in the best possible place, and level-set with their
+interlocutors there.</p>
+<p>Speaking of level-setting, each question is marked with 1, 2, or 3 stars based on
 the level of familiarity they assume. Here is the key:</p>
 <table>
 <thead>
@@ -103,6 +106,13 @@ controversies is level 4.  When you not only understand why all those chili are
 there, but furthermore feel torn and sympathetic to all parties in each
 controversy, you’re at level 5-- and should maybe think about chairing a working
 group or joining one of the Steering Committees?</p>
+<p>You may be wondering what the high-level categories on the sidebar mean: they break down the terrain of decentralized identity into broadly-defined “layers”. This can be a little “inside baseball” at first, but with time, the utility and consequence of this layering should become apparent. It originated in the DIF Interoperability WG’s months-long iterative discussion on interoperability and integration with prior art, which in turn built on Executive Director Rouven Heck’s iteration on the ToIP 4-layer paradigm.</p>
+<details><summary>
+See the simplified 4+1 layering diagram 
+</summary>
+![](assets/map.png)
+Src: [Hakan Yildiz, Technische Universität Berlin](https://github.com/decentralized-identity/interoperability/blob/master/assets/interop-mapping-version-by-Hakan-Yildiz(TUB).pdf); [more detailed version](https://github.com/decentralized-identity/interoperability/raw/master/assets/interoperability-mapping-exercise-10-12-20.pdf)
+<details>
 <p>This mini-site was made using <a path-0="decentralized-identity"path-1="spec-up"path-2=""href="/decentralized-identity/spec-up/" >Spec-Up</a>, DIF’s
 in-house spec-authoring tool that consumes GitHub-flavored Markdown (with a few
 additional bells and whistles) and publishes JS-enabled HTML to a github pages
@@ -860,27 +870,113 @@ quite well and provided lots of further reading and links.</p>
 <details><summary>
  &nbsp;&nbsp; ⭐ &nbsp;&nbsp; So, is this stuff street-legal yet? If so, where? If not, what's it going to take?
 </summary><br>
-<p>Legalizing any load-bearing, high-value technology is slow and complex work that takes a lot of hands-- first, exact definitions and specifications are needed, as well as standardizations, longitudinal assesments, academic studies, impact reports, that kind of thing.  Even after all that is squared away and packaged up to adequately prepare regulators to do their work, they in turn take their own time to harmonize many different specialists and stakeholders, before they can present somethign to politicians, who have their own games to play and interests to align.  All the market forces in the world, perfectly aligned, can only speed these processes up so much.</p>
-<p>All that said, encryption has been around a long time, and personal data, and direct control mechanisms, and privacy laws.  All of these exist in regulatory frameworks and relatively stable, regulated marketplaces for software that structure all of this at national or global scale. When you combine these regulatory frameworks with certification schemes and the kind of fair-play pressures and norms that Better Business Bureaus and guilds enforce, you’ve got a <strong>Trust Framework</strong>, which in layman’s terms tells you how much to trust each link in a chain of data, contracts, and service/fiduciary relationships. How much liability can a bank outsource to the software providers that make its mobile app? Which digital signatures hold up in court? What’s an acceptible margin of error when identifying people, or vouching for the soundness of their paperwork? These are all norms set by a Trust Framework, which might govern a nation-state or an industry within one or a global software market.</p>
+<p>Legalizing any load-bearing, high-value technology is slow and complex work that
+takes a lot of hands-- first, exact definitions and specifications are needed,
+as well as standardizations, longitudinal assesments, academic studies, impact
+reports, that kind of thing.  Even after all that is squared away and packaged
+up to adequately prepare regulators to do their work, they in turn take their
+own time to harmonize many different specialists and stakeholders, before they
+can present somethign to politicians, who have their own games to play and
+interests to align.  All the market forces in the world, perfectly aligned, can
+only speed these processes up so much.</p>
+<p>All that said, encryption has been around a long time, and personal data, and
+direct control mechanisms, and privacy laws.  All of these exist in regulatory
+frameworks and relatively stable, regulated marketplaces for software that
+structure all of this at national or global scale. When you combine these
+regulatory frameworks with certification schemes and the kind of fair-play
+pressures and norms that Better Business Bureaus and guilds enforce, you’ve got
+a <strong>Trust Framework</strong>, which in layman’s terms tells you how much to trust each
+link in a chain of data, contracts, and service/fiduciary relationships. How
+much liability can a bank outsource to the software providers that make its
+mobile app? Which digital signatures hold up in court? What’s an acceptible
+margin of error when identifying people, or vouching for the soundness of their
+paperwork? These are all norms set by a Trust Framework, which might govern a
+nation-state or an industry within one or a global software market.</p>
 </details>
 <details><summary>
  &nbsp;&nbsp; ⭐⭐ &nbsp;&nbsp; Those Trust Framework things sound cool, where can I find out more?
 </summary><br>
-<p>Trust Frameworks are complex things, and no single organization can be expected to track them all or exert pressure on all of them. DIF has historically done little work directly on trust frameworks, but DIF works with many organizations on trust framework and regulatory issues, inside and outside of its parent organization, the Linux Foundation.  For further reading, see:</p>
+<p>Trust Frameworks are complex things, and no single organization can be expected
+to track them all or exert pressure on all of them. DIF has historically done
+little work directly on trust frameworks, but DIF works with many organizations
+on trust framework and regulatory issues, inside and outside of its parent
+organization, the Linux Foundation.  For further reading, see:</p>
 <ul>
-<li>The Open Identity Exchange (<a path-0="openidentityexchange.org"path-1="about"href="https://openidentityexchange.org/about" >OIX</a>) has a <a path-0="openidentityexchange.org"path-1="workgroups"href="https://openidentityexchange.org/workgroups?action=view&Workgroup=455" >Trust Framework Working Group</a> that has released a <a path-0="openidentityexchange.org"path-1="guide-trust-frameworks-interoperability"href="https://openidentityexchange.org/guide-trust-frameworks-interoperability" >very thorough and comprehensive guide</a> to trust frameworks for identity software, and is incrementally expanding and revising it to include decentralized architectures alongside today’s mainstream federated ones. See <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---28-apr-eu-time---how-trust-frameworks-compare-and-develop-oix"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---28-apr-eu-time---how-trust-frameworks-compare-and-develop-oix" >this recording</a> of OIX’s Nick Mothershaw speaking at the Interoperability WG about the revision process and getting input from our community on how to bring the good word to the regulators and trustwork framers of the world.</li>
-<li>The DIF Interop WG also held an open discussion on the subject of some trust frameworks and certification schemes pertinent to our industry on <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---31-mar-2021---trust-framework-talk"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---31-mar-2021---trust-framework-talk" >31 Mar 2021</a></li>
-<li>A sister organization in the Linux Foundation called the Trust Over IP foundation does a lot of work on trust frameworks and specifying privacy, confidentiality, and audit/verification capabilities into trust frameworks instead of just liabilities.  They also have an early-stage specification for <a path-0="wiki.trustoverip.org"path-1="display"path-2="HOME"path-3="ToIP+Governance+Metamodel"href="https://wiki.trustoverip.org/display/HOME/ToIP+Governance+Metamodel" >Machine-Readable Trust Frameworks</a> that is being formulated on a conceptual level in their <a path-0="wiki.trustoverip.org"path-1="display"path-2="HOME"path-3="Governance+Stack+Working+Group"href="https://wiki.trustoverip.org/display/HOME/Governance+Stack+Working+Group" >Governance Stack Working Group</a>; the technical specifications for an early prototype of the concept are currently proposed as a <a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="blob"path-4="master"path-5="concepts"path-6="0430-machine-readable-governance-frameworks"path-7="README.md"href="https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0430-machine-readable-governance-frameworks/README.md" >conceptual RFC</a> in the Aries community.</li>
-<li>Trust Frameworks are often discussed, assessed, and even critiqued in the <a path-0="mydata.org"path-1=""href="https://mydata.org/" >MyData community</a>, particularly in Europe, where the bulk of their activities are based).</li>
-<li>Another key technical organization that often intervenes and opines on Trust Frameworks and regulatory matters is the <a path-0="kantarainitiative.org"path-1=""href="https://kantarainitiative.org/" >Kantara Initiative</a>, primarily active and influential in the English-speaking world. They have even authored meta-frameworks that offer building blocks for more active frameworks in specific jurisdictions, such as their <a path-0="kantarainitiative.org"path-1="idassurance"path-2=""href="https://kantarainitiative.org/idassurance/" >Identity Assurance Framework</a>; they also incubated, standardized, and govern an Authorization framework called <a path-0="kantarainitiative.org"path-1="confluence"path-2="display"path-3="uma"path-4="Home"href="https://kantarainitiative.org/confluence/display/uma/Home" >User Managed Access</a>, which laid important technical and social groundwork for the technologies and ideas of decentralized identity.</li>
+<li>
+<p>The Open Identity Exchange (<a path-0="openidentityexchange.org"path-1="about"href="https://openidentityexchange.org/about" >OIX</a>) has
+a <a path-0="openidentityexchange.org"path-1="workgroups"href="https://openidentityexchange.org/workgroups?action=view&Workgroup=455" >Trust Framework Working
+Group</a>
+that has released a <a path-0="openidentityexchange.org"path-1="guide-trust-frameworks-interoperability"href="https://openidentityexchange.org/guide-trust-frameworks-interoperability" >very thorough and comprehensive
+guide</a>
+to trust frameworks for identity software, and is incrementally expanding and
+revising it to include decentralized architectures alongside today’s
+mainstream federated ones. See <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---28-apr-eu-time---how-trust-frameworks-compare-and-develop-oix"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---28-apr-eu-time---how-trust-frameworks-compare-and-develop-oix" >this
+recording</a>
+of OIX’s Nick Mothershaw speaking at the Interoperability WG about the
+revision process and getting input from our community on how to bring the good
+word to the regulators and trustwork framers of the world.</p>
+</li>
+<li>
+<p>The DIF Interop WG also held an open discussion on the subject of some trust
+frameworks and certification schemes pertinent to our industry on <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---31-mar-2021---trust-framework-talk"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---31-mar-2021---trust-framework-talk" >31 Mar
+2021</a></p>
+</li>
+<li>
+<p>A sister organization in the Linux Foundation called the Trust Over IP
+foundation does a lot of work on trust frameworks and specifying privacy,
+confidentiality, and audit/verification capabilities into trust frameworks
+instead of just liabilities.  They also have an early-stage specification for
+<a path-0="wiki.trustoverip.org"path-1="display"path-2="HOME"path-3="ToIP+Governance+Metamodel"href="https://wiki.trustoverip.org/display/HOME/ToIP+Governance+Metamodel" >Machine-Readable Trust
+Frameworks</a>
+that is being formulated on a conceptual level in their <a path-0="wiki.trustoverip.org"path-1="display"path-2="HOME"path-3="Governance+Stack+Working+Group"href="https://wiki.trustoverip.org/display/HOME/Governance+Stack+Working+Group" >Governance Stack
+Working
+Group</a>;
+the technical specifications for an early prototype of the concept are
+currently proposed as a <a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="blob"path-4="master"path-5="concepts"path-6="0430-machine-readable-governance-frameworks"path-7="README.md"href="https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0430-machine-readable-governance-frameworks/README.md" >conceptual
+RFC</a>
+in the Aries community.</p>
+</li>
+<li>
+<p>Trust Frameworks are often discussed, assessed, and even critiqued in the
+<a path-0="mydata.org"path-1=""href="https://mydata.org/" >MyData community</a>, particularly in Europe, where the
+bulk of their activities are based).</p>
+</li>
+<li>
+<p>Another key technical organization that often intervenes and opines on Trust
+Frameworks and regulatory matters is the <a path-0="kantarainitiative.org"path-1=""href="https://kantarainitiative.org/" >Kantara
+Initiative</a>, primarily active and influential
+in the English-speaking world. They have even authored meta-frameworks that
+offer building blocks for more active frameworks in specific jurisdictions,
+such as their <a path-0="kantarainitiative.org"path-1="idassurance"path-2=""href="https://kantarainitiative.org/idassurance/" >Identity Assurance
+Framework</a>; they also incubated,
+standardized, and govern an Authorization framework called <a path-0="kantarainitiative.org"path-1="confluence"path-2="display"path-3="uma"path-4="Home"href="https://kantarainitiative.org/confluence/display/uma/Home" >User Managed
+Access</a>, which laid
+important technical and social groundwork for the technologies and ideas of
+decentralized identity.</p>
+</li>
 </ul>
 </details>
 <h2 id="layer-x-architectural-considerations-interoperability-and-integrations"><a class="toc-anchor" href="#layer-x-architectural-considerations-interoperability-and-integrations" >§</a> Layer X: Architectural Considerations, Interoperability, and Integrations</h2>
 <details><summary>
  &nbsp;&nbsp; ⭐⭐ &nbsp;&nbsp; Don't we already have a standard? What's so hard about interoperating? 🌶
 </summary><br>
-<p>If it were easy, the <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability#interoperability-project"href="https://github.com/decentralized-identity/interoperability#interoperability-project" >Interop WG</a> wouldn’t need to meet <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md" >weekly</a> to educate, document, strategize, and evangelize for interoperability planning, testing, certifications, and collaborations!  The <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability#minor-deliverables"href="https://github.com/decentralized-identity/interoperability#minor-deliverables" >“Deliverables” section</a> of the WG’s homepage is a good overview of how complicated and hard it is to herd the cats of our community and broker common goals and definitions.  For an explanation of the current state of those negotiations, see our recent <a path-0="blog.identity.foundation"path-1="setting-interoperability-targets"path-2=""href="https://blog.identity.foundation/setting-interoperability-targets/" >blog post</a> on the subject.</p>
-<p>In particular, see our <a path-0="github.com"path-1="decentralized-identity"path-2="decentralized-identity.github.io"path-3="blob"path-4="master"path-5="assets"path-6="crosscommunity-architecture-survey-oct-2020.pdf"href="https://github.com/decentralized-identity/decentralized-identity.github.io/blob/master/assets/crosscommunity-architecture-survey-oct-2020.pdf" >interoperability map</a>, which includes lots of information about architectural considerations in the “transversal” column, and integration/retro-fitting concerns for bridging to today’s data systems.</p>
+<p>If it were easy, the <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability#interoperability-project"href="https://github.com/decentralized-identity/interoperability#interoperability-project" >Interop
+WG</a>
+wouldn’t need to meet
+<a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md" >weekly</a>
+to educate, document, strategize, and evangelize for interoperability planning,
+testing, certifications, and collaborations!  The <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability#minor-deliverables"href="https://github.com/decentralized-identity/interoperability#minor-deliverables" >“Deliverables”
+section</a>
+of the WG’s homepage is a good overview of how complicated and hard it is to
+herd the cats of our community and broker common goals and definitions.  For an
+explanation of the current state of those negotiations, see our recent <a path-0="blog.identity.foundation"path-1="setting-interoperability-targets"path-2=""href="https://blog.identity.foundation/setting-interoperability-targets/" >blog
+post</a> on the
+subject.</p>
+<p>In particular, see our <a path-0="github.com"path-1="decentralized-identity"path-2="decentralized-identity.github.io"path-3="blob"path-4="master"path-5="assets"path-6="crosscommunity-architecture-survey-oct-2020.pdf"href="https://github.com/decentralized-identity/decentralized-identity.github.io/blob/master/assets/crosscommunity-architecture-survey-oct-2020.pdf" >interoperability
+map</a>,
+which includes lots of information about architectural considerations in the
+“transversal” column, and integration/retro-fitting concerns for bridging to
+today’s data systems.</p>
 </details>
                     </article>    
       
