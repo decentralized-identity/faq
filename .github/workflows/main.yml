@@ -26,14 +26,13 @@ jobs:
           HostName github.com
           IdentityFile ~/.ssh/id_rsa
           EOT
-      - name: Release to GitHub Pages
+      - name: Merged Rendered GitHub Pages
         env:
           USE_SSH: true
           GIT_USER: git
         run: 
           npm install spec-up
           npm run render
-          \cp -r docs/index.html index.html
           git add -A
-          git commit -a -m "to push index.html-->gh-pages (GH Action)"
+          git commit -a -m "to push index.html-->main (GH Action)"
           git push origin main
