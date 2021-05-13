@@ -7,6 +7,6 @@ $ npm run edit
 ``` 
 Meanwhile, open your local copy of /docs/index.html in a browser for a live preview.  Each time you save the underlying markdown files, you can refresh index.html in your browser to see the page re-rendered by gulp based on the new input. 
 
-When you are done, simply PR in the new, rendered `/index.html` file to `/main/` and the live FAQ will be updated shortly. 
+When you are done, simply open a PR to merge your new, re-rendered `/index.html` file to `main` and the live FAQ will be updated shortly after the PR is accepted. 
 
 For more information on spec-up, see its [repo at DIF](/decentralized-identity/spec-up/).
