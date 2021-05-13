@@ -51,6 +51,7 @@ You may be wondering what the high-level categories on the sidebar mean: they br
 <details><summary>
 See the simplified 4+1 layering diagram 
 </summary>
+
 ![](assets/map.png)
 Src: [Hakan Yildiz, Technische Universität Berlin](https://github.com/decentralized-identity/interoperability/blob/master/assets/interop-mapping-version-by-Hakan-Yildiz(TUB).pdf); [more detailed version](https://github.com/decentralized-identity/interoperability/raw/master/assets/interoperability-mapping-exercise-10-12-20.pdf)
 </details>
