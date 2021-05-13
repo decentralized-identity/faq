@@ -60,6 +60,7 @@
     "markdown-it-toc-and-anchor": "4.2.0",
     "merge-stream": "2.0.0",
     "pkg-dir": "4.2.0",
+    "spec-up": "^0.10.2",
     "yargs": "16.2.0",
     "yargs-parser": ">=5.0.0-security.0"
   }
