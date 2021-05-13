@@ -33,6 +33,7 @@ jobs:
         run: 
           git config --global user.email "actions@github.com"
           git config --global user.name "bumblefudge"
+          git clone https://github.com/decentralized=identity/faq --depth 2 ../faq
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
@@ -42,6 +43,7 @@ jobs:
           fi
           npm install spec-up
           npm run render
+          \cp -r docs/index.html index.html
           git add -A
           git commit -a -m "to push index.html-->gh-pages (GH Action)"
           git push origin main
