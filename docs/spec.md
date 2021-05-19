@@ -211,6 +211,7 @@ wallets in general and the Universal Wallet in particular.
  &nbsp;&nbsp; ⭐ &nbsp;&nbsp; What’s so `decentralized` and `self-sovereign` about these abstract-sounding
 identity tools? 
 </summary><br>
+In short, not your keys and data?, not your identity! The tools allow you to issue and control your identifiers (like a name you'd use on social media), build value (like followers, interactions, kudos) and act more trustworthy while preserving your privacy on the web.<br><br>
 
 Each "DID Method" represents the governance and groundrules of a
 variously-decentralized addressing system. In the most decentralized of these,
