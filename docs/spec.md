@@ -86,6 +86,7 @@ system) is navigated with and governed by a "DID Method."
 <details><summary>
  &nbsp;&nbsp; ⭐ &nbsp;&nbsp; What's a DID "Method"?
 </summary><br>
+In short, if you type your DID username in a browser, it's method that going to handle your request.<br><br>
 
 Each DID is a publically-specified micro-protocol containing namespace rules,
 CRUD and resolution mechanics, references to all dependencies such as
