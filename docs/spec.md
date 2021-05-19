@@ -383,6 +383,7 @@ for verifiable credentials.
 <details><summary>
 ⭐⭐ &nbsp;&nbsp; What’s the difference between a DOI or other “persistent identifier” and a DID?
 </summary><br>
+In short, DOIs are very centralized, locked in and fixed, DID can be reused, updated, transfered.<br><br>
 
 Digital Object Identifiers ([DOIs](https://www.doi.org/)) are the most famous
 form of persistent identifier, and differ in two main aspects from decentralized
