@@ -68,7 +68,7 @@ you are proposing both questions AND respective answers.
 <details><summary>
  &nbsp;&nbsp; ⭐ &nbsp;&nbsp; What's a DID? What's a DID Document?
 </summary><br>
-In short, it's a username on the internet that you own. A connected DID document contains extra info.<br>
+In short, it's a username on the internet that you own. A connected DID document contains extra info that describes you.<br><br>
 
 The most "decentralized" of the identifiers are so-called "decentralized
 identifiers," or DIDs. These are each registered and resolved on autonomous
