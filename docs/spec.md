@@ -110,6 +110,8 @@ and/or non-human-readable.
 <details><summary>
 ⭐⭐ &nbsp;&nbsp; Who governs and maintains these "DID Methods"? How can I learn how a given method works?
 </summary><br>
+In short, there's a [list](https://w3c.github.io/did-spec-registries/#the-registration-process) of systems that are nicely specified how you can use them.
+
 
 All methods are expected to be maintainers of systems and infrastructure that
 are built on top of them. They are each specified by a published, registered,
