@@ -247,7 +247,7 @@ Foundation.
 <details><summary>
 ⭐⭐ &nbsp;&nbsp; What’s the difference between decentralized identity and IAM? 
 </summary><br>
-In short, with Identity and Access Management, you're being managed by a go between. In decentralized identity **you get to decide**. Because your identifier is controlled by you, anchored to - and verifiable via a decentralized datastructure (like a blockchain) and your connected data is distributed available but hidden for the public. 
+In short, with Identity and Access Management, you're being managed by a go between. In decentralized identity **you get to decide**. Because your identifier is controlled by you, anchored to - and verifiable via a decentralized datastructure (like a blockchain) and your connected data is distributed available but shielded off from the public. 
 <br><br>
 
 Identity and Access Management tends to be associated with centralized
@@ -269,6 +269,7 @@ foundation!
 <details><summary>
 ⭐⭐ &nbsp;&nbsp; DID methods: should I support just one or multiple?
 </summary><br>
+In short, one will do, multiple offers more efficiency in some cases. <br><br>
 
 Most people presume only one DID method will be enough for a given product,
 use-case, or ecosystem, but consuming credentials from other DID systems
