@@ -406,6 +406,7 @@ information about that other world, see Markus Sabadello’s article on our blog
 <details><summary>
 ⭐⭐ &nbsp;&nbsp; What exactly is a SCID?
 </summary><br>
+In short, A self-certifying identifier cryptographically binds an identifier to a public private key pair.<br><br>
 
 Self-certifying identifiers are deterministically derived from public keys, such
 that they can be widely published and control of the public key from which they
