@@ -342,6 +342,7 @@ meeting.https://en.wikipedia.org/wiki/XACML
 method/did:doc design. How do I find out which DID methods I should be looking
 at? 
 </summary><br>
+In short, read what the distinctive methods uniquely aim for. For example virtual credentials come in many flavors.<br><br>
 
 This is, again, too large a question for a one-paragraph answer. But
 understanding the requirements of a given use-case or problem space takes time
