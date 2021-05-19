@@ -247,6 +247,8 @@ Foundation.
 <details><summary>
 ⭐⭐ &nbsp;&nbsp; What’s the difference between decentralized identity and IAM? 
 </summary><br>
+In short, with Identity and Access Management, you're being managed by a go between. In decentralized identity **you get to decide**. Because your identifier is controlled by you, anchored to - and verifiable via a decentralized datastructure (like a blockchain) and your connected data is distributed available but hidden for the public. 
+<br><br>
 
 Identity and Access Management tends to be associated with centralized
 hierarchies of delegation (i.e., the “Access Control List” approach, credentials
