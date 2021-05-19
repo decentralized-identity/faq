@@ -167,6 +167,7 @@ happening here!
 <details><summary>
  &nbsp;&nbsp; ⭐ &nbsp;&nbsp; What are Verifiable Credentials ("VCs"), exactly?
 </summary><br>
+In short, statements issued by authorities about your DID, that confirms who you are or gives you a right or a license. For example "You're over 18 yo" or "You have a US drivers license.<br><br>
 
 Verifiable Credentials combine properties and superpowers from many different
 mental models and forms of prior art; Linked Data, JSON Web Tokens, Ontologies,
