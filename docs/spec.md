@@ -183,6 +183,8 @@ categories or "flavors" of VC, see Layer 3 below.
 <details><summary>
  &nbsp;&nbsp; ⭐ &nbsp;&nbsp; What is a wallet?
 </summary><br>
+In short, a wallet is _magical secret_ key ring. The keys give access to all kinds of value, like crypto coins, attestions and titles. Important: The wallet contains the keys not the actual value! The value resides on the internet.\
+Your _secret_ is in most cases a 24-words phrase, that _magically_ sprouts off keys, randomly but also reproducably. That means a wallet requires you to manage your 24-words phrase well, but could do without the wallet software or hardware that you use.<br><br>
 
 Controlling, updating, and proving control of a DID (or, for that matter, a
 cryptocurrency address, an NFT, or many other kinds of digital assets) requires
