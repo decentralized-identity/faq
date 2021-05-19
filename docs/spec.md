@@ -289,6 +289,7 @@ a trusted agent.
 <details><summary>
 ⭐⭐⭐How do I pick between DID methods?
 </summary><br>
+In short, study first (see resources below), then pick.<br><br>
 
 This is a very complex question, and one which DIF cannot give advice in a way
 that is neutral and fair to all its members. There are, however, a number of
@@ -314,6 +315,7 @@ is available.
 <details><summary>
 ⭐⭐⭐So if I were to design my own DID Method, where to start? How to approach the design?
 </summary><br>
+In short, if you were to design your own, your ideas would have gone through so much scrutiny by the _existing_ method designers, that the question is obsolete. Put differently: you sure got the balls if you dare design your own before having thoroughly studied the hard work of others in the field.<br><br>
 
 The open-endedness and extensibility of DIDs is liberating, daunting, and
 staggeringly complex. What can you put into a DID Doc? What are the tradeoffs?
