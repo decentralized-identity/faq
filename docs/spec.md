@@ -110,8 +110,7 @@ and/or non-human-readable.
 <details><summary>
 ⭐⭐ &nbsp;&nbsp; Who governs and maintains these "DID Methods"? How can I learn how a given method works?
 </summary><br>
-In short, there's a [list](https://w3c.github.io/did-spec-registries/#the-registration-process) of systems that are nicely specified how you can use them.
-
+In short, there's a [list](https://w3c.github.io/did-spec-registries/#the-registration-process) of systems that are nicely specified how you can use them.<br><br>
 
 All methods are expected to be maintainers of systems and infrastructure that
 are built on top of them. They are each specified by a published, registered,
@@ -130,6 +129,7 @@ likely whichever maintenance group will maintain the DID specification itself.
 <details><summary>
 ⭐⭐ &nbsp;&nbsp; Are there sub-categories of DID "Method" that I should know about?
 </summary><br>
+In short, yes, there are [several ways](https://www.windley.com/archives/2020/09/the_architecture_of_identity_systems.shtml) to proceed under the hood of DIDs. It should be transparent for users though.<br><br>
 
 Absolutely! A DID is any address that can be turned into a usable DID Document,
 and there are many drastically different ways of doing this that can confuse
