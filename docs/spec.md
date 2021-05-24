@@ -845,13 +845,13 @@ present the project for feedback!
 **How can key management be made usable for "normal" end-users?**
 
 
+
 Rouven Heck led a fascinating
 [two](https://github.com/decentralized-identity/product-managers/blob/main/agenda.md#february-10th-2021)-[part](https://github.com/decentralized-identity/product-managers/blob/main/agenda.md#february-24th-2021)
 discussion of this topic at the Product Managers group, which overviewed the
 problem space quite well and provided lots of further reading and links. 
 
 ## Trust Frameworks and Ecosystems across Industries and Jurisdictions (Layer 5)
-
 
 ### Compliance - ❗
 **So, is this stuff street-legal yet? If so, where? If not, what's it going to take?**
