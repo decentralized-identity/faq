@@ -5,10 +5,11 @@ DIF FAQ
   [https://identity.foundation/faq](https://identity.foundation/faq)
 
 Editors:
-~ [DIF Staff](https://www.linkedin.com/in/dbuchner/)
+~ [Juan Caballero](https://www.linkedin.com/in/juan-caballero)
 
 Participate:
 ~ [GitHub repo](https://github.com/decentralized-identity/faq)
+~ [Contribute by opening a PR here](https://github.com/decentralized-identity/faq/blob/main/docs/spec.md)
 ~ [File a bug](https://github.com/decentralized-identity/faq/issues)
 ~ [Commit history](https://github.com/decentralized-identity/faq/commits/master)
 
@@ -28,12 +29,12 @@ interlocutors there.
 Speaking of level-setting, each question is marked with 1, 2, or 3 stars based on
 the level of familiarity they assume. Here is the key:
 
-|Symbol|Meaning|
+|Meaning | Symbol|
 |---|---|
-|⭐|Q&A requiring little technical background|
-|⭐⭐|Q&A for the moderately tech-savvy software developer or industry insider|
-|⭐⭐⭐|Q&A for the dedicated identity geek or guru|
-|🌶|Controversial topic|
+|Little technical background|⭐|
+|moderately tech-savvy | ⭐⭐|
+|dedicated identity pro | ⭐⭐⭐| 
+|Controversial topic|🌶|
 
 One strategy for learning is to read through in three separate passes, i.e.,
 expand and read all the 1-star questions first, then reload the page and do the
@@ -65,9 +66,8 @@ you are proposing both questions AND respective answers.
 
 ## Layer 0: Introductory Concepts
 
-<details><summary>
- &nbsp;&nbsp; ⭐ &nbsp;&nbsp; What's a DID? What's a DID Document?
-</summary><br>
+| --- | --- |
+|Little technical background|⭐|
 
 The most "decentralized" of the identifiers are so-called "decentralized
 identifiers," or DIDs. These are each registered and resolved on autonomous
