@@ -668,7 +668,7 @@ That said,  specifying and aligning amongst ourselves and watching closely as
 the cryptocurrency and cybersecurity worlds progress towards their own
 alignments and specifications will be a major task in the coming years. 
 
-## VC Infrastructure (Layer 3)
+## VC Infrastructure (**"Layer 3"***)
 
 ### Diversity of VCs
 
@@ -688,6 +688,101 @@ was crowd-edited on a [very special
 episode](https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---13-jan-2021---usapac-time-1400pt---communications-problem-explaining-the-vc-format-wars-to-decision-makers).
 The article is definitely the best place to start further reading. 
 
+##### How do I translate between VC formats or consume foreign ones? ❗
+
+Traditional data schemata are used to express (and thus validate against that
+expression) the **syntax** of data objects-- the type, length, form,
+presence/absence, etc of values in the key/value pairs that make up most data
+structures. Translation between different kinds of VCs requires explicit
+understanding of both syntax and **semantics**-- what fields mean, how to
+interepret content. 
+
+The primary function of JSON-LD "contexts" (complex JSON objects referenced by
+the mandatory JSON-LD key "@Context") is to express the **semantics** of the
+keys of the rest of the LD object that it's in. This reinforces and makes more
+explicit "ontological" assumptions about what data can mean, which facilitates
+the translation between schemata or systems and the reconstruction of lost or
+foreign contexts in the case these are lost.
+
+##### So what exactly is JSON-LD ? ❗❗
+
+JSON-LD is a way of encoding complex, semantically-disambiguated information
+about data in the handy JSON format that developers interact with all the time.
+The underlying, graph-structured information can be composed and navigated like
+a graph using RDF, without necessarily requiring the developer to go down the
+RDF rabbithole-- it does this by constraining JSON in a form where it can be
+parsed as, or converted to, RDF.  In fact, a version of an LD document that has
+been converted to RDF (or at least, that can be treated as RDF by standard RDF
+tooling) is referred to as an "**expanded version**".  
+
+A JSON LD document looks like a regular JSON blobl except for a few
+eccentricities (like the mandatory @Context key/value pair), but works quite
+differently under the hood.  Processing an LD blob as it if were a vanilla JSON
+blob can lead to confusion and bad interoperability. For more information, see
+"Advanced Topics: JSON-LD". 
+
+##### Do I have to use JSON-LD to use VCs? ❗❓️ 🌶🌶 
+
+Yes and no-- the Verifiable Credentials [data model
+specification](https://www.w3.org/TR/vc-data-model/), currently in Candidate
+Recommendation stage of approval at the W3C, relies upon the JSON-LD standard,
+and all its examples presume conformant LD. Being able to design and issue
+conformant LD is not the duty of each individual system, however-- there are
+many ways to arrive at the goal of VCs being encoded in that way.
+
+There are other systems for expressing semantics for data, such as the young
+IETF standard
+[JSON-Schema](https://json-schema.org/learn/getting-started-step-by-step.html)
+which does not require keys to be defined against public (i.e. web-published)
+definitions and that does not require/assume the immutable publication of
+contexts for signatures to be long-lived. This may be simpler and easier for
+some use-cases but may inhibit interoperability with LD-based systems and the
+vocabularies of organizations like the W3C and GS1. Like JSON-LD Schemata, JSON
+Schema objects require special linters and validators, which can be found in the
+[JSON Schema Section](https://extendsclass.com/json-schema-validator.html) at
+extendsclass.com . Some DIF work items like the [Credential
+Manifest](https://identity.foundation/credential-manifest/) use JSON Schema for
+semantic anchoring extensively. The trick is getting those other ways of
+expressing semantics into a shape that other SSI systems and VC consumers can
+interpret.
+
+> That sounds hard, and/or I don’t think my boss/investors/CISO would like that.
+> Is JSON-LD the only way to express semantics? Do I need to output JSON-LD
+> somehow to have interoperability with other systems?
+
+It is worth mentioning that the low-level VC libraries in the Aries ecosystem
+abstract out much of the complexity specific to LD and semantic anchoring.  In
+the case of Indy-based systems, there are specific layers of blockchain-based
+semantic and syntactic annotation that frame verifiable presentations (See below
+under Advanced Topics: Credential Definitions). See
+[RFC47](https://github.com/hyperledger/aries-rfcs/tree/master/concepts/0047-json-ld-compatibility),
+[RFC250](https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0250-rich-schemas/README.md),
+Implementer’s Call [Notes
+12-17-20](https://wiki.hyperledger.org/display/IWG/2020-12-17+Identity+Implementers+WG+Call),
+and the archives of the AriesGo framework [discussion
+channels](https://wiki.hyperledger.org/display/ARIES/aries-framework-go), where
+much low-level JSON-LD work has taken place; to expand Aries support for
+JSON-LD, check the [Code With
+Us](https://digital.gov.bc.ca/marketplace/opportunities/code-with-us/3f9f0e86-b8bf-47ee-9f3d-5b272f9ec845)
+for open grants.
+
+*For more information on each of these broader families of tooling and
+validation, see the Advanced Topics section for each below.*
+
+##### What is the relationship between DIDs and VCs? ❗
+
+Technically, there is none! VCs work great with DIDs used as the identifiers for
+issuer and verifier, but they also work with many other kinds of identifiers
+(Solid addresses, centralized and local identifier schemes,
+blockchain/smart-contract addresses, etc). DIDs can be used for all kinds of
+verifications, which is why the "verification method" system of associating
+multiple keys of different types with each DID is so flexible; signing VCs is
+only one of many purposes.  That said, the designers of both always had the
+other front-of-mind, and the complementarity of design thinking is hard to deny
+or overlook.
+
+### Advanced Features of VCs
+
 ##### Are VCs revocable? ❗
 
 Most VC systems currently have limited revocation capabilities, as
@@ -701,140 +796,7 @@ of events in the months since have explored the topic further; see the Interop
 WG notes for more
 [details](https://github.com/decentralized-identity/interoperability/blob/master/agenda.md).
 
-##### What is JSON-LD? ❗
-
-> I’ve never used JSON-LD and I get confused by all this LD talk. Can you
-explain it to me like I’m 5? What’s the difference between a JSON-LD “Context”
-or "Vocabulary", the traditional “Data Schemata” I use every day?***
-
-Traditional data schemata are used to express (and thus validate against that
-expression) the **syntax** of data objects-- the type, length, form,
-presence/absence, etc of values in the key/value pairs that make up most data
-structures. 
-The primary function of JSON-LD contexts is to express the
-**semantics** of the keys, not the values-- they facilitate the translation
-between schemata or systems and the reconstruction of lost or foreign contexts
-in which data can have meaning.
-
-##### What is so "semantic" about the *semantic web* and why is that relevant to JSON-LD?
-
-The web-based portability of 
-All VC systems need both semantic and syntantic mechanisms to issue and consume VCs in an interoperable and widely-portable way. They
-
-##### Do I have to use JSON-LD to use VCs? ❗❓️ 🌶🌶 
-
-> That sounds hard, and/or I don’t think my boss/investors/CISO would like that. Is JSON-LD the only way to express semantics? 
-
-There are other systems for expressing semantics for data, such as the young
-IETF standard
-[JSON-Schema](https://json-schema.org/learn/getting-started-step-by-step.html)
-which does not require keys to be defined against public definitions and that
-does not require/assume the immutable publication of contexts for signatures to
-be long-lived. This may be simpler and easier for some use cases but may inhibit
-interoperability with LD-based systems and the vocabularies of organizations
-like the W3C and GS1. Like JSON-LD Schemata, JSON Schema objects require special
-linters and validators, which can be found in the [JSON Schema
-Section](https://extendsclass.com/json-schema-validator.html) at
-extendsclass.com . DIF work items like the [Credential
-Manifest](https://identity.foundation/credential-manifest/) use JSON Schema
-extensively.
-
-Also, the low-level VC libraries in the Aries ecosystem abstract out much of the
-complexity specific to LD and semantic anchoring. See
-[RFC47](https://github.com/hyperledger/aries-rfcs/tree/master/concepts/0047-json-ld-compatibility),
-[RFC250](https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0250-rich-schemas/README.md),
-Implementer’s Call [Notes
-12-17-20](https://wiki.hyperledger.org/display/IWG/2020-12-17+Identity+Implementers+WG+Call),
-and the archives of the AriesGo framework [discussion
-channels](https://wiki.hyperledger.org/display/ARIES/aries-framework-go), where
-much low-level JSON-LD work has taken place; to expand Aries support for
-JSON-LD, check the [Code With
-Us](https://digital.gov.bc.ca/marketplace/opportunities/code-with-us/3f9f0e86-b8bf-47ee-9f3d-5b272f9ec845)
-for open grants.
-
-*For more information on each of these broader families of tooling and validation, see the Advanced Topics section for each below.*
-
-### Advanced Topics: JSON-LD
-
-##### How do I make (and host!) my own JSON-LD Context ❗❓️ 
-
-Basically, the process of creating schemata (whether for syntax, for semantics,
-or both) is best thought of as a *recombinatory* process-- mixing and matching
-composable prior art and adding properties or methods to existing building
-blocks is the name of the game, and the more you can recycle or use common
-building blocks, the better. Developers often refer to this as “extending
-classes,” i.e. adding properties and methods to a pre-existing object.
-
-Most schema development for JSON-LD projects (whether for shape, for semantics,
-or both) starts with a bit of reading on Schema.org’s [reference
-shelf](https://schema.org/docs/documents.html) and search function results, or a
-few other major ontologies/contexts like the [HeppNetz Good Relations
-](http://www.heppnetz.de/projects/goodrelations/)vocabulary for e-Commerce or
-the [EPCIS](https://www.gs1.org/epcis/epcis/1-1) standard for describing
-business processes and events. Once you have a skeleton that maps *most* of the
-relevant data for your use case in standardized terms, you’re ready to start
-extending!
-
-Another place to look is the vocabularies established in the W3C-CCG, some of
-which, such as the traceability vocabulary, have their own unique generators for
-creating and testing LD schemata from conventional "data shape" schemata in
-JSON. An example of the stages of generation can be found
-[here](https://github.com/w3c-ccg/traceability-vocab#place-as-an-example)and a
-generation tutorial is forthcoming. 
-
-
-### Advanced Topics: Credential Definitions 
-
-##### What are Credential Definitions? ❗️
-
-##### How are Credential Definitions compatible with JSON Schema and JSON-LD? ❗️❓️ 
-
-The core VC libraries of the Hyperledger Aries project work on a kind of hybrid
-“credential definition” that includes both semantic and syntactic definitions of
-what can go into a given VC called a [Rich
-Schema](https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0250-rich-schemas/README.md).
-VCs are not only validated against these definitions, but the CL-ZKP algorithms
-available in the same libraries also use the definitions to allow for verifiable
-selective disclosure of subsets of credential data via “framing”-- this process
-requires the definition as one of the inputs, however, so Indy-conformant
-credential definitions must be used. These have historically been written to the
-Indy blockchain, but other forms of immutable/highly-available storage are being
-pioneered in the Aries ecosystem.
-
-### Interpreting Credentials 
-
-##### How do I interpret credentials that require validating them against JSON-LD Contexts? Should I be scared? - ❗❓️
-
-Fetching new contexts and revocation lists at runtime is generally frowned upon
-and could raise serious privacy and security issues in a production environment;
-for this reason, JSON-LD, like most graph-model data systems, makes extensive
-use of caching, pre-loading, and periodically refreshing its dependencies to
-build a “local graph.” One crucial building-block in such a secure pre-loading
-system specific to the JSON-LD concept of a “document” is the “document loader”
-described in many specifications and tutorials on how to build for JSON-LD
-verification. DIF hosts a general-purpose reference
-[implementation](https://github.com/decentralized-identity/jsonld-document-loader)
-of such a tool, and its donator, Orie Steele of Transmute Industries, gave an
-overview of [why and how to use it](https://youtu.be/-yUbMDft5O0) at DIF Interop
-WG.
-
-
-
-
-### Where are extensions? - ❗❓️
-**Where do your extensions *live*, tho?**
-
-Extensions can remain specific to a given project if your project hosts its own
-vocabulary extending standard one, or (with appropriate resources and timelines)
-you can propose your extensions “to origin” at
-[schema.org](https://schema.org/docs/extension.html) or elsewhere. When
-self-hosting, remember to configure your web server to serve LD files as
-MIME-type json+ld (you might also want to get fancy with [versioning
-redirects](https://github.com/w3c-ccg/vc-http-api/pull/158#issue-588951741) like
-/latest/ and /next/)
-
-### Multisig VC? - ❗❓️
-**Can a VC be signed by two or more parties? How do I produce and consume multi-signed VCs?**
+##### Can a VC be signed by two or more parties? How do I produce and consume multi-signed VCs? ❗❓️
 
 Yes! The VC spec is actually fairly open on this issue, and Markus Sabadello
 gave a [great
@@ -842,8 +804,7 @@ presentation](https://github.com/decentralized-identity/interoperability/blob/ma
 at DIF Interop in January of 2021 laying out two major schools of prior art
 here-- how and when to produce each, and how to verify both.
 
-### ZKP, selective disclosure? - ❗❗️
-**What is ZKP? What is the difference between ZKP and “Selective Disclosure”?**
+##### What is ZKP? What is the difference between ZKP and “Selective Disclosure”? ❗❗️
 
 Zero-Knowledge Proofs refers to a mathematical construct, which is at the heart
 of many cryptographic systems such as the control privacy-preserving mechanisms
@@ -877,19 +838,98 @@ are:
   Trinsic and SecureKey. 
 - Microsoft Research has been building up ZKP capabilities based on an unrelated third form of cryptographic tradition known as "[fuzzy vaults](https://medium.com/decentralized-identity/building-interoperable-zkp-credential-systems-70bc20a8a809)," but a VP implementation based on it is still forthcoming. 
 
+##### These features don't seem specified in the core spec-- where do I find information about them? ❗❓️
 
-### DIDs + VCs - ❗
-**What is the relationship between DIDs and VCs?**
+Some features are specific to one DID Method, and are documented in that
+specification. Other features are intended to be widely interoperable and
+consumable/verifiable without a dependency on supporting a given DID method--
+i.e., these are extensions to the core VC data model. Regardless of whether they
+should be or if anyone wants them to be, they could conceivably be added to
+future versions of the core data model as optional or required features of VCs
+themselves.  This class of extensions live in a [distinct
+registry](https://w3c-ccg.github.io/vc-extension-registry/) governed by the
+W3C-CCG rather than the VC WG.
 
-Technically, there is none! VCs work great with DIDs used as the identifiers for
-issuer and verifier, but they also work with many other kinds of identifiers
-(Solid addresses, centralized and local identifier schemes,
-blockchain/smart-contract addresses, etc). DIDs can be used for all kinds of
-verifications, which is why the "verification method" system of associating
-multiple keys of different types with each DID is so flexible; signing VCs is
-only one of many purposes.  That said, the designers of both always had the
-other front-of-mind, and the complementarity of design thinking is hard to deny
-or overlook.
+### Interpreting Credentials 
+
+##### How do I interpret credentials that require validating them against JSON-LD Contexts? Should I be scared? - ❗❓️
+
+Fetching new contexts and revocation lists at runtime is generally frowned upon
+and could raise serious privacy and security issues in a production environment;
+for this reason, JSON-LD, like most graph-model data systems, makes extensive
+use of caching, pre-loading, and periodically refreshing its dependencies to
+build a “local graph.” One crucial building-block in such a secure pre-loading
+system specific to the JSON-LD concept of a “document” is the “document loader”
+described in many specifications and tutorials on how to build for JSON-LD
+verification. DIF hosts a general-purpose reference
+[implementation](https://github.com/decentralized-identity/jsonld-document-loader)
+of such a tool, and its donator, Orie Steele of Transmute Industries, gave an
+overview of [why and how to use it](https://youtu.be/-yUbMDft5O0) at DIF Interop
+WG.
+
+
+### Advanced Topics: JSON-LD
+
+##### How do I make (and host!) my own JSON-LD Context ❗❓️ 
+
+Basically, the process of creating schemata (whether for syntax, for semantics,
+or both) is best thought of as a *recombinatory* process-- mixing and matching
+composable prior art and adding properties or methods to existing building
+blocks is the name of the game, and the more you can recycle or use common
+building blocks, the better. Developers often refer to this as “extending
+classes,” i.e. adding properties and methods to a pre-existing object.
+
+Most schema development for JSON-LD projects (whether for shape, for semantics,
+or both) starts with a bit of reading on Schema.org’s [reference
+shelf](https://schema.org/docs/documents.html) and search function results, or a
+few other major ontologies/contexts like the [HeppNetz Good Relations
+](http://www.heppnetz.de/projects/goodrelations/)vocabulary for e-Commerce or
+the [EPCIS](https://www.gs1.org/epcis/epcis/1-1) standard for describing
+business processes and events. Once you have a skeleton that maps *most* of the
+relevant data for your use case in standardized terms, you’re ready to start
+extending!
+
+Extensions can remain specific to a given project if your project hosts its own
+vocabulary that extends the standard one, or (with appropriate resources and timelines)
+you can propose your extensions “to origin” at
+[schema.org](https://schema.org/docs/extension.html) or elsewhere. When
+self-hosting, remember to configure your web server to serve LD files as
+MIME-type json+ld (you might also want to get fancy with [versioning
+redirects](https://github.com/w3c-ccg/vc-http-api/pull/158#issue-588951741) like
+/latest/ and /next/)
+
+Another place to look is the vocabularies established in the W3C-CCG, some of
+which, such as the traceability vocabulary, have their own unique generators for
+creating and testing LD schemata from conventional "data shape" schemata in
+JSON. An example of the stages of generation can be found
+[here](https://github.com/w3c-ccg/traceability-vocab#place-as-an-example)and a
+generation tutorial is forthcoming. 
+
+### Advanced Topics: Credential Definitions 
+
+
+##### What are Credential Definitions and Rich Schemata? ❗️
+
+The core VC libraries of the Hyperledger Aries project work on a kind of hybrid
+“credential definition” that includes both semantic and syntactic definitions of
+what can go into a given VC. Credential Definitions are more like syntax
+schemata, and [Rich
+Schema](https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0250-rich-schemas/README.md)
+include semantic information as well, which allows Verifiable Presentations
+derived from conformant VCs to create LD framing in the presentation process.
+For tutorials, examples, and up-to-date discussion about protocol upgrades, see
+the Aries RFC linked above.
+
+##### How are Credential Definitions compatible with JSON Schema and JSON-LD? ❗️❓️ 
+
+VCs are not only validated directly against JSON-LD or JSON Schema, but the
+CL-ZKP algorithms available in the Aries libraries use the CD and RS definitions
+to allow for verifiable selective disclosure of subsets of credential data via
+“framing”-- this process requires the definition as one of the inputs, however,
+so Indy-conformant credential definitions must be used from the same Indy-based
+ledger that stores the rest of the ingredients in the presentation. These have
+historically been written to a given Indy blockchain, but other forms of
+immutable/highly-available storage are being pioneered in the Aries ecosystem.
 
 ## Apps, UX, and Wallets (Layer 4)
 
