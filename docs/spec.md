@@ -533,6 +533,7 @@ Today's major frameworks are all well-documented and contain SDKs, improvement p
 - Consensys's Veramo portal and
   [overview](https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---20-jan-2021---useu-time-0600-pt---tour-of-the-os-veramo-suite-from-consensys-meshdaf-team)
   (aka "Aries Agent+ for Ethereum")
+- Trinsic Platform [documentation](https://docs.trinsic.id) and [Studio](https://trinsic.studio)
 - [Affinidi](https://www.affinidi.com/developers)/Bloom - [Portal](https://www.affinidi.com/developers) 
 - Spruce [Portal](http://spruceid.dev) 
 - Mattr Platform ([launch
@@ -600,6 +601,7 @@ way to full VC-HTTP-API support across frameworks.
 **“Connection”** is very much an Aries-centric concept: it is an abstraction of a
 relationship between two identifiers/data subjects, first described in an [Aries
 RFC](https://github.com/hyperledger/aries-rfcs/blob/master/features/0160-connection-protocol/README.md).
+Its purpose is to establish persistent, end-to-end encrypted messaging based on DIDs.
 A more generic version of the concept is included in the [Universal Wallet draft
 specification](https://w3c-ccg.github.io/universal-wallet-interop-spec/#connection)
 at W3C-CCG, for the sake of portability and equivalences. 
@@ -611,7 +613,7 @@ can be described colloquially using this construction. Instead, an Aries
 connection is how exchange protocols are initiated and expressed to an end-user;
 for the actual mechanics of transport protocols, see the relevant
 [subprotocols](https://github.com/hyperledger/aries-rfcs/blob/master/features/0160-connection-protocol/README.md#0-invitation-to-connect)
-and Aries RFCs. 
+and Aries RFCs. Even in Aries, first establishing a formal connection is not a requirement for exchanging VCs.
 
 > Whether or not you store persistent identifiers locally or not, and whether or not that storage conforms to portability and recovery data models calling them "connections", the connection doesn't exchange credentials-- a protocol does. See the next layer for discussions about those.
 
@@ -936,7 +938,7 @@ immutable/highly-available storage are being pioneered in the Aries ecosystem.
 ### What can rely on DIDs, VCs - ❗
 **What shape can this take? What kinds of software and hardware will be able to use DIDs and VC?**
 
-The sky is the limit-- all kinds of form factors and software contexts are in
+The sky is the limit--all kinds of form factors and software contexts are in
 various stages of prototyping an standardization!  In fact, many people use the
 word "wallet" to refer to all kinds software, including libraries and widgets
 working invisibly inside other software. There are browser-based wallets (that
@@ -964,10 +966,10 @@ will likely need to be advanced and standardized before decentralized identity
 architectures can be brought to the huge fraction of the world's population with
 low chances of owning a cryptographically enabled personal phone or computer.  
 
-### Crpyto vs Identtiy wallet - ❗❗️ 
+### Crypto vs Identity wallet - ❗❗️ 
 **Do concepts from cryptocurrency wallets like "cold storage", "air gapping", and "custodial wallet" apply to identity wallets?**
 
-Yes and no-- in some use cases, the distinctions can be quite meaningful because
+Yes and no--in some use cases, the distinctions can be quite meaningful because
 they signal different architectures, security guarantees, relations of power
 between stakeholders, etc etc.  In particular, SSI use cases about direct,
 interactive control of credentials by individual humans lend themselves quite
