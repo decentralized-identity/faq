@@ -510,7 +510,10 @@ meeting.https://en.wikipedia.org/wiki/XACML
 
 ##### Is an SCID a kind of DID? ❗❗️
 
-> A Self-Certifying IDentifier cryptographically binds an identifier to a public private key pair-- you can get a public key deterministically from the identifier, and the private key corresponding to it can be used to prove control over it, without any third party certifying these relationships.
+> A Self-Certifying IDentifier cryptographically binds an identifier to a public
+> private key pair-- you can get a public key deterministically from the
+> identifier, and the private key corresponding to it can be used to prove
+> control over it, without any third party certifying these relationships.
 
 Self-certifying identifiers are deterministically derived from public keys, such
 that they can be widely published and control of the public key from which they
