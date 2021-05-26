@@ -83,19 +83,33 @@ you are proposing both questions AND respective answers.
 
 ##### What is a DID? ❗
 
-The most "decentralized" of the identifiers are so-called "decentralized
-identifiers," or DIDs. These are each registered and resolved on autonomous
-"namespaces" (see below), which are often closely coupled to specific
-public-readable DLTs like blockchains that, by publishing addressing records
-immutably, function as "verifiable data registries" for their specific kind of
-identifiers. 
+> In short, it's an address on the internet that someone called a **subject** (you, a company, a device) can "own" and control directly, like a username but randomly generated. It can be used to find a connected "DID document" which is like a business card, providing extra information for finding or contacting or checking the signatures of that subject; that subject can update or remove that "listing" over time, directly.
+
+These  identifiers are called "decentralized" because each is registered and
+resolved on autonomous "namespaces" (see below), which are often closely coupled
+to specific public-readable DLTs like blockchains or DAGs that, by publishing
+addressing records immutably, function as "verifiable data registries" for their
+specific kind of identifiers. The most general category, though, is "VDR"
+because these do not necessarily have to take the form of blockchains, clouds,
+networks, or anything else-- a VDR could be paper-based and still decentralized!
+(We would have to name it after Jorge Luis Borges if we made such a registry.)
+
+##### What is a DID "prefix"? ❗
 
 Each DID is prefixed with a reference to, and only guaranteed to useful,
-meaningful, and reliable within, one DID namespace. Each "namespace" (addressing
-system) is navigated with and governed by a "DID Method." 
-
+meaningful, and reliable within, one DID namespace. If you come across a DID in
+the wild, this prefix makes it easy to identify its origin and where to go to
+"use" it for fetching a DID Document.  A DID from the Sovrin network, for
+example, begins with "did:sov:...", and one from the Veres One network begins
+with "did:v1:..." Each "namespace" (addressing system) is navigated with and
+governed by a "DID Method." 
 
 ##### What is a "DID Method"? ❗
+
+> You can think of a DID Method as a black box-- if you type in a DID, you get
+> back a DID Document. Press the "new DID" button and enter some information,
+> you will get control of a new DID.  If it's not a simple machine, it's not a
+> very useful DID Method!
 
 Each DID is a publically-specified micro-protocol containing namespace rules,
 CRUD and resolution mechanics, references to all dependencies such as
@@ -107,10 +121,13 @@ guarantees and privacy engineering vary widely, so it can be dangerous to assume
 they are all equal and interchangeable. Each is like a little internet unto
 itself!
 
+
+
+
 > Each "DID method" encodes and specifies a set of interdependent governance,
 > publication, and discovery mechanisms for DIDs in a given DID namespace.
 
-##### What exactly is a "Namespace" ❗
+##### What exactly is a "Namespace", in simple terms? ❗
 
 **Namespace** here means a universe of possible names, each of which is unique
 and ideally as collision-free as possible, and in most cases completely opaque
@@ -124,16 +141,29 @@ Thailand, etc etc.
 
 ##### What are Verifiable Credentials ("VC")? ❗
 
+> In short, they are a portable list of claims about a subject signed by one or
+> more authority.
+
 Verifiable Credentials combine properties and superpowers from many different
 mental models and forms of prior art; Linked Data, JSON Web Tokens, Ontologies,
 ETL systems. They are like portable, free-floating data points, which are not
 exactly documents or files or "records" in the usual sense. They are signed and
 thus tamper-evident, and thus share much of the verifiability of blockchain data
 or signed PDFs insofar as the signatures they contain can be properly verified
-by reference to the identities included inside the document.  For the different
-categories or "flavors" of VC, see the section on Layer 3 below.
+by reference to the identities included inside the document. 
+
+They can be encrypted or not, they can identify their subject directly or
+indirectly using DIDs or any other kind of address and/or indirection mechanism.
+They can be public or private or somewhere in between, large or small,
+long-lasting or ephemeral. For the different categories or "flavors" of VC, see
+the section on Layer 3 below.
 
 ##### What is a Wallet? ❗
+
+> In short, a wallet stores magic gibberish passwords (private keys) and magic
+> fridge-magnet poetry (seed phrases) that help end-users control DIDs and other
+> kinds of accounts like blockchain addresses or high-security multi-factor
+> log-ins.
 
 Controlling, updating, and proving control of a DID (or, for that matter, a
 cryptocurrency address, an NFT, or many other kinds of digital assets) requires
@@ -144,6 +174,8 @@ they have to do complex, high-security operations to avoid leaking private keys
 while still producing unique signatures with those private keys every time proof
 is needed that they possess them (in different context, these private-key
 operations can be called "signing", "authentication", "interactive proof", etc).
+
+![wallet ux meme](https://pbs.twimg.com/media/E1hhKZTWYAA2Eu_?format=jpg&name=small)
 
 In the identity context, however, a wallet can also store and present VCs, which
 require proof of control of a private key to be considered verifiable at a given
@@ -158,6 +190,11 @@ architectural questions. Heck, just CTRL-F and search for "wallet"!
 ### Core Concepts
 
 ##### What is so *decentralized* about a DID? ❗
+
+> Ever heard the phrase, "not your keys, not your account?" The variously
+> "direct" control of a DID makes it different than identifiers managed by a
+> central database, registry, or database-- i.e., 99% of today's identifier
+> systems.
 
 What makes a DID decentralized isn't the DID itself or what you can do with it,
 but how you got the DID and how it relates to the outside world. Each "DID
@@ -273,7 +310,9 @@ are common in today’s IAM, but they are not inherent to IAM: many IAM companie
 are rolling out products and systems for managing and provisioning decentralized
 identities and/or verifiable credentials at enterprise scale. If those
 identities and credentials are portable and interoperable, that’s decentralized
-enough for this decentralized identity foundation!
+enough for this decentralized identity foundation! But for many use-cases or
+ideologies, any "go-between" or mediation is too much, particularly when it
+comes to censorship-resistance or anonymity. 
 
 > IAM can be more or less decentralized, and decentralized tools can be used to
 > centralized ends. Technological decentralization doesn't guarantee
@@ -299,6 +338,9 @@ for verifiable credentials.
 
 ##### What’s the difference between a DOI or other “persistent identifier” and a DID? ❗❗️
 
+> DOIs are static and centrally managed/overseen; DIDs are self-managed and
+> self-updateable.
+
 Digital Object Identifiers ([DOIs](https://www.doi.org/)) are the most famous
 form of persistent identifier, and differ in two main aspects from decentralized
 identifiers: on the one hand, they are very centralized, in that one global
@@ -318,7 +360,18 @@ information about that other world, see Markus Sabadello’s article on our blog
 
 ### Diversity Between DID Methods 
 
+##### Who governs each DID Method? ❗
+
+Whoever creates a method and documents it is expected to register it if they
+want anyone to use it and consider it a method for broad use. There is no
+central committee deciding what DID methods are legitimate or not-- each Method
+is responsible for its own specification, governance, and maintenance/evolution.
+
 ##### How do I find out more about a given DID "method" ❗❗
+
+> There is a handy
+> [list](https://w3c.github.io/did-spec-registries/#the-registration-process),
+> you can just read it! There is no membership fee, gatekeeper, or velvet rope.
 
 All methods are expected to be maintainers of systems and infrastructure that
 are built on top of them. They are each specified by a published, registered,
@@ -334,17 +387,25 @@ likely whichever maintenance group will maintain the DID specification itself.
 
 ##### Do DID "Method"s break down into categories I should know about? ❗❗
 
-Absolutely! A DID is any address that can be turned into a usable DID Document,
-and there are many drastically different ways of doing this that can confuse
-beginners by all being grouped under the broad category of DIDs.  For example,
-most DID methods use blockchains or other publicly-readable verifiable data
-registries directly (or indirectly, in the case of "layer 2" systems based on
-DIF's [Sidetree Protocol](https://identity.foundation/sidetree/spec/) ) but
-some, such as [`DID:Web`](https://w3c-ccg.github.io/did-method-web/), use other
-systems of verification, such as TLS-secured DNS resolution. There are also
-"deterministic" DID methods like [`DID:key`]() and `DID:pkh` that produce a DID
-Document without any verifiable registry from a pre-existing public key for
-interoperability purposes, and "off-chain" or "ephemeral" methods like
+> Absolutely! In short, yes, there are [several
+> ways](https://www.windley.com/archives/2020/09/the_architecture_of_identity_systems.shtml)
+> to proceed under the mantle of DIDs, with major differences-- supporting some
+> of them does not require you to support them all.  In fact, it might be
+> clearer for your end-users if you do not expose them to all the diversity and
+> complexity!
+
+Remember, A DID is any address that can be turned into a usable and conformant
+DID Document, and there are many drastically different ways of doing this that
+can confuse new-comers to the space by all being grouped under the broad
+category of DIDs. For example, most DID methods use blockchains or other
+publicly-readable verifiable data registries directly (or indirectly, in the
+case of "layer 2" systems based on DIF's [Sidetree
+Protocol](https://identity.foundation/sidetree/spec/) ) but some, such as
+[`DID:Web`](https://w3c-ccg.github.io/did-method-web/), use other systems of
+verification, such as TLS-secured DNS resolution. There are also "deterministic"
+DID methods like [`DID:key`]() and `DID:pkh` that produce a DID Document without
+any verifiable registry from a pre-existing public key for interoperability
+purposes, and "off-chain" or "ephemeral" methods like
 [DID:Peer](https://identity.foundation/peer-did-method-spec) that produce a
 single-use, private DID Document corresponding to private keys generated at
 runtime for private connections. DID:Peer DIDs are integral to DIDComm, which is
@@ -355,6 +416,9 @@ properties.
 
 
 ##### Should my project support just one method or multiple? ❗
+
+> No one is stopping you from using only one-- there is no universal rule about
+> how many or few makes sense!
 
 Most people presume only one DID method will be enough for a given product,
 use-case, or ecosystem, but consuming credentials from other DID systems
@@ -371,6 +435,9 @@ project for information about how to “outsource” CRUD on foreign DID methods
 a trusted agent.
 
 ##### How do I pick between DID methods? ❗❓️
+
+> In short: *keep reading* after you've read everything here, it's a major
+> research question not answered in a day!
 
 This is a very complex question, and one which DIF cannot give advice in a way
 that is neutral and fair to all its members. There are, however, a number of
@@ -395,8 +462,9 @@ is available.
 ##### How do I define criteria for which types of DID to use, trust, or depend on? ❗❓️ 
 
 > Certain use-cases are only possible given certain properties of a
-method/did:doc design. How do I find out which DID methods I should be looking
-at?**
+method/did:doc design. A good rule of thumb is to study each DID Method enough
+to understand what it is optimizing for, and find the optimizations relevant
+most important for your project.
 
 This is, again, too large a question for a one-paragraph answer. But
 understanding the requirements of a given use-case or problem space takes time
@@ -442,6 +510,8 @@ meeting.https://en.wikipedia.org/wiki/XACML
 
 ##### Is an SCID a kind of DID? ❗❗️
 
+> A Self-Certifying IDentifier cryptographically binds an identifier to a public private key pair-- you can get a public key deterministically from the identifier, and the private key corresponding to it can be used to prove control over it, without any third party certifying these relationships.
+
 Self-certifying identifiers are deterministically derived from public keys, such
 that they can be widely published and control of the public key from which they
 derive can be proven with its corresponding private key. They are
@@ -469,7 +539,7 @@ which the following illustration is taken:
 Src: https://livebook.manning.com/book/self-sovereign-identity/chapter-8/v-2/139 
 
 
-##### Can a DID be a SCID? ❗❓
+##### Can a DID be a SCID at the same time? ❗❓
 
 Yes-- but it can also NOT be a SCID.  Two DIF work items, the Sidetree Protocol
 and the KERI Protocol both aspire to make DIDs that are SCIDs within a certain
