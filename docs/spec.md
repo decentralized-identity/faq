@@ -601,7 +601,9 @@ longtime program participants and W3C-CCG contributors Digital Bazaar. DB
 founder and CEO Manu Sporny gave a detailed [testimonial and
 overview](https://www.din.foundation/initiativ/tps-meeting-april) of the
 program, its structure, and its use-cases at a conference organized by DIF
-members DIN (Digital Identity North, Norway) in April 2021.
+members DIN (Digital Identity North, Norway) in April 2021. Discussion of the
+framework-like coordination and high bar for "swappability" between vendors is
+discussed starting at minute 19.
 
 
 ##### How flexible are today's frameworks for interacting beyond their domain? ❗❗️ 
