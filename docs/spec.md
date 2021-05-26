@@ -152,7 +152,8 @@ keys for cryptocurrency accounts) are usually distinguished from identity
 wallets (that control keys for receiving and verifiably presenting verifiable
 credentials).  That said, there is no good reason one wallet couldn't do both,
 and some day soon they probably will! See the Layer 4 section for more detail on
-wallets in general and the Universal Wallet in particular.
+wallets in general and the Universal Wallet in particular, and Layer 5 for
+architectural questions. Heck, just CTRL-F and search for "wallet"!
 
 ### Core Concepts
 
@@ -690,7 +691,27 @@ was crowd-edited on a [very special
 episode](https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---13-jan-2021---usapac-time-1400pt---communications-problem-explaining-the-vc-format-wars-to-decision-makers).
 The article is definitely the best place to start further reading. 
 
+##### What is the relationship between DIDs and VCs? ❗
+
+Technically, there is none! VCs work great with DIDs used as the identifiers for
+issuer and verifier, but they also work with many other kinds of identifiers
+(Solid addresses, centralized and local identifier schemes,
+blockchain/smart-contract addresses, etc). DIDs can be used for all kinds of
+verifications, which is why the "verification method" system of associating
+multiple keys of different types with each DID is so flexible; signing VCs is
+only one of many purposes.  That said, the designers of both always had the
+other front-of-mind, and the complementarity of design thinking is hard to deny
+or overlook.
+
 ##### How do I translate between VC formats or consume foreign ones? ❗
+
+That is...a big question-- read through the rest of this section and ask me
+again later. Suffice it to say you need to account for both the semantics and
+the syntax of a VC to translate between VC systems. If you are translating to or
+from JSON-LD systems or Aries systems, be sure to read those "Advanced Topics"
+sections as well before the "Advanced Topics: VC Translation" section.
+
+##### The semantics and the what now? Schemata aren't enough? ❗
 
 Traditional data schemata are used to express (and thus validate against that
 expression) the **syntax** of data objects-- the type, length, form,
@@ -706,24 +727,24 @@ explicit "ontological" assumptions about what data can mean, which facilitates
 the translation between schemata or systems and the reconstruction of lost or
 foreign contexts in the case these are lost.
 
-##### So what exactly is JSON-LD ? ❗❗
+##### So what exactly is JSON-LD, then, if not a kind of JSON? ❗❗
 
 JSON-LD is a way of encoding complex, semantically-disambiguated information
-about data in the handy JSON format that developers interact with all the time.
-The underlying, graph-structured information can be composed and navigated like
-a graph using RDF, without necessarily requiring the developer to go down the
-RDF rabbithole-- it does this by constraining JSON in a form where it can be
-parsed as, or converted to, RDF.  In fact, a version of an LD document that has
-been converted to RDF (or at least, that can be treated as RDF by standard RDF
-tooling) is referred to as an "**expanded version**".  
+about data in a variant or a subset of the the handy JSON format that developers
+interact with all the time. The underlying, graph-structured information can be
+composed and navigated like a graph using RDF, without necessarily requiring the
+developer to go down the RDF rabbithole-- it does this by constraining JSON in a
+form where it can be parsed as, or converted to, RDF.  In fact, a version of an
+LD document that has been converted to RDF (or at least, that can be treated as
+RDF by standard RDF tooling) is referred to as an "**expanded version**".  
 
-A JSON LD document looks like a regular JSON blobl except for a few
+A JSON LD document looks like a regular JSON blob except for a few
 eccentricities (like the mandatory @Context key/value pair), but works quite
 differently under the hood.  Processing an LD blob as it if were a vanilla JSON
 blob can lead to confusion and bad interoperability. For more information, see
 "Advanced Topics: JSON-LD". 
 
-##### Do I have to use JSON-LD to use VCs? ❗❓️ 🌶🌶 
+##### Do I *have* to use JSON-LD to use VCs? ❗❓️ 🌶🌶 
 
 Yes and no-- the Verifiable Credentials [data model
 specification](https://www.w3.org/TR/vc-data-model/), currently in Candidate
@@ -771,27 +792,16 @@ for open grants.
 *For more information on each of these broader families of tooling and
 validation, see the Advanced Topics section for each below.*
 
-##### What is the relationship between DIDs and VCs? ❗
-
-Technically, there is none! VCs work great with DIDs used as the identifiers for
-issuer and verifier, but they also work with many other kinds of identifiers
-(Solid addresses, centralized and local identifier schemes,
-blockchain/smart-contract addresses, etc). DIDs can be used for all kinds of
-verifications, which is why the "verification method" system of associating
-multiple keys of different types with each DID is so flexible; signing VCs is
-only one of many purposes.  That said, the designers of both always had the
-other front-of-mind, and the complementarity of design thinking is hard to deny
-or overlook.
-
 ### Advanced Features of VCs
 
 ##### Are VCs revocable? ❗
 
-Most VC systems currently have limited revocation capabilities, as
-they add significant scaling costs and complexity, to say nothing of varying
-properties for privacy engineering. Different use cases justify different
-approaches to revocation (including none at all).  Martin Riedel's overview of
-approaches to revocation/status mechanisms at interop [in
+By definition, no. Most VC systems currently have limited revocation
+capabilities, as they add significant scaling costs and complexity, to say
+nothing of varying properties for privacy engineering and architectural
+assumptions/requirements. Different use cases justify different approaches to
+revocation (including none at all).  Martin Riedel's overview of approaches to
+revocation/status mechanisms at interop [in
 February](https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---10-feb-2021---usapac-time-1400pt---revocation-method-comparison)
 was really helpful in introducing these approaches at a high level, and a series
 of events in the months since have explored the topic further; see the Interop
@@ -869,7 +879,6 @@ of such a tool, and its donator, Orie Steele of Transmute Industries, gave an
 overview of [why and how to use it](https://youtu.be/-yUbMDft5O0) at DIF Interop
 WG.
 
-
 ### Advanced Topics: JSON-LD
 
 ##### How do I make (and host!) my own JSON-LD Context ❗❓️ 
@@ -933,10 +942,26 @@ ledger that stores the rest of the ingredients in the presentation. These have
 historically been written to a given Indy blockchain, but other forms of
 immutable/highly-available storage are being pioneered in the Aries ecosystem.
 
+
+### Advanced Topics: VC Translation 
+
+##### I read the VC section above and studied the problem. Now what? ❗❓
+
+More thorough guidance is forthcoming in the next month or two-- no, really! For
+now, see the ongoing [WACI-PEx work
+item](https://github.com/decentralized-identity/waci-presentation-exchange) of
+the Claims and Credentials WG for more info on which subset of each system can
+send and receive messages across systems. Documentation is expected soon from
+not only the WACI-PEx working group at DIF, but also the VC-HTTP-API
+specification at W3C-CCG and a few other groups working on narrower/more
+specific interop profiles such as the Vaccination Vocabulary and Traceability
+Vocabulary projects at W3C-CCG/Good Health Pass.
+
 ## Apps, UX, and Wallets (Layer 4)
 
-### What can rely on DIDs, VCs - ❗
-**What shape can this take? What kinds of software and hardware will be able to use DIDs and VC?**
+### Software
+
+##### What software can be built on top of a foundation of DIDs and VCs? ❗
 
 The sky is the limit--all kinds of form factors and software contexts are in
 various stages of prototyping an standardization!  In fact, many people use the
@@ -951,23 +976,10 @@ on-premise systems for issuance and verification, which might produce and
 consume VCs without a conventional individual/edge wallet ever coming into play.
 There are many many nails that this hammer is good for!
 
-### Hardware requirements? - ❗
-**Do I need a fancy new, modern smartphone to control my own identity and credentials securely and privately?**
+##### Crypto wallets vs Identity wallet ❗❗️ 
 
-This is a matter of some debate, and like privacy and other psychological and/or
-legal norms, "self-sovereignty", "direct control" of data, and "data rights" are
-highly specific to their underlying social, legal, political,  economic, and
-even medical realities.  There is plenty of work ongoing in our community on
-[Guardianship](https://sovrin.org/a-deeper-understanding-of-implementing-guardianship/)
-as a techno-social construct (and legal corollary to assumptions about the
-agency of the "user" in software thinking), to give just one example, and the
-use of biometrics or mnemonics to prove, maintain, and exert control over a DID
-will likely need to be advanced and standardized before decentralized identity
-architectures can be brought to the huge fraction of the world's population with
-low chances of owning a cryptographically enabled personal phone or computer.  
-
-### Crypto vs Identity wallet - ❗❗️ 
-**Do concepts from cryptocurrency wallets like "cold storage", "air gapping", and "custodial wallet" apply to identity wallets?**
+> Do concepts from cryptocurrency wallets like "cold storage", "air gapping",
+> and "custodial wallet" apply to identity wallets?
 
 Yes and no--in some use cases, the distinctions can be quite meaningful because
 they signal different architectures, security guarantees, relations of power
@@ -979,26 +991,7 @@ storage device, etc) can be understood as less directly human-controlled.  In
 other use cases, though, the analogy can be confusing or distracting, so don't
 expect them to be useful everywhere!
 
-
-### No connectivity environment? - ❗
-**How do DIDs and VCs get used without a live internet connection for querying a live blockchain?**
-
-
-Depending on what information needs to be live for a given use-case, and how
-live/fresh it needs to be, verification can be more or less "offline".  For
-instance, if a verifier has all the information it needs about a known and
-finite set of issuers, it can verify the authenticity of a VC offline-- and
-depending on what information the holder of that credential can present along
-with it, they can also verify that it was indeed issued to them.  Checking the
-status of mutable-status (i.e., revocable) credentials offline is another tricky
-matter, but here as everywhere, it depends on the requirements of the usecase--
-if revocation lists can be updated once a day, the 23 hours between updates
-verification can happen live and offline!
-
-
-### Wallet vs Mobile agent - ❗🌶
-**What's the difference between a Wallet and a Mobile Agent?**
-
+##### What's the difference between a Wallet and a Mobile Agent? ❗🌶
 
 Actually, this answer cannot be answered definitively-- the terms are, in some
 sense, still shifting and drifting over time as our nascent "market" changes
@@ -1012,11 +1005,13 @@ etc etc.  A whole survey-based research project of DIF's Glossary Group tried to
 suss out who used the term how in our community and descriptively map the
 schools of thought (see the [final
 report](https://identity.foundation/assets/glossary-group-report--may-2020.pdf)
-for a skimmable overview).  It's not a bad thing that no cross-community
-concensus ever arose!
+for a skimmable overview).  It's not necessarily a bad thing that no
+cross-community concensus ever arose!
 
-### Future of wallets? - ❗❗️🌶🌶
-**How many wallet should there be in the future? How many will there be in, say, 2 or 10 or 20 years?**
+##### What is the future of wallets? ❗❗️🌶🌶
+
+> How many wallet should there be in the future? How many will there be in, say,
+> 2 or 10 or 20 years?**
 
 I marked this question with two chilis because "browsers" were the battleground
 of Web 1.0 and "apps" were the battleground of Web 2.0, leaving many to
@@ -1038,9 +1033,52 @@ business models and market dynamics of our members' work that we can only signal
 the consequence of wallet design and encourage its member to collaborate and
 co-develop wallets and common wallet libraries and components openly.
 
-### UX flexibility vs privacy? - ❗❗️
-**How can UX design be flexible but still privacy-preserving when allowing users to combine, link, or co-present VCs issued to different DIDs?**
 
+
+### Hardware 
+
+##### What are the HW requirements for SSI? ❗
+
+> Do I need a modern smartphone to control my own identity and credentials
+> securely and privately? Is anyone thinking about the no-phoners, the
+> phone-sharing parts of the world, and the accessibility of
+> personal-intervention/consent UX?
+
+This is a matter of some debate, and like privacy and other psychological and/or
+legal norms, "self-sovereignty", "direct control" of data, and "data rights" are
+highly specific to their underlying social, legal, political,  economic, and
+even medical realities.  There is plenty of work ongoing in our community on
+[Guardianship](https://sovrin.org/a-deeper-understanding-of-implementing-guardianship/)
+as a techno-social construct (and legal corollary to assumptions about the
+agency of the "user" in software thinking), to give just one example, and the
+use of biometrics or mnemonics to prove, maintain, and exert control over a DID
+will likely need to be advanced and standardized before decentralized identity
+architectures can be brought to the huge fraction of the world's population with
+low chances of owning a cryptographically enabled personal phone or computer.  
+
+##### What about no- and low-connectivity environments? ❗
+
+> How do DIDs and VCs get used without a live internet connection for querying a
+> live blockchain?**
+
+Depending on what information needs to be live for a given use-case, and how
+live/fresh it needs to be, verification can be more or less "offline".  For
+instance, if a verifier has all the information it needs about a known and
+finite set of issuers, it can verify the authenticity of a VC offline-- and
+depending on what information the holder of that credential can present along
+with it, they can also verify that it was indeed issued to them.  Checking the
+status of mutable-status (i.e., revocable) credentials offline is another tricky
+matter, but here as everywhere, it depends on the requirements of the usecase--
+if revocation lists can be updated once a day, the 23 hours between updates
+verification can happen live and offline!
+
+
+### Product Design & User Experience (UX)
+
+##### Is there an inherent trade-off between flexibility of UX and privacy? - ❗❗️🌶
+
+> How can UX design be flexible but still privacy-preserving when allowing users
+> to combine, link, or co-present VCs issued to different DIDs?**
 
 There’s not a lot written about this or prior art!  If you know of any please
 open a PR against this answer using the github link at the top of this document.
@@ -1048,21 +1086,30 @@ If you are working on such a project, please contact the [product
 managers](https://lists.identity.foundation/g/id-productmanagers) group and
 present the project for feedback!
 
-
-### Key management - ❗❓️
-**How can key management be made usable for "normal" end-users?**
-
-
+##### How can key management be made usable for "normal" end-users? ❗❓️
 
 Rouven Heck led a fascinating
 [two](https://github.com/decentralized-identity/product-managers/blob/main/agenda.md#february-10th-2021)-[part](https://github.com/decentralized-identity/product-managers/blob/main/agenda.md#february-24th-2021)
 discussion of this topic at the Product Managers group, which overviewed the
-problem space quite well and provided lots of further reading and links. 
+problem space quite well and provided lots of further reading and links. The
+short version is: it won't happen soon, but it will terraform the UX and
+architecture of our digital lives when it does. A fascinating socio-technical
+mystery to ponder and research in the meantime!
+
+##### Will SSI finally deliver eKYC and disposable/revocable anonymity to the crypto space?
+
+DIF is not in the fortune-telling business, but DIF *is* in the notes-comparison
+racket, and our [Finance and Banking Special Interest
+Group](https://www.notion.so/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2)
+has had a number of speakers and discussions about the emerging field of
+SSI-powered "Know Your Customer"/compliance products for privacy-preserving
+financial transparency.
 
 ## Trust Frameworks and Ecosystems across Industries and Jurisdictions (Layer 5)
 
-### Compliance - ❗
-**So, is this stuff street-legal yet? If so, where? If not, what's it going to take?**
+### Compliance & Regulation 
+
+##### So, is this stuff street-legal yet? If so, where? If not, what's it going to take? ❗
 
 Legalizing any load-bearing, high-value technology is slow and complex work that
 takes a lot of hands-- first, exact definitions and specifications are needed,
@@ -1087,11 +1134,10 @@ mobile app? Which digital signatures hold up in court? What's an acceptible
 margin of error when identifying people, or vouching for the soundness of their
 paperwork? These are all norms set by a Trust Framework, which might govern a
 nation-state or an industry within one or a global software market.
-</details>
 
+### Trust Frameworks 
 
-### More on Trust Frameworks - ❗❗️
-**Those Trust Framework things sound cool, where can I find out more?**
+##### Those Trust Framework things sound cool, where can I find out more? 
 
 Trust Frameworks are complex things, and no single organization can be expected
 to track them all or exert pressure on all of them. DIF has historically done
@@ -1146,8 +1192,9 @@ organization, the Linux Foundation.  For further reading, see:
 
 ## Architectural Considerations, Interoperability, and Integrations
 
-### Interoperability?- ❗❗️🌶
-**Don't we already have a standard? What's so hard about interoperating? 🌶**
+### Interoperability
+
+#####  Don't we already have a standard? What's so hard about interoperating? ❗❗️🌶
 
 If it were easy, the [Interop
 WG](https://github.com/decentralized-identity/interoperability#interoperability-project)

@@ -192,7 +192,8 @@ keys for cryptocurrency accounts) are usually distinguished from identity
 wallets (that control keys for receiving and verifiably presenting verifiable
 credentials).  That said, there is no good reason one wallet couldn’t do both,
 and some day soon they probably will! See the Layer 4 section for more detail on
-wallets in general and the Universal Wallet in particular.</p>
+wallets in general and the Universal Wallet in particular, and Layer 5 for
+architectural questions. Heck, just CTRL-F and search for “wallet”!</p>
 <h3 id="core-concepts"><a class="toc-anchor" href="#core-concepts" >§</a> Core Concepts</h3>
 <h5 id="what-is-so-decentralized-about-a-did"><a class="toc-anchor" href="#what-is-so-decentralized-about-a-did" >§</a> What is so <em>decentralized</em> about a DID? ❗</h5>
 <p>What makes a DID decentralized isn’t the DID itself or what you can do with it,
@@ -512,6 +513,7 @@ Aries can be found
 <li>Consensys’s Veramo portal and
 <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---20-jan-2021---useu-time-0600-pt---tour-of-the-os-veramo-suite-from-consensys-meshdaf-team"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---20-jan-2021---useu-time-0600-pt---tour-of-the-os-veramo-suite-from-consensys-meshdaf-team" >overview</a>
 (aka “Aries Agent+ for Ethereum”)</li>
+<li>Trinsic Platform <a path-0="docs.trinsic.id"href="https://docs.trinsic.id" >documentation</a> and <a path-0="trinsic.studio"href="https://trinsic.studio" >Studio</a></li>
 <li><a path-0="www.affinidi.com"path-1="developers"href="https://www.affinidi.com/developers" >Affinidi</a>/Bloom - <a path-0="www.affinidi.com"path-1="developers"href="https://www.affinidi.com/developers" >Portal</a></li>
 <li>Spruce <a path-0="spruceid.dev"href="http://spruceid.dev" >Portal</a></li>
 <li>Mattr Platform (<a path-0="mattr.global"path-1="introducing-the-mattr-platform"path-2=""href="https://mattr.global/introducing-the-mattr-platform/" >launch
@@ -565,6 +567,7 @@ way to full VC-HTTP-API support across frameworks.</p>
 <p><strong>“Connection”</strong> is very much an Aries-centric concept: it is an abstraction of a
 relationship between two identifiers/data subjects, first described in an <a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="blob"path-4="master"path-5="features"path-6="0160-connection-protocol"path-7="README.md"href="https://github.com/hyperledger/aries-rfcs/blob/master/features/0160-connection-protocol/README.md" >Aries
 RFC</a>.
+Its purpose is to establish persistent, end-to-end encrypted messaging based on DIDs.
 A more generic version of the concept is included in the <a path-0="w3c-ccg.github.io"path-1="universal-wallet-interop-spec"path-2="#connection"href="https://w3c-ccg.github.io/universal-wallet-interop-spec/#connection" >Universal Wallet draft
 specification</a>
 at W3C-CCG, for the sake of portability and equivalences.</p>
@@ -574,7 +577,7 @@ can be described colloquially using this construction. Instead, an Aries
 connection is how exchange protocols are initiated and expressed to an end-user;
 for the actual mechanics of transport protocols, see the relevant
 <a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="blob"path-4="master"path-5="features"path-6="0160-connection-protocol"path-7="README.md#0-invitation-to-connect"href="https://github.com/hyperledger/aries-rfcs/blob/master/features/0160-connection-protocol/README.md#0-invitation-to-connect" >subprotocols</a>
-and Aries RFCs.</p>
+and Aries RFCs. Even in Aries, first establishing a formal connection is not a requirement for exchanging VCs.</p>
 <blockquote>
 <p>Whether or not you store persistent identifiers locally or not, and whether or not that storage conforms to portability and recovery data models calling them “connections”, the connection doesn’t exchange credentials-- a protocol does. See the next layer for discussions about those.</p>
 </blockquote>
@@ -636,7 +639,23 @@ this</a>
 was crowd-edited on a <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---13-jan-2021---usapac-time-1400pt---communications-problem-explaining-the-vc-format-wars-to-decision-makers"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---13-jan-2021---usapac-time-1400pt---communications-problem-explaining-the-vc-format-wars-to-decision-makers" >very special
 episode</a>.
 The article is definitely the best place to start further reading.</p>
+<h5 id="what-is-the-relationship-between-dids-and-vcs"><a class="toc-anchor" href="#what-is-the-relationship-between-dids-and-vcs" >§</a> What is the relationship between DIDs and VCs? ❗</h5>
+<p>Technically, there is none! VCs work great with DIDs used as the identifiers for
+issuer and verifier, but they also work with many other kinds of identifiers
+(Solid addresses, centralized and local identifier schemes,
+blockchain/smart-contract addresses, etc). DIDs can be used for all kinds of
+verifications, which is why the “verification method” system of associating
+multiple keys of different types with each DID is so flexible; signing VCs is
+only one of many purposes.  That said, the designers of both always had the
+other front-of-mind, and the complementarity of design thinking is hard to deny
+or overlook.</p>
 <h5 id="how-do-i-translate-between-vc-formats-or-consume-foreign-ones"><a class="toc-anchor" href="#how-do-i-translate-between-vc-formats-or-consume-foreign-ones" >§</a> How do I translate between VC formats or consume foreign ones? ❗</h5>
+<p>That is…a big question-- read through the rest of this section and ask me
+again later. Suffice it to say you need to account for both the semantics and
+the syntax of a VC to translate between VC systems. If you are translating to or
+from JSON-LD systems or Aries systems, be sure to read those “Advanced Topics”
+sections as well before the “Advanced Topics: VC Translation” section.</p>
+<h5 id="the-semantics-and-the-what-now-schemata-arent-enough"><a class="toc-anchor" href="#the-semantics-and-the-what-now-schemata-arent-enough" >§</a> The semantics and the what now? Schemata aren’t enough? ❗</h5>
 <p>Traditional data schemata are used to express (and thus validate against that
 expression) the <strong>syntax</strong> of data objects-- the type, length, form,
 presence/absence, etc of values in the key/value pairs that make up most data
@@ -649,21 +668,21 @@ keys of the rest of the LD object that it’s in. This reinforces and makes more
 explicit “ontological” assumptions about what data can mean, which facilitates
 the translation between schemata or systems and the reconstruction of lost or
 foreign contexts in the case these are lost.</p>
-<h5 id="so-what-exactly-is-json-ld"><a class="toc-anchor" href="#so-what-exactly-is-json-ld" >§</a> So what exactly is JSON-LD ? ❗❗</h5>
+<h5 id="so-what-exactly-is-json-ld-then-if-not-a-kind-of-json"><a class="toc-anchor" href="#so-what-exactly-is-json-ld-then-if-not-a-kind-of-json" >§</a> So what exactly is JSON-LD, then, if not a kind of JSON? ❗❗</h5>
 <p>JSON-LD is a way of encoding complex, semantically-disambiguated information
-about data in the handy JSON format that developers interact with all the time.
-The underlying, graph-structured information can be composed and navigated like
-a graph using RDF, without necessarily requiring the developer to go down the
-RDF rabbithole-- it does this by constraining JSON in a form where it can be
-parsed as, or converted to, RDF.  In fact, a version of an LD document that has
-been converted to RDF (or at least, that can be treated as RDF by standard RDF
-tooling) is referred to as an “<strong>expanded version</strong>”.</p>
-<p>A JSON LD document looks like a regular JSON blobl except for a few
+about data in a variant or a subset of the the handy JSON format that developers
+interact with all the time. The underlying, graph-structured information can be
+composed and navigated like a graph using RDF, without necessarily requiring the
+developer to go down the RDF rabbithole-- it does this by constraining JSON in a
+form where it can be parsed as, or converted to, RDF.  In fact, a version of an
+LD document that has been converted to RDF (or at least, that can be treated as
+RDF by standard RDF tooling) is referred to as an “<strong>expanded version</strong>”.</p>
+<p>A JSON LD document looks like a regular JSON blob except for a few
 eccentricities (like the mandatory @Context key/value pair), but works quite
 differently under the hood.  Processing an LD blob as it if were a vanilla JSON
 blob can lead to confusion and bad interoperability. For more information, see
 “Advanced Topics: JSON-LD”.</p>
-<h5 id="do-i-have-to-use-json-ld-to-use-vcs-️"><a class="toc-anchor" href="#do-i-have-to-use-json-ld-to-use-vcs-️" >§</a> Do I have to use JSON-LD to use VCs? ❗❓️ 🌶🌶</h5>
+<h5 id="do-i-have-to-use-json-ld-to-use-vcs-️"><a class="toc-anchor" href="#do-i-have-to-use-json-ld-to-use-vcs-️" >§</a> Do I <em>have</em> to use JSON-LD to use VCs? ❗❓️ 🌶🌶</h5>
 <p>Yes and no-- the Verifiable Credentials <a path-0="www.w3.org"path-1="TR"path-2="vc-data-model"path-3=""href="https://www.w3.org/TR/vc-data-model/" >data model
 specification</a>, currently in Candidate
 Recommendation stage of approval at the W3C, relies upon the JSON-LD standard,
@@ -707,23 +726,14 @@ Us</a>
 for open grants.</p>
 <p><em>For more information on each of these broader families of tooling and
 validation, see the Advanced Topics section for each below.</em></p>
-<h5 id="what-is-the-relationship-between-dids-and-vcs"><a class="toc-anchor" href="#what-is-the-relationship-between-dids-and-vcs" >§</a> What is the relationship between DIDs and VCs? ❗</h5>
-<p>Technically, there is none! VCs work great with DIDs used as the identifiers for
-issuer and verifier, but they also work with many other kinds of identifiers
-(Solid addresses, centralized and local identifier schemes,
-blockchain/smart-contract addresses, etc). DIDs can be used for all kinds of
-verifications, which is why the “verification method” system of associating
-multiple keys of different types with each DID is so flexible; signing VCs is
-only one of many purposes.  That said, the designers of both always had the
-other front-of-mind, and the complementarity of design thinking is hard to deny
-or overlook.</p>
 <h3 id="advanced-features-of-vcs"><a class="toc-anchor" href="#advanced-features-of-vcs" >§</a> Advanced Features of VCs</h3>
 <h5 id="are-vcs-revocable"><a class="toc-anchor" href="#are-vcs-revocable" >§</a> Are VCs revocable? ❗</h5>
-<p>Most VC systems currently have limited revocation capabilities, as
-they add significant scaling costs and complexity, to say nothing of varying
-properties for privacy engineering. Different use cases justify different
-approaches to revocation (including none at all).  Martin Riedel’s overview of
-approaches to revocation/status mechanisms at interop <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---10-feb-2021---usapac-time-1400pt---revocation-method-comparison"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---10-feb-2021---usapac-time-1400pt---revocation-method-comparison" >in
+<p>By definition, no. Most VC systems currently have limited revocation
+capabilities, as they add significant scaling costs and complexity, to say
+nothing of varying properties for privacy engineering and architectural
+assumptions/requirements. Different use cases justify different approaches to
+revocation (including none at all).  Martin Riedel’s overview of approaches to
+revocation/status mechanisms at interop <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---10-feb-2021---usapac-time-1400pt---revocation-method-comparison"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---10-feb-2021---usapac-time-1400pt---revocation-method-comparison" >in
 February</a>
 was really helpful in introducing these approaches at a high level, and a series
 of events in the months since have explored the topic further; see the Interop
@@ -841,10 +851,21 @@ so Indy-conformant credential definitions must be used from the same Indy-based
 ledger that stores the rest of the ingredients in the presentation. These have
 historically been written to a given Indy blockchain, but other forms of
 immutable/highly-available storage are being pioneered in the Aries ecosystem.</p>
+<h3 id="advanced-topics-vc-translation"><a class="toc-anchor" href="#advanced-topics-vc-translation" >§</a> Advanced Topics: VC Translation</h3>
+<h5 id="i-read-the-vc-section-above-and-studied-the-problem-now-what"><a class="toc-anchor" href="#i-read-the-vc-section-above-and-studied-the-problem-now-what" >§</a> I read the VC section above and studied the problem. Now what? ❗❓</h5>
+<p>More thorough guidance is forthcoming in the next month or two-- no, really! For
+now, see the ongoing <a path-0="github.com"path-1="decentralized-identity"path-2="waci-presentation-exchange"href="https://github.com/decentralized-identity/waci-presentation-exchange" >WACI-PEx work
+item</a> of
+the Claims and Credentials WG for more info on which subset of each system can
+send and receive messages across systems. Documentation is expected soon from
+not only the WACI-PEx working group at DIF, but also the VC-HTTP-API
+specification at W3C-CCG and a few other groups working on narrower/more
+specific interop profiles such as the Vaccination Vocabulary and Traceability
+Vocabulary projects at W3C-CCG/Good Health Pass.</p>
 <h2 id="apps-ux-and-wallets-layer-4"><a class="toc-anchor" href="#apps-ux-and-wallets-layer-4" >§</a> Apps, UX, and Wallets (Layer 4)</h2>
-<h3 id="what-can-rely-on-dids-vcs-"><a class="toc-anchor" href="#what-can-rely-on-dids-vcs-" >§</a> What can rely on DIDs, VCs - ❗</h3>
-<p><strong>What shape can this take? What kinds of software and hardware will be able to use DIDs and VC?</strong></p>
-<p>The sky is the limit-- all kinds of form factors and software contexts are in
+<h3 id="software"><a class="toc-anchor" href="#software" >§</a> Software</h3>
+<h5 id="what-software-can-be-built-on-top-of-a-foundation-of-dids-and-vcs"><a class="toc-anchor" href="#what-software-can-be-built-on-top-of-a-foundation-of-dids-and-vcs" >§</a> What software can be built on top of a foundation of DIDs and VCs? ❗</h5>
+<p>The sky is the limit–all kinds of form factors and software contexts are in
 various stages of prototyping an standardization!  In fact, many people use the
 word “wallet” to refer to all kinds software, including libraries and widgets
 working invisibly inside other software. There are browser-based wallets (that
@@ -856,22 +877,12 @@ synchronization/replication systems spanning 2 or 3 of those.  There are even
 on-premise systems for issuance and verification, which might produce and
 consume VCs without a conventional individual/edge wallet ever coming into play.
 There are many many nails that this hammer is good for!</p>
-<h3 id="hardware-requirements-"><a class="toc-anchor" href="#hardware-requirements-" >§</a> Hardware requirements? - ❗</h3>
-<p><strong>Do I need a fancy new, modern smartphone to control my own identity and credentials securely and privately?</strong></p>
-<p>This is a matter of some debate, and like privacy and other psychological and/or
-legal norms, “self-sovereignty”, “direct control” of data, and “data rights” are
-highly specific to their underlying social, legal, political,  economic, and
-even medical realities.  There is plenty of work ongoing in our community on
-<a path-0="sovrin.org"path-1="a-deeper-understanding-of-implementing-guardianship"path-2=""href="https://sovrin.org/a-deeper-understanding-of-implementing-guardianship/" >Guardianship</a>
-as a techno-social construct (and legal corollary to assumptions about the
-agency of the “user” in software thinking), to give just one example, and the
-use of biometrics or mnemonics to prove, maintain, and exert control over a DID
-will likely need to be advanced and standardized before decentralized identity
-architectures can be brought to the huge fraction of the world’s population with
-low chances of owning a cryptographically enabled personal phone or computer.</p>
-<h3 id="crpyto-vs-identtiy-wallet-️"><a class="toc-anchor" href="#crpyto-vs-identtiy-wallet-️" >§</a> Crpyto vs Identtiy wallet - ❗❗️</h3>
-<p><strong>Do concepts from cryptocurrency wallets like “cold storage”, “air gapping”, and “custodial wallet” apply to identity wallets?</strong></p>
-<p>Yes and no-- in some use cases, the distinctions can be quite meaningful because
+<h5 id="crypto-wallets-vs-identity-wallet-️"><a class="toc-anchor" href="#crypto-wallets-vs-identity-wallet-️" >§</a> Crypto wallets vs Identity wallet ❗❗️</h5>
+<blockquote>
+<p>Do concepts from cryptocurrency wallets like “cold storage”, “air gapping”,
+and “custodial wallet” apply to identity wallets?</p>
+</blockquote>
+<p>Yes and no–in some use cases, the distinctions can be quite meaningful because
 they signal different architectures, security guarantees, relations of power
 between stakeholders, etc etc.  In particular, SSI use cases about direct,
 interactive control of credentials by individual humans lend themselves quite
@@ -880,20 +891,7 @@ controlled by a trusted service provider, a hardware security module, a cold
 storage device, etc) can be understood as less directly human-controlled.  In
 other use cases, though, the analogy can be confusing or distracting, so don’t
 expect them to be useful everywhere!</p>
-<h3 id="no-connectivity-environment-"><a class="toc-anchor" href="#no-connectivity-environment-" >§</a> No connectivity environment? - ❗</h3>
-<p><strong>How do DIDs and VCs get used without a live internet connection for querying a live blockchain?</strong></p>
-<p>Depending on what information needs to be live for a given use-case, and how
-live/fresh it needs to be, verification can be more or less “offline”.  For
-instance, if a verifier has all the information it needs about a known and
-finite set of issuers, it can verify the authenticity of a VC offline-- and
-depending on what information the holder of that credential can present along
-with it, they can also verify that it was indeed issued to them.  Checking the
-status of mutable-status (i.e., revocable) credentials offline is another tricky
-matter, but here as everywhere, it depends on the requirements of the usecase–
-if revocation lists can be updated once a day, the 23 hours between updates
-verification can happen live and offline!</p>
-<h3 id="wallet-vs-mobile-agent-"><a class="toc-anchor" href="#wallet-vs-mobile-agent-" >§</a> Wallet vs Mobile agent - ❗🌶</h3>
-<p><strong>What’s the difference between a Wallet and a Mobile Agent?</strong></p>
+<h5 id="whats-the-difference-between-a-wallet-and-a-mobile-agent"><a class="toc-anchor" href="#whats-the-difference-between-a-wallet-and-a-mobile-agent" >§</a> What’s the difference between a Wallet and a Mobile Agent? ❗🌶</h5>
 <p>Actually, this answer cannot be answered definitively-- the terms are, in some
 sense, still shifting and drifting over time as our nascent “market” changes
 shape and needs; they might never truly settle, because both “wallet” and
@@ -906,10 +904,13 @@ etc etc.  A whole survey-based research project of DIF’s Glossary Group tried 
 suss out who used the term how in our community and descriptively map the
 schools of thought (see the <a path-0="identity.foundation"path-1="assets"path-2="glossary-group-report--may-2020.pdf"href="https://identity.foundation/assets/glossary-group-report--may-2020.pdf" >final
 report</a>
-for a skimmable overview).  It’s not a bad thing that no cross-community
-concensus ever arose!</p>
-<h3 id="future-of-wallets-️"><a class="toc-anchor" href="#future-of-wallets-️" >§</a> Future of wallets? - ❗❗️🌶🌶</h3>
-<p><strong>How many wallet should there be in the future? How many will there be in, say, 2 or 10 or 20 years?</strong></p>
+for a skimmable overview).  It’s not necessarily a bad thing that no
+cross-community concensus ever arose!</p>
+<h5 id="what-is-the-future-of-wallets-️"><a class="toc-anchor" href="#what-is-the-future-of-wallets-️" >§</a> What is the future of wallets? ❗❗️🌶🌶</h5>
+<blockquote>
+<p>How many wallet should there be in the future? How many will there be in, say,
+2 or 10 or 20 years?**</p>
+</blockquote>
 <p>I marked this question with two chilis because “browsers” were the battleground
 of Web 1.0 and “apps” were the battleground of Web 2.0, leaving many to
 speculate that wallets and/or blockchains will be the battlegrounds of Web 3.0.
@@ -928,22 +929,69 @@ competition between its members. Wallets play such an integral role in the
 business models and market dynamics of our members’ work that we can only signal
 the consequence of wallet design and encourage its member to collaborate and
 co-develop wallets and common wallet libraries and components openly.</p>
-<h3 id="ux-flexibility-vs-privacy-️"><a class="toc-anchor" href="#ux-flexibility-vs-privacy-️" >§</a> UX flexibility vs privacy? - ❗❗️</h3>
-<p><strong>How can UX design be flexible but still privacy-preserving when allowing users to combine, link, or co-present VCs issued to different DIDs?</strong></p>
+<h3 id="hardware"><a class="toc-anchor" href="#hardware" >§</a> Hardware</h3>
+<h5 id="what-are-the-hw-requirements-for-ssi"><a class="toc-anchor" href="#what-are-the-hw-requirements-for-ssi" >§</a> What are the HW requirements for SSI? ❗</h5>
+<blockquote>
+<p>Do I need a modern smartphone to control my own identity and credentials
+securely and privately? Is anyone thinking about the no-phoners, the
+phone-sharing parts of the world, and the accessibility of
+personal-intervention/consent UX?</p>
+</blockquote>
+<p>This is a matter of some debate, and like privacy and other psychological and/or
+legal norms, “self-sovereignty”, “direct control” of data, and “data rights” are
+highly specific to their underlying social, legal, political,  economic, and
+even medical realities.  There is plenty of work ongoing in our community on
+<a path-0="sovrin.org"path-1="a-deeper-understanding-of-implementing-guardianship"path-2=""href="https://sovrin.org/a-deeper-understanding-of-implementing-guardianship/" >Guardianship</a>
+as a techno-social construct (and legal corollary to assumptions about the
+agency of the “user” in software thinking), to give just one example, and the
+use of biometrics or mnemonics to prove, maintain, and exert control over a DID
+will likely need to be advanced and standardized before decentralized identity
+architectures can be brought to the huge fraction of the world’s population with
+low chances of owning a cryptographically enabled personal phone or computer.</p>
+<h5 id="what-about-no-and-low-connectivity-environments"><a class="toc-anchor" href="#what-about-no-and-low-connectivity-environments" >§</a> What about no- and low-connectivity environments? ❗</h5>
+<blockquote>
+<p>How do DIDs and VCs get used without a live internet connection for querying a
+live blockchain?**</p>
+</blockquote>
+<p>Depending on what information needs to be live for a given use-case, and how
+live/fresh it needs to be, verification can be more or less “offline”.  For
+instance, if a verifier has all the information it needs about a known and
+finite set of issuers, it can verify the authenticity of a VC offline-- and
+depending on what information the holder of that credential can present along
+with it, they can also verify that it was indeed issued to them.  Checking the
+status of mutable-status (i.e., revocable) credentials offline is another tricky
+matter, but here as everywhere, it depends on the requirements of the usecase–
+if revocation lists can be updated once a day, the 23 hours between updates
+verification can happen live and offline!</p>
+<h3 id="product-design-user-experience-ux"><a class="toc-anchor" href="#product-design-user-experience-ux" >§</a> Product Design &amp; User Experience (UX)</h3>
+<h5 id="is-there-an-inherent-trade-off-between-flexibility-of-ux-and-privacy-️"><a class="toc-anchor" href="#is-there-an-inherent-trade-off-between-flexibility-of-ux-and-privacy-️" >§</a> Is there an inherent trade-off between flexibility of UX and privacy? - ❗❗️🌶</h5>
+<blockquote>
+<p>How can UX design be flexible but still privacy-preserving when allowing users
+to combine, link, or co-present VCs issued to different DIDs?**</p>
+</blockquote>
 <p>There’s not a lot written about this or prior art!  If you know of any please
 open a PR against this answer using the github link at the top of this document.
 If you are working on such a project, please contact the <a path-0="lists.identity.foundation"path-1="g"path-2="id-productmanagers"href="https://lists.identity.foundation/g/id-productmanagers" >product
 managers</a> group and
 present the project for feedback!</p>
-<h3 id="key-management-️"><a class="toc-anchor" href="#key-management-️" >§</a> Key management - ❗❓️</h3>
-<p><strong>How can key management be made usable for “normal” end-users?</strong></p>
+<h5 id="how-can-key-management-be-made-usable-for-normal-end-users-️"><a class="toc-anchor" href="#how-can-key-management-be-made-usable-for-normal-end-users-️" >§</a> How can key management be made usable for “normal” end-users? ❗❓️</h5>
 <p>Rouven Heck led a fascinating
 <a path-0="github.com"path-1="decentralized-identity"path-2="product-managers"path-3="blob"path-4="main"path-5="agenda.md#february-10th-2021"href="https://github.com/decentralized-identity/product-managers/blob/main/agenda.md#february-10th-2021" >two</a>-<a path-0="github.com"path-1="decentralized-identity"path-2="product-managers"path-3="blob"path-4="main"path-5="agenda.md#february-24th-2021"href="https://github.com/decentralized-identity/product-managers/blob/main/agenda.md#february-24th-2021" >part</a>
 discussion of this topic at the Product Managers group, which overviewed the
-problem space quite well and provided lots of further reading and links.</p>
+problem space quite well and provided lots of further reading and links. The
+short version is: it won’t happen soon, but it will terraform the UX and
+architecture of our digital lives when it does. A fascinating socio-technical
+mystery to ponder and research in the meantime!</p>
+<h5 id="will-ssi-finally-deliver-ekyc-and-disposablerevocable-anonymity-to-the-crypto-space"><a class="toc-anchor" href="#will-ssi-finally-deliver-ekyc-and-disposablerevocable-anonymity-to-the-crypto-space" >§</a> Will SSI finally deliver eKYC and disposable/revocable anonymity to the crypto space?</h5>
+<p>DIF is not in the fortune-telling business, but DIF <em>is</em> in the notes-comparison
+racket, and our <a path-0="www.notion.so"path-1="Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2"href="https://www.notion.so/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2" >Finance and Banking Special Interest
+Group</a>
+has had a number of speakers and discussions about the emerging field of
+SSI-powered “Know Your Customer”/compliance products for privacy-preserving
+financial transparency.</p>
 <h2 id="trust-frameworks-and-ecosystems-across-industries-and-jurisdictions-layer-5"><a class="toc-anchor" href="#trust-frameworks-and-ecosystems-across-industries-and-jurisdictions-layer-5" >§</a> Trust Frameworks and Ecosystems across Industries and Jurisdictions (Layer 5)</h2>
-<h3 id="compliance-"><a class="toc-anchor" href="#compliance-" >§</a> Compliance - ❗</h3>
-<p><strong>So, is this stuff street-legal yet? If so, where? If not, what’s it going to take?</strong></p>
+<h3 id="compliance-regulation"><a class="toc-anchor" href="#compliance-regulation" >§</a> Compliance &amp; Regulation</h3>
+<h5 id="so-is-this-stuff-street-legal-yet-if-so-where-if-not-whats-it-going-to-take"><a class="toc-anchor" href="#so-is-this-stuff-street-legal-yet-if-so-where-if-not-whats-it-going-to-take" >§</a> So, is this stuff street-legal yet? If so, where? If not, what’s it going to take? ❗</h5>
 <p>Legalizing any load-bearing, high-value technology is slow and complex work that
 takes a lot of hands-- first, exact definitions and specifications are needed,
 as well as standardizations, longitudinal assesments, academic studies, impact
@@ -966,9 +1014,8 @@ mobile app? Which digital signatures hold up in court? What’s an acceptible
 margin of error when identifying people, or vouching for the soundness of their
 paperwork? These are all norms set by a Trust Framework, which might govern a
 nation-state or an industry within one or a global software market.</p>
-</details>
-<h3 id="more-on-trust-frameworks-️"><a class="toc-anchor" href="#more-on-trust-frameworks-️" >§</a> More on Trust Frameworks - ❗❗️</h3>
-<p><strong>Those Trust Framework things sound cool, where can I find out more?</strong></p>
+<h3 id="trust-frameworks"><a class="toc-anchor" href="#trust-frameworks" >§</a> Trust Frameworks</h3>
+<h5 id="those-trust-framework-things-sound-cool-where-can-i-find-out-more"><a class="toc-anchor" href="#those-trust-framework-things-sound-cool-where-can-i-find-out-more" >§</a> Those Trust Framework things sound cool, where can I find out more?</h5>
 <p>Trust Frameworks are complex things, and no single organization can be expected
 to track them all or exert pressure on all of them. DIF has historically done
 little work directly on trust frameworks, but DIF works with many organizations
@@ -1029,8 +1076,8 @@ decentralized identity.</p>
 </li>
 </ul>
 <h2 id="architectural-considerations-interoperability-and-integrations"><a class="toc-anchor" href="#architectural-considerations-interoperability-and-integrations" >§</a> Architectural Considerations, Interoperability, and Integrations</h2>
-<h3 id="interoperability-️"><a class="toc-anchor" href="#interoperability-️" >§</a> Interoperability?- ❗❗️🌶</h3>
-<p><strong>Don’t we already have a standard? What’s so hard about interoperating? 🌶</strong></p>
+<h3 id="interoperability"><a class="toc-anchor" href="#interoperability" >§</a> Interoperability</h3>
+<h5 id="dont-we-already-have-a-standard-whats-so-hard-about-interoperating-️"><a class="toc-anchor" href="#dont-we-already-have-a-standard-whats-so-hard-about-interoperating-️" >§</a> Don’t we already have a standard? What’s so hard about interoperating? ❗❗️🌶</h5>
 <p>If it were easy, the <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability#interoperability-project"href="https://github.com/decentralized-identity/interoperability#interoperability-project" >Interop
 WG</a>
 wouldn’t need to meet
@@ -1107,29 +1154,25 @@ today’s data systems.</p>
 <li><a href="#interpreting-credentials" >Interpreting Credentials</a></li>
 <li><a href="#advanced-topics-json-ld" >Advanced Topics: JSON-LD</a></li>
 <li><a href="#advanced-topics-credential-definitions" >Advanced Topics: Credential Definitions</a></li>
+<li><a href="#advanced-topics-vc-translation" >Advanced Topics: VC Translation</a></li>
 </ul>
 </li>
 <li><a href="#apps-ux-and-wallets-layer-4" >Apps, UX, and Wallets (Layer 4)</a>
 <ul>
-<li><a href="#what-can-rely-on-dids-vcs-" >What can rely on DIDs, VCs - ❗</a></li>
-<li><a href="#hardware-requirements-" >Hardware requirements? - ❗</a></li>
-<li><a href="#crpyto-vs-identtiy-wallet-%EF%B8%8F" >Crpyto vs Identtiy wallet - ❗❗️</a></li>
-<li><a href="#no-connectivity-environment-" >No connectivity environment? - ❗</a></li>
-<li><a href="#wallet-vs-mobile-agent-" >Wallet vs Mobile agent - ❗🌶</a></li>
-<li><a href="#future-of-wallets-%EF%B8%8F" >Future of wallets? - ❗❗️🌶🌶</a></li>
-<li><a href="#ux-flexibility-vs-privacy-%EF%B8%8F" >UX flexibility vs privacy? - ❗❗️</a></li>
-<li><a href="#key-management-%EF%B8%8F" >Key management - ❗❓️</a></li>
+<li><a href="#software" >Software</a></li>
+<li><a href="#hardware" >Hardware</a></li>
+<li><a href="#product-design-user-experience-ux" >Product Design &amp; User Experience (UX)</a></li>
 </ul>
 </li>
 <li><a href="#trust-frameworks-and-ecosystems-across-industries-and-jurisdictions-layer-5" >Trust Frameworks and Ecosystems across Industries and Jurisdictions (Layer 5)</a>
 <ul>
-<li><a href="#compliance-" >Compliance - ❗</a></li>
-<li><a href="#more-on-trust-frameworks-%EF%B8%8F" >More on Trust Frameworks - ❗❗️</a></li>
+<li><a href="#compliance-regulation" >Compliance &amp; Regulation</a></li>
+<li><a href="#trust-frameworks" >Trust Frameworks</a></li>
 </ul>
 </li>
 <li><a href="#architectural-considerations-interoperability-and-integrations" >Architectural Considerations, Interoperability, and Integrations</a>
 <ul>
-<li><a href="#interoperability-%EF%B8%8F" >Interoperability?- ❗❗️🌶</a></li>
+<li><a href="#interoperability" >Interoperability</a></li>
 </ul>
 </li>
 </ul>
