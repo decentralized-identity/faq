@@ -77,7 +77,7 @@ branch. Please use issues to request minor changes or new sections, or PRs if
 you are proposing both questions AND respective answers.
 
 
-## Introductory Concepts (Layer 0)
+## Introductory Concepts ("**Layer 0**")
 
 ### Objects & Data Models
 
@@ -296,7 +296,7 @@ or not.
 > authority. Mileage may vary when expecting social outcomes from technological
 > measures.
 
-## Identifiers and Namespaces (Layer 1)
+## Identifiers and Namespaces ("**Layer 1**")
 
 ### DIDs versus other identifiers
 
@@ -565,7 +565,7 @@ outside of DIF, and even a kind of SCID-AID hybrid in the form of the
 [DID:Orb](https://trustbloc.github.io/did-method-orb/) system, which is
 currently an early-stage work item in the Sidetree Working Group.
 
-## Agent Frameworks & Infrastructure (Layer 2)
+## Agent Frameworks & Infrastructure ("**Layer 2**")
 
 ### Diversity of Infrastructure 
 
@@ -768,7 +768,7 @@ That said,  specifying and aligning amongst ourselves and watching closely as
 the cryptocurrency and cybersecurity worlds progress towards their own
 alignments and specifications will be a major task in the coming years. 
 
-## VC Infrastructure (**"Layer 3"***)
+## VC Infrastructure (**"Layer 3"**)
 
 ### Diversity of VCs
 
@@ -1054,7 +1054,7 @@ specification at W3C-CCG and a few other groups working on narrower/more
 specific interop profiles such as the Vaccination Vocabulary and Traceability
 Vocabulary projects at W3C-CCG/Good Health Pass.
 
-## Apps, UX, and Wallets (Layer 4)
+## Apps, UX, and Wallets ("**Layer 4**")
 
 ### Software
 
@@ -1202,7 +1202,7 @@ has had a number of speakers and discussions about the emerging field of
 SSI-powered "Know Your Customer"/compliance products for privacy-preserving
 financial transparency.
 
-## Trust Frameworks and Ecosystems across Industries and Jurisdictions (Layer 5)
+## Trust Frameworks and Ecosystems across Industries and Jurisdictions ("**Layer 5**")
 
 ### Compliance & Regulation 
 
