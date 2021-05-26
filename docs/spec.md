@@ -478,7 +478,6 @@ Unpacking that statement is a little beyond the scope of a FAQ, but needless to
 say, DIF loves all its children equally, from the DIDs to the SCIDs to every
 identifier transitioning in either direction.
 
-
 ##### Is an AID the same as a SCID?
 
 An emerging category of DID-like things is AIDs, or **Autonomous Identifiers**,
@@ -581,6 +580,29 @@ This is no small feature! It does, however, require some complex and DID-centric
 messaging.  Depending on the time-scale of your project, this kind of
 forward-compatibility might be a stitch in time, or an optional feature you
 can't afford to support in the short term.
+
+##### Is the SVIP program a framework?
+
+Not exactly-- the Silicon Valley Innovation Project and the Department of
+Homeland Security grants it administers are structured as an incubator for
+contractors, resulting in a cooperatively-designed test harness and
+interoperability profile and supporting LD/Schemata tooling but not an
+overarching "framework" codebase per se. 
+
+The program's structure encourages open specification, early and open standards,
+and co-development but also requires independent implementations at every layer
+and good separation of concerns, with a lot of effort put into preventing vendor
+lock-in, dependency management, and standardized interfaces and APIs. Some would
+go so far as to call it an "anti-framework" in that what coordination there has
+been between developers there has happened slowly and organically and there is
+no overarching documentation or entrance point like the frameworks mentioned
+above. In large part, the co-development, learning, and design has been lead by
+longtime program participants and W3C-CCG contributors Digital Bazaar. DB
+founder and CEO Manu Sporny gave a detailed [testimonial and
+overview](https://www.din.foundation/initiativ/tps-meeting-april) of the
+program, its structure, and its use-cases at a conference organized by DIF
+members DIN (Digital Identity North, Norway) in April 2021.
+
 
 ##### How flexible are today's frameworks for interacting beyond their domain? ❗❗️ 
 
