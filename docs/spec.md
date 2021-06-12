@@ -1,4 +1,4 @@
-#DIF FAQ
+DIF FAQ
 ==================
 
 **You Are Here (or should be):**
