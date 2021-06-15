@@ -1240,7 +1240,14 @@ has had a number of speakers and discussions about the emerging field of
 SSI-powered "Know Your Customer"/compliance products for privacy-preserving
 financial transparency.
 
-## Trust Frameworks and Ecosystems across Industries and Jurisdictions ("**Layer 5**")
+
+
+## Trust Frameworks and Ecosystems ("**Layer 5**")
+
+Beyond individual apps and platforms, industry-wide and jurisdictional
+governance still imposes many requirements and harmonization processes.  We
+consider all of these kinds of decisions to be "above" the stack, and thus a
+kind of real world hovering over it in our layering model.
 
 ### Compliance & Regulation 
 
@@ -1263,11 +1270,19 @@ structure all of this at national or global scale. When you combine these
 regulatory frameworks with certification schemes and the kind of fair-play
 pressures and norms that Better Business Bureaus and guilds enforce, you've got
 a **Trust Framework**, which in layman's terms tells you how much to trust each
-link in a chain of data, contracts, and service/fiduciary relationships. How
-much liability can a bank outsource to the software providers that make its
-mobile app? Which digital signatures hold up in court? What's an acceptible
-margin of error when identifying people, or vouching for the soundness of their
-paperwork? These are all norms set by a Trust Framework, which might govern a
+link in a chain of data, contracts, and service/fiduciary relationships. 
+
+A trust framework serves to answer question like:
+* How much liability can a bank outsource to the software providers that make
+  its mobile app? 
+* What are the real-world consequences of technological equivalences or
+  guarantees?
+* Which kinds of digital signatures hold up in court? Which are rated at what
+  level of safety or security for X or Y real-world situation?
+* What's an acceptible margin of error when identifying people, or vouching for the soundness of their
+paperwork? 
+
+These are all norms set by a Trust Framework, which might govern a
 nation-state or an industry within one or a global software market.
 
 ### Trust Frameworks 
@@ -1325,7 +1340,16 @@ organization, the Linux Foundation.  For further reading, see:
   decentralized identity.
 
 
-## Architectural Considerations, Interoperability, and Integrations ("**Layer 5**")
+## Transversal Considerations: Architecture & Interop ("**Layer X**")
+
+Certain fundamental questions cross-cut our layering model, and have
+consequences at EVERY level.  For instance, authorization models and auditing
+capabilities, committed to across components or architectures, constrain choices
+at every level.  In many cases, these are handed down from "above", from the
+real-world Layer 5; in other cases, they arise from very low-level choices and
+infrastructural properties, such as a commitment to confidential storage or
+messaging protocol autonomy, and bubble up to the real world.  These were left
+for last because they are basically all 🟠 and 🔥.
 
 ### Interoperability
 
