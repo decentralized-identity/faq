@@ -76,7 +76,24 @@ on Executive Director Rouven Heck's iteration on the
 [4-layer
 paradigm](https://github.com/hyperledger/aries-rfcs/tree/master/concepts/0289-toip-stack).
 
+<tab-panels selected-index="0">
+  <nav>
+    <button type="button">Layers (Schematic)</button>
+    <button type="button">Layers (with Example Topics)</button>
+  </nav>
+
+  <section>
+
+![](assets/map3.png)
+
+  </section>
+  <section>
+
 ![](assets/map.png)
+
+  </section>
+</tab-panels>
+
 **Simplified 4+1 layering diagram**
 
 Src: [Hakan Yildiz, Technische Universität Berlin](https://github.com/decentralized-identity/interoperability/blob/master/assets/interop-mapping-version-by-Hakan-Yildiz(TUB).pdf); 📄[more detailed version](https://github.com/decentralized-identity/interoperability/raw/master/assets/interoperability-mapping-exercise-10-12-20.pdf)
