@@ -105,25 +105,43 @@ Src: [Hakan Yildiz, Technische Universität Berlin](https://github.com/decentral
 
 ##### What is a DID? 🟢
 
-> In short, it's an address on the internet that someone called a **subject** (you, a company, a device) can "own" and control directly, like a username but randomly generated. It can be used to find a connected "DID document" which is like a business card, providing extra information for finding or contacting or checking the signatures of that subject; that subject can update or remove that "listing" over time, directly.
+> In short, it's an address on the internet that someone called a **subject**
+> (you, a company, a device) can "own" and control directly, like a username but
+> randomly generated. It can be used to find a connected "DID document" which is
+> like a business card, providing extra information for finding or contacting or
+> checking the signatures of that subject; that subject can update or remove
+> that "listing" over time, directly.
 
 These  identifiers are called "decentralized" because each is registered and
-resolved on autonomous "namespaces" (see below), which are often closely coupled
-to specific public-readable DLTs like blockchains or DAGs that, by publishing
-addressing records immutably, function as "verifiable data registries" for their
-specific kind of identifiers. The most general category, though, is "VDR"
-because these do not necessarily have to take the form of blockchains, clouds,
-networks, or anything else-- a VDR could be paper-based and still decentralized!
-(We would have to name it after Jorge Luis Borges if we made such a registry.)
+resolved on autonomous "namespaces" that are not centrally administered. The
+relative degree of autonomy (i.e., what stops a human or non-human actor from
+registering their own identifier there under their own control) might vary, and
+there might be trusted intermediaries or friction-points to reduce abuse, but
+all [[ref:DID]] systems are substantially more decentralized than traditional,
+heirarchical systems like the KMS heirarchies of, say, [[ref:X.509]] systems.
 
 > Strictly speaking, a DID is a string that functions as an address, but sometimes
 people might use the term to refer both to the DID and the DID Document that you
 get when you use a "DID Method" to resolve it.  A DID without a DID Document is
 like a dead end!
 
+##### What is a Verifiable Data Registry?
+
+A VDR is a general term for ways data can be verifiably registered. VDRs can be
+thought of as abstractions of the publishing functions of some kind of
+decentralized registry: the entire readable/referenceable corpus of things
+published by, say, a blockchain is a VDR "on" that blockchain. The most common
+and commonly-discussed VDRs are in fact by-products (or products) of
+public-readable [[ref:DLTs]] like blockchains or [[ref:DAGs]] that, by publishing addressing
+records immutably, function as "verifiable data registries" for a specific kind
+of identifiers. In principle, however, the umbrella category of "VDRs" does not
+necessarily have to take the form of blockchains, clouds, networks, or anything
+else-- a VDR could be paper-based and still decentralized! (We would have to
+name it after Jorge Luis Borges if we made such a registry.)
+
 ##### What is a DID "prefix"? 🟢
 
-Each DID is prefixed with a reference to, and only guaranteed to useful,
+Each [[ref:DID]] is prefixed with a reference to, and only guaranteed to useful,
 meaningful, and reliable within, one DID namespace. If you come across a DID in
 the wild, this prefix makes it easy to identify its origin and where to go to
 "use" it for fetching a DID Document.  A DID from the Sovrin network, for
@@ -135,10 +153,10 @@ be found [here](https://www.w3.org/TR/did-spec-registries/#did-methods).
 
 ##### What is a "DID Method"? 🟢
 
-> You can think of a DID Method as a black box-- if you type in a DID, you get
-> back a DID Document. Press the "new DID" button and enter some information,
-> you will get control of a new DID.  If it's not a simple machine, it's not a
-> very useful DID Method!
+> You can think of a DID Method as a black box-- if you type in a [[ref:DID]],
+> you get back a DID Document. Press the "new DID" button and enter some
+> information, you will get control of a new DID.  If it's not a simple machine,
+> it's not a very useful DID Method!
 
 Each DID is a publically-specified micro-protocol containing namespace rules,
 CRUD and resolution mechanics, references to all dependencies such as
@@ -171,25 +189,25 @@ Thailand, etc etc.
 > more authority.
 
 Verifiable Credentials combine properties and superpowers from many different
-mental models and forms of prior art; Linked Data, JSON Web Tokens, Ontologies,
-ETL systems. They are like portable, free-floating data points, which are not
+mental models and forms of prior art: Linked Data, JSON Web Tokens, Ontologies,
+and ETL systems, to name a few. The [data model specification](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries) for VCs is governed in the [W3C](https://w3.org). They are like portable, free-floating data points, which are not
 exactly documents or files or "records" in the usual sense. They are signed and
 thus tamper-evident, and thus share much of the verifiability of blockchain data
 or signed PDFs insofar as the signatures they contain can be properly verified
 by reference to the identities included inside the document. 
 
 They can be encrypted or not, they can identify their subject directly or
-indirectly using DIDs or any other kind of address and/or indirection mechanism.
-They can be public or private or somewhere in between, large or small,
-long-lasting or ephemeral. For the different categories or "flavors" of VC, see
-the section on Layer 3 below.
+indirectly using [[ref:DIDs]] or any other kind of address and/or indirection
+mechanism. They can be public or private or somewhere in between, large or
+small, long-lasting or ephemeral. For the different categories or "flavors" of
+VC, see the section on Layer 3 below.
 
 ##### What is a Wallet? 🟢
 
 > In short, a wallet stores magic gibberish passwords (private keys) and magic
-> fridge-magnet poetry (seed phrases) that help end-users control DIDs and other
-> kinds of accounts like blockchain addresses or high-security multi-factor
-> log-ins.
+> fridge-magnet poetry (seed phrases) that help end-users control [[ref:DIDs]]
+> and other kinds of accounts like blockchain addresses or high-security
+> multi-factor log-ins.
 
 Controlling, updating, and proving control of a DID (or, for that matter, a
 cryptocurrency address, an NFT, or many other kinds of digital assets) requires
@@ -222,12 +240,12 @@ architectural questions. Heck, just CTRL-F and search for "wallet"!
 > central database, registry, or database-- i.e., 99% of today's identifier
 > systems.
 
-What makes a DID decentralized isn't the DID itself or what you can do with it,
-but how you got the DID and how it relates to the outside world. Each "DID
-Method" represents the governance and groundrules of an experimental new form of
-addressing system or namespace. How decentralized it is depends on the specific
-system, as they are all designed to make specific compromises and design
-choices.
+What makes a [[ref:DID]] decentralized isn't the DID itself or what you can do
+with it, but how you got the DID and how it relates to the outside world. Each
+"DID Method" represents the governance and groundrules of an experimental new
+form of addressing system or namespace. How decentralized it is depends on the
+specific system, as they are all designed to make specific compromises and
+design choices.
 
 In the most decentralized of these, addresses can be
 generated and/or registered confidentially by any party, as on public
@@ -290,14 +308,14 @@ contribution to it!  Ideology is tricky that way.
 More importantly, it is DIF's position that the technology we support and foster
 is a necessary but insufficient means to that end; we do not want to
 overpromise, so we consider any good-faith effort at decentralization that
-relies on the building blocks of DIDs and/or VCs to be within our scope and
-remit. We are a technology organization, so our boundaries are set by the
+relies on the building blocks of [[ref:DIDs]] and/or VCs to be within our scope
+and remit. We are a technology organization, so our boundaries are set by the
 standardization done to date centered on the W3C specifications, not by
 ideological definitions.
 
 ##### Is *decentralized* identity different from *self-sovereign* identity? 🟡🔥
 
-The two building blocks of DIDs and VCs, which decentralize
+The two building blocks of [[ref:DIDs]] and VCs, which decentralize
 addressing/identifier systems and make data portable and verifiable, enable new,
 decentralized ways of representing and protecting data and structuring software.
 These tools can be applied to individual human identity use-cases, but they can
@@ -351,7 +369,7 @@ They are! VCs are neutral and un-opinionated by design as to what kinds of
 identifier URIs are provided for issuer and holder identification. DID methods
 could be designed to use x.509 structures to manage key material for DIDs, or
 simply contain x.509 addresses in their DID:Documents.  For bibliography on
-eIDAS and DIDs, see the [Vienna Identity
+[[ref:eIDAS]] and [[ref:DIDs]], see the [Vienna Identity
 Meetup](https://www.thedinglegroup.com/blog/2021/3/11/eidas-and-self-sovereign-identity)
 and [SSI Meetup](http://ssimeetup.org) recordings on the subject.
 
@@ -374,7 +392,7 @@ registry of all DOIs is maintained and governed by a non-profit called the
 International DOI Foundation or
 [IDF](https://www.doi.org/doi_handbook/7_IDF.html). On the other, they are
 static in both senses of the word: they are neither updatable/reusable nor
-interactive, which are the two main superpowers of DIDs.
+interactive, which are the two main superpowers of [[ref:DIDs]].
 
 There are, however, many more persistent identifiers, some of them less
 centralized and some of them more interactive or dynamic. Indeed, a whole
@@ -409,8 +427,8 @@ particularly good place for such feedback.,)
 All methods are expected to be maintainers of systems and infrastructure that
 are built on top of them. They are each specified by a published, registered,
 and ideally well-maintained **specification**. This specification explains how
-to validate a DID (namespace rules), where to query and what to expect back when
-resolving a DID, etc. The
+to validate a [[ref:DID]] (namespace rules), where to query and what to expect
+back when resolving a DID, etc. The
 [registry](https://w3c.github.io/did-spec-registries/#the-registration-process)
 of compliant specifications for DID Methods is maintained by a dedicated W3C
 working group, currently the [DID-core WG](https://w3c.github.io/did-core/), and
@@ -427,10 +445,10 @@ likely whichever maintenance group will maintain the DID specification itself.
 > clearer for your end-users if you do not expose them to all the diversity and
 > complexity!
 
-Remember, A DID is any address that can be turned into a usable and conformant
-DID Document, and there are many drastically different ways of doing this that
-can confuse new-comers to the space by all being grouped under the broad
-category of DIDs. For example, most DID methods use blockchains or other
+Remember, A [[ref:DID]] is any address that can be turned into a usable and
+conformant DID Document, and there are many drastically different ways of doing
+this that can confuse new-comers to the space by all being grouped under the
+broad category of DIDs. For example, most DID methods use blockchains or other
 publicly-readable verifiable data registries directly (or indirectly, in the
 case of "layer 2" systems based on DIF's [Sidetree
 Protocol](https://identity.foundation/sidetree/spec/) ) but some, such as
@@ -454,7 +472,7 @@ properties.
 > how many or few makes sense!
 
 Most people presume only one DID method will be enough for a given product,
-use-case, or ecosystem, but consuming credentials from other DID systems
+use-case, or ecosystem, but consuming credentials from other [[ref:DID]] systems
 requires at least a passive level of support (i.e., resolution), and being able
 to issue VCs to holders of multiple kinds of identifiers (including but not
 limited to other DID methods) requires considerable development work as well.
@@ -578,8 +596,8 @@ Src: https://livebook.manning.com/book/self-sovereign-identity/chapter-8/v-2/139
 ##### Can a DID be a SCID at the same time? 🟠
 
 Yes-- but it can also NOT be a SCID.  Two DIF work items, the Sidetree Protocol
-and the KERI Protocol both aspire to make DIDs that are SCIDs within a certain
-context and SCIDs that are DIDs within a certain context, respectively. 
+and the KERI Protocol both aspire to make [[ref:DIDs]] that are SCIDs within a
+certain context and SCIDs that are DIDs within a certain context, respectively.
 Unpacking that statement is a little beyond the scope of a FAQ, but needless to
 say, DIF loves all its children equally, from the DIDs to the SCIDs to every
 identifier transitioning in either direction.
@@ -729,11 +747,13 @@ way to full VC-HTTP-API support across frameworks.
 
 ##### What exactly is a “connection”? Is it a transport? Is it ephemeral? 🟢
 
-**“Connection”** is very much an Aries-centric concept: it is an abstraction of a
-relationship between two identifiers/data subjects, first described in an [Aries
+**“Connection”** is very much an Aries-centric concept: it is an abstraction of
+a relationship between two identifiers/data subjects, first described in an
+[Aries
 RFC](https://github.com/hyperledger/aries-rfcs/blob/master/features/0160-connection-protocol/README.md).
-Its purpose is to establish persistent, end-to-end encrypted messaging based on DIDs.
-A more generic version of the concept is included in the [Universal Wallet draft
+Its purpose is to establish persistent, end-to-end encrypted messaging based on
+[[ref:DIDs]]. A more generic version of the concept is included in the
+[Universal Wallet draft
 specification](https://w3c-ccg.github.io/universal-wallet-interop-spec/#connection)
 at W3C-CCG, for the sake of portability and equivalences. 
 
@@ -823,9 +843,9 @@ The article is definitely the best place to start further reading.
 
 ##### What is the relationship between DIDs and VCs? 🟢
 
-Technically, there is none! VCs work great with DIDs used as the identifiers for
-issuer and verifier, but they also work with many other kinds of identifiers
-(Solid addresses, centralized and local identifier schemes,
+Technically, there is none! VCs work great with [[ref:DIDs]] used as the
+identifiers for issuer and verifier, but they also work with many other kinds of
+identifiers (Solid addresses, centralized and local identifier schemes,
 blockchain/smart-contract addresses, etc). DIDs can be used for all kinds of
 verifications, which is why the "verification method" system of associating
 multiple keys of different types with each DID is so flexible; signing VCs is
@@ -1399,3 +1419,29 @@ map](https://github.com/decentralized-identity/decentralized-identity.github.io/
 which includes lots of information about architectural considerations in the
 "transversal" column, and integration/retro-fitting concerns for bridging to
 today's data systems.
+
+## Glossary
+
+[[def:CRUD]]:
+ ~ Create, Replace, Update, and Delete are the four functions of classic persistent storage, i.e., computer file systems local and networked alike. { [wiki](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) }
+
+[[def:DAG, DAGs]]:
+ ~ Directed Acyclic Graphs are graph structures where each block points to one or more "previous" ones (in chronological sequence) by hash-addressing reference; they are "acyclic" because they cannot recursively cyclically, as no block can link to a *future* block by predictively hashing it. Git structures, usually represented as "trees," as DAGs, and some blockchains and consensys mechanisms (including that of [Veres One](https://w3c-ccg.github.io/did-method-v1/)) incorporate them.
+
+[[def:DID, DIDs]]:
+ ~ In this context, [Decentralized Identifiers](#what-is-a-did). Sometimes people refer to decentralized identity in general as "DID" or "DIDLand," but this is non-standard and can be confusing to normal humans, so we do not recommend it!
+
+[[def:DLT, DLTs]]:
+ ~ Distributed Ledger Technologies are the general category, of which public blockchains and consortium/permissioned ledgers are subcategories.  DLTs offer variously trustless, variously immutable systems of record for distributed communities of human and/or machine actors; the "ledger" can refer to "balances" and other exchange records of virtual or real currencies, but they can also encode many other kinds of information, such as accounts, identities, key material, metadata about any of the above, etc. { [wiki](https://en.wikipedia.org/wiki/Distributed_ledger) }
+
+[[def:eIDAS]]:
+ ~ electronic IDentification, Authentication and trust Services is a 2014 EU regulation that specified requirements for cross-border interoperability of identification and financial-transaction auditing capabilities within the European economic zone. It also established levels of assurance, national registries for allow-listing service providers and auditers, and other legal and business primitives molding the market for compliant electronic signatures in the so-called European Single Market. [Proposals](http://www.astrid-online.it/static/upload/c202/c2021_3968_en_act_part1_dnlkk3hm1tytdlvgdypq3rtp6jc_76610.pdf) to upgrade/reform the requirements are currently moving through the European Commission and may greatly influence the development of compliant SSI digital signatures and business processes within and beyond Europe. { [wiki](https://en.wikipedia.org/wiki/EIDAS) }
+
+[[def:VC]]:
+ ~ In this context, VC stands for [Verifiable Credentials](#what-are-verifiable-credentials-vc). { [spec] (https://www.w3.org/TR/vc-data-model/) }
+
+[[def:VDR]]:
+ ~ A [Verifiable Data Registry](#what-is-a-verifiable-data-registry) is an abstraction for things like blockchains or KERI communities that serve verifiable data published directly or indirectly by the subjects of that data. [W3C VC Data Model Spec](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries)
+
+[[def:x.509]]:
+ ~ X.509 can refer to many things, but in general it is a standard for Public Key Infrastructure of the kind used both online for mTLS and HTTPS and offline for digital signatures of the type used by [[ref:eIDAS]]-compliant eSignature providers in Europe.  { [wiki](https://en.wikipedia.org/wiki/X.509) | [ITU specification](https://www.itu.int/rec/T-REC-X.509/en) }
