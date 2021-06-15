@@ -857,6 +857,28 @@ differently under the hood.  Processing an LD blob as it if were a vanilla JSON
 blob can lead to confusion and bad interoperability. For more information, see
 "Advanced Topics: JSON-LD". 
 
+##### What is the difference between a JSON-LD `@Context` and the `credentialSchemas` property? What's the division of labor? 🟡
+
+There was a great
+[thread](https://lists.w3.org/Archives/Public/public-credentials/2021Jun/0073.html)
+about this topic on the CCG mailing list which breaks down this division of
+labor. In a nutshell:
+
+* `@Context` is defined by the JSON-LD spec and points to a graph containing
+  semantics of terms used in a given credential (see above)
+* `credentialSchemas` is defined [loosely] in the VC spec, and points to validation and/or "data shape" information used to interpret the content of a given credential
+* the latter is used very differently by different systems, which may deploy
+  JSON Schema validation information, presentation/signing-specific structures,
+  SHACL, etc. there is no entry in the VC extensions registry or elsewhere that
+  tells consumers of a VC how to interpret those schemata or what language they
+  are in.
+* these "languages" for data shape have different representational/serialization
+  scopes: SHACL is not JSON-LD specific, but JSON-Schema only works for JSON
+  objects
+* the CL-ZKP signing systems have also used this property to frame selective disclosure; other systems might emerge that also do this.
+
+> "You can consider an issuer signing over a `credentialSchema` to be a commitment to a particular data shape, and depending on the technology they used for that, it could help you validate the representation, or help you validate the information, or both." --Orie Steele 
+
 ##### Do I *have* to use JSON-LD to use VCs? 🟠️ 🔥🔥 
 
 Yes and no-- the Verifiable Credentials [data model
@@ -990,7 +1012,7 @@ verification. DIF hosts a general-purpose reference
 [implementation](https://github.com/decentralized-identity/jsonld-document-loader)
 of such a tool, and its donator, Orie Steele of Transmute Industries, gave an
 overview of [why and how to use it](https://youtu.be/-yUbMDft5O0) at DIF Interop
-WG.
+WG. 
 
 ### Advanced Topics: JSON-LD
 
