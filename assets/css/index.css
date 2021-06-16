@@ -807,36 +807,43 @@ pre[class*="language-"] {
   font-weight: bold;
 }
 
-  .toc a:hover {
-    text-shadow: 0px 1px 1px #fff;
-    background: rgba(0,0,0,0.1);
-  }
+.toc a:hover {
+  text-shadow: 0px 1px 1px #fff;
+  background: rgba(0,0,0,0.1);
+}
 
-  .toc > li a:before {
-    counter-increment: toc1;
-    content: counter(toc1)  ".";
-    padding: 0 0.4em 0 0.2em;
-  }
+.toc > li a:before {
+  counter-increment: toc1;
+  content: counter(toc1)  ".";
+  padding: 0 0.4em 0 0.2em;
+}
 
-  .toc > li > ul {
-    counter-reset: toc2;
-  }
+.toc > li > ul {
+  counter-reset: toc2;
+}
 
-    .toc > li > ul > li a:before {
-      counter-increment: toc2;
-      content: counter(toc1) "." counter(toc2);
-      padding: 0 0.45em 0 0.2em;
-    }
+ul.toc > li > a:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
 
-  .toc > li > ul ul {
-    counter-reset: toc3;
-  }
+.toc > li > ul > li a:before {
+  counter-increment: toc2;
+  content: counter(toc1) "." counter(toc2);
+  padding: 0 0.45em 0 0.2em;
+}
 
-  .toc > li > ul ul li a:before {
-    counter-increment: toc3;
-    content: counter(toc1) "." counter(toc2) "." counter(toc3);
-    padding: 0 0.5em 0 0.2em;
-  }
+.toc > li > ul ul {
+  counter-reset: toc3;
+}
+
+.toc > li > ul ul li a:before {
+  counter-increment: toc3;
+  content: counter(toc1) "." counter(toc2) "." counter(toc3);
+  padding: 0 0.5em 0 0.2em;
+}
 
 @media (min-width: 900px) {
 
