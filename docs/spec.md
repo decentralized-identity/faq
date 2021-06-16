@@ -15,15 +15,21 @@ Participate:
 
 ------------------------------------
 
-At a glance:
+This is the Decentralized Identity Foundation's general-purpose knowledgebase,
+which aims to help people at all levels of familiarity with our problem space
+quickly level-set and find the most useful links. Feel free to share links and
+"anchor links" to specific questions using the § symbol next to headings.
 
-[Layer 0: Introductory Concepts](#introductory-concepts-layer-0)
-[Layer 1: Identifiers and Namespaces](#identifiers-and-namespaces-layer-1)
-[Layer 2: Agent Frameworks & Infrastructure](#agent-frameworks-infrastructure-layer-2)
-[Layer 3: Verifiable Credentials](#vc-infrastructure-layer-3)
-[Layer 4: Apps, Wallets, and UX](#apps-ux-and-wallets-layer-4)
-[Layer 5: Trust Frameworks and Ecosystems](#trust-frameworks-and-ecosystems-layer-5)
-[Layer X: Transversal Considerations: Architecture and Interoperability](#transversal-considerations-architecture-interop-layer-x)
+Contents at a glance:
+
+- [Usage Guide](#usage-guide)
+- [Layer 0: Introductory Concepts](#introductory-concepts-layer-0)
+- [Layer 1: Identifiers and Namespaces](#identifiers-and-namespaces-layer-1)
+- [Layer 2: Agent Frameworks & Infrastructure](#agent-frameworks-infrastructure-layer-2)
+- [Layer 3: Verifiable Credentials](#vc-infrastructure-layer-3)
+- [Layer 4: Apps, Wallets, and UX](#apps-ux-and-wallets-layer-4)
+- [Layer 5: Trust Frameworks and Ecosystems](#trust-frameworks-and-ecosystems-layer-5)
+- [Layer X: Transversal Considerations: Architecture and Interoperability](#transversal-considerations-architecture-interop-layer-x)
 
 ## Usage guide: 
 
@@ -107,7 +113,10 @@ paradigm](https://github.com/hyperledger/aries-rfcs/tree/master/concepts/0289-to
 
 **Simplified 4+1 layering diagram**
 
-Src: [Hakan Yildiz, Technische Universität Berlin](https://github.com/decentralized-identity/interoperability/blob/master/assets/interop-mapping-version-by-Hakan-Yildiz(TUB).pdf); 📄[more detailed version](https://github.com/decentralized-identity/interoperability/raw/master/assets/interoperability-mapping-exercise-10-12-20.pdf)
+Src: [Hakan Yildiz, Technische Universität
+Berlin](https://github.com/decentralized-identity/interoperability/blob/master/assets/interop-mapping-version-by-Hakan-Yildiz(TUB).pdf);
+📄[more detailed
+version](https://github.com/decentralized-identity/interoperability/raw/master/assets/interoperability-mapping-exercise-10-12-20.pdf)
 
 
 ## Introductory Concepts ("**Layer 0**")
@@ -201,11 +210,14 @@ Thailand, etc etc.
 
 Verifiable Credentials combine properties and superpowers from many different
 mental models and forms of prior art: Linked Data, JSON Web Tokens, Ontologies,
-and ETL systems, to name a few. The [data model specification](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries) for VCs is governed in the [W3C](https://w3.org). They are like portable, free-floating data points, which are not
-exactly documents or files or "records" in the usual sense. They are signed and
-thus tamper-evident, and thus share much of the verifiability of blockchain data
-or signed PDFs insofar as the signatures they contain can be properly verified
-by reference to the identities included inside the document. 
+and ETL systems, to name a few. The [data model
+specification](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries)
+for VCs is governed in the [W3C](https://w3.org). They are like portable,
+free-floating data points, which are not exactly documents or files or "records"
+in the usual sense. They are signed and thus tamper-evident, and thus share much
+of the verifiability of blockchain data or signed PDFs insofar as the signatures
+they contain can be properly verified by reference to the identities included
+inside the document. 
 
 They can be encrypted or not, they can identify their subject directly or
 indirectly using [[ref:DIDs]] or any other kind of address and/or indirection
