@@ -121,10 +121,7 @@ there might be trusted intermediaries or friction-points to reduce abuse, but
 all [[ref:DID]] systems are substantially more decentralized than traditional,
 heirarchical systems like the KMS heirarchies of, say, [[ref:X.509]] systems.
 
-> Strictly speaking, a DID is a string that functions as an address, but sometimes
-people might use the term to refer both to the DID and the DID Document that you
-get when you use a "DID Method" to resolve it.  A DID without a DID Document is
-like a dead end!
+> Strictly speaking, a DID is a string that functions as an address. Sometimes people might use the term to refer _both_ to the DID _and_ the DID **Document**, When you use a "DID _Method_" to resolve the DID you get the associated DID Document.  A DID without a DID Document is like a dead end!
 
 ##### What is a Verifiable Data Registry?
 
