@@ -788,6 +788,9 @@ pre[class*="language-"] {
 .toc, .toc ul {
   margin: 0;
   list-style: none;
+}
+
+ul.toc>li>a:first-child {
   font-size: 18px;
   font-weight: bold;
   padding-top: 20px;
