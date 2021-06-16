@@ -32,7 +32,6 @@
     "find-pkg-dir": "2.0.0",
     "fs-extra": "8.1.0",
     "globby": "11.0.0",
-    "gulp": "4.0.2",
     "gulp-bump": "3.2.0",
     "gulp-clean-css": "4.3.0",
     "gulp-concat": "2.6.1",
@@ -63,5 +62,8 @@
     "spec-up": "^0.10.2",
     "yargs": "16.2.0",
     "yargs-parser": ">=5.0.0-security.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
