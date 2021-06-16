@@ -53,6 +53,9 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 <dl>
 <dt>Editors:</dt>
 <dd><a path-0="www.linkedin.com"path-1="in"path-2="juan-caballero"href="https://www.linkedin.com/in/juan-caballero" >Juan Caballero</a></dd>
+<dt>MVP Contributors (pre-v1):</dt>
+<dd><a path-0="github.com"path-1="henkvancann"href="https://github.com/henkvancann" >Henk van Cann</a></dd>
+<dd><a path-0="github.com"path-1="vongohren"href="https://github.com/vongohren" >Snorre Lothar von Gohren Edwin</a></dd>
 <dt>Participate:</dt>
 <dd><a path-0="github.com"path-1="decentralized-identity"path-2="faq"href="https://github.com/decentralized-identity/faq" >GitHub repo</a></dd>
 <dd><a path-0="github.com"path-1="decentralized-identity"path-2="faq"path-3="blob"path-4="main"path-5="docs"path-6="spec.md"href="https://github.com/decentralized-identity/faq/blob/main/docs/spec.md" >Contribute by opening a PR here</a></dd>
@@ -60,6 +63,21 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 <dd><a path-0="github.com"path-1="decentralized-identity"path-2="faq"path-3="commits"path-4="master"href="https://github.com/decentralized-identity/faq/commits/master" >Commit history</a></dd>
 </dl>
 <hr>
+<p>This is the Decentralized Identity Foundation’s general-purpose knowledgebase,
+which aims to help people at all levels of familiarity with our problem space
+quickly level-set and find the most useful links. Feel free to share links and
+“anchor links” to specific questions using the § symbol next to headings.</p>
+<p>Contents at a glance:</p>
+<ul>
+<li><a href="#usage-guide" >Usage Guide</a></li>
+<li><a href="#introductory-concepts-layer-0" >Layer 0: Introductory Concepts</a></li>
+<li><a href="#identifiers-and-namespaces-layer-1" >Layer 1: Identifiers and Namespaces</a></li>
+<li><a href="#agent-frameworks-infrastructure-layer-2" >Layer 2: Agent Frameworks &amp; Infrastructure</a></li>
+<li><a href="#vc-infrastructure-layer-3" >Layer 3: Verifiable Credentials</a></li>
+<li><a href="#apps-ux-and-wallets-layer-4" >Layer 4: Apps, Wallets, and UX</a></li>
+<li><a href="#trust-frameworks-and-ecosystems-layer-5" >Layer 5: Trust Frameworks and Ecosystems</a></li>
+<li><a href="#transversal-considerations-architecture-interop-layer-x" >Layer X: Transversal Considerations: Architecture and Interoperability</a></li>
+</ul>
 <h2 id="usage-guide"><a class="toc-anchor" href="#usage-guide" >§</a> Usage guide:</h2>
 <h3 id="how-did-i-get-here-who-are-you"><a class="toc-anchor" href="#how-did-i-get-here-who-are-you" >§</a> How did I get here? Who are you?</h3>
 <p>This is a general-purpose collection of frequently-asked questions,
@@ -114,10 +132,10 @@ familiarity it presumes. Here is the key:</p>
 expand and read all the 1-star questions first, then reload the page and do the
 same for all the 2-star questions, then the 3-stars. They are not sorted by
 level because they progress down rabbit holes, and are intended to be readable
-in various orders. If you don’t understand the placement of chilis warning you
-about triggering, controversial topics, don’t worry-- understanding the
-controversies is level 4.  When you not only understand why all those chili are
-there, but furthermore feel torn and sympathetic to all parties in each
+in various orders. If you don’t understand why some topics get fire-emojis
+warning you about triggering, controversial topics, don’t worry-- understanding
+the controversies is level 4.  When you not only understand why all those emojis
+are there, but furthermore feel torn and sympathetic to all parties in each
 controversy, you’re at level 5-- and should maybe think about chairing a working
 group or joining one of the Steering Committees?</p>
 <h3 id="how-is-this-faq-structured"><a class="toc-anchor" href="#how-is-this-faq-structured" >§</a> How is this FAQ structured?</h3>
@@ -125,7 +143,8 @@ group or joining one of the Steering Committees?</p>
 which organizes the space of decentralized identity into interlocking and
 interdependent subsystems. This can be a little “inside baseball” at first, but
 with time, the utility and consequence of this layering should grow more
-intuitive and less arbitrary. Modeled on the It originated in the DIF
+intuitive and less arbitrary. Inspired by the classic <a path-0="en.wikipedia.org"path-1="wiki"path-2="OSI_model"href="https://en.wikipedia.org/wiki/OSI_model" >OSI layer
+model</a>, it originated in the DIF
 Interoperability WG’s months-long iterative discussion on interoperability and
 integration with centralized/industry-strandard prior art, which in turn built
 on Executive Director Rouven Heck’s iteration on the
@@ -145,7 +164,10 @@ paradigm</a>.</p>
   </section>
 </tab-panels>
 <p><strong>Simplified 4+1 layering diagram</strong></p>
-<p>Src: <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="assets"path-6="interop-mapping-version-by-Hakan-Yildiz(TUB).pdf"href="https://github.com/decentralized-identity/interoperability/blob/master/assets/interop-mapping-version-by-Hakan-Yildiz(TUB).pdf" >Hakan Yildiz, Technische Universität Berlin</a>; 📄<a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="raw"path-4="master"path-5="assets"path-6="interoperability-mapping-exercise-10-12-20.pdf"href="https://github.com/decentralized-identity/interoperability/raw/master/assets/interoperability-mapping-exercise-10-12-20.pdf" >more detailed version</a></p>
+<p>Src: <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="assets"path-6="interop-mapping-version-by-Hakan-Yildiz(TUB).pdf"href="https://github.com/decentralized-identity/interoperability/blob/master/assets/interop-mapping-version-by-Hakan-Yildiz(TUB).pdf" >Hakan Yildiz, Technische Universität
+Berlin</a>;
+📄<a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="raw"path-4="master"path-5="assets"path-6="interoperability-mapping-exercise-10-12-20.pdf"href="https://github.com/decentralized-identity/interoperability/raw/master/assets/interoperability-mapping-exercise-10-12-20.pdf" >more detailed
+version</a></p>
 <h2 id="introductory-concepts-layer-0"><a class="toc-anchor" href="#introductory-concepts-layer-0" >§</a> Introductory Concepts (“<strong>Layer 0</strong>”)</h2>
 <h3 id="objects-data-models"><a class="toc-anchor" href="#objects-data-models" >§</a> Objects &amp; Data Models</h3>
 <h5 id="what-is-a-did"><a class="toc-anchor" href="#what-is-a-did" >§</a> What is a DID? 🟢</h5>
@@ -183,10 +205,10 @@ necessarily have to take the form of blockchains, clouds, networks, or anything
 else-- a VDR could be paper-based and still decentralized! (We would have to
 name it after Jorge Luis Borges if we made such a registry.)</p>
 <h5 id="what-is-a-did-prefix"><a class="toc-anchor" href="#what-is-a-did-prefix" >§</a> What is a DID “prefix”? 🟢</h5>
-<p>Each <a class="term-reference" href="#term:did">DID</a> is prefixed with a reference to, and only guaranteed to useful,
-meaningful, and reliable within, one DID namespace. If you come across a DID in
-the wild, this prefix makes it easy to identify its origin and where to go to
-“use” it for fetching a DID Document.  A DID from the Sovrin network, for
+<p>Each <a class="term-reference" href="#term:did">DID</a> is prefixed with a reference to, and only guaranteed to be
+useful, meaningful, and reliable within, one DID namespace. If you come across a
+DID in the wild, this prefix makes it easy to identify its origin and where to
+go to “use” it for fetching a DID Document.  A DID from the Sovrin network, for
 example, begins with “did:sov:…”, and one from the Veres One network begins
 with “did:v1:…” Each “namespace” (addressing system) is navigated with and
 governed by a “DID Method.” Some methods have multiple networks/namespaces, but
@@ -229,11 +251,14 @@ more authority.</p>
 </blockquote>
 <p>Verifiable Credentials combine properties and superpowers from many different
 mental models and forms of prior art: Linked Data, JSON Web Tokens, Ontologies,
-and ETL systems, to name a few. The <a path-0="www.w3.org"path-1="TR"path-2="vc-data-model"path-3="#dfn-verifiable-data-registries"href="https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries" >data model specification</a> for VCs is governed in the <a path-0="w3.org"href="https://w3.org" >W3C</a>. They are like portable, free-floating data points, which are not
-exactly documents or files or “records” in the usual sense. They are signed and
-thus tamper-evident, and thus share much of the verifiability of blockchain data
-or signed PDFs insofar as the signatures they contain can be properly verified
-by reference to the identities included inside the document.</p>
+and ETL systems, to name a few. The <a path-0="www.w3.org"path-1="TR"path-2="vc-data-model"path-3="#dfn-verifiable-data-registries"href="https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries" >data model
+specification</a>
+for VCs is governed in the <a path-0="w3.org"href="https://w3.org" >W3C</a>. They are like portable,
+free-floating data points, which are not exactly documents or files or “records”
+in the usual sense. They are signed and thus tamper-evident, and thus share much
+of the verifiability of blockchain data or signed PDFs insofar as the signatures
+they contain can be properly verified by reference to the identities included
+inside the document.</p>
 <p>They can be encrypted or not, they can identify their subject directly or
 indirectly using <a class="term-reference" href="#term:dids">DIDs</a> or any other kind of address and/or indirection
 mechanism. They can be public or private or somewhere in between, large or
@@ -335,8 +360,8 @@ is a necessary but insufficient means to that end; we do not want to
 overpromise, so we consider any good-faith effort at decentralization that
 relies on the building blocks of <a class="term-reference" href="#term:dids">DIDs</a> and/or VCs to be within our scope
 and remit. We are a technology organization, so our boundaries are set by the
-standardization done to date centered on the W3C specifications, not by
-ideological definitions.</p>
+standardization done to date centered on the core W3C specifications for
+<a class="term-reference" href="#term:dids">DIDs</a> and <a class="term-reference" href="#term:vcs">VCs</a>, not by ideological definitions.</p>
 <h5 id="is-decentralized-identity-different-from-self-sovereign-identity"><a class="toc-anchor" href="#is-decentralized-identity-different-from-self-sovereign-identity" >§</a> Is <em>decentralized</em> identity different from <em>self-sovereign</em> identity? 🟡🔥</h5>
 <p>The two building blocks of <a class="term-reference" href="#term:dids">DIDs</a> and VCs, which decentralize
 addressing/identifier systems and make data portable and verifiable, enable new,
@@ -434,11 +459,13 @@ particularly good place for such feedback.,)</p>
 maintained by volunteers from the W3C-CCG, you can just read it! There is no
 membership fee, gatekeeper, or velvet rope.</p>
 </blockquote>
-<p>All methods are expected to be maintainers of systems and infrastructure that
-are built on top of them. They are each specified by a published, registered,
-and ideally well-maintained <strong>specification</strong>. This specification explains how
-to validate a <a class="term-reference" href="#term:did">DID</a> (namespace rules), where to query and what to expect
-back when resolving a DID, etc. The
+<p>All the rules and algorithms that make a method work are expected to be
+maintained and documented over time by the maintainers of the systems and
+infrastructure that are built on top of them, whether commercial, non-profit, or
+radically decentralized. These rules and algorithms are spelled out by a
+published, registered, and ideally well-maintained <strong>specification</strong>. This
+specification explains how to validate a <a class="term-reference" href="#term:did">DID</a> (namespace rules), where to
+query and what to expect back when resolving a DID, etc. The
 <a path-0="w3c.github.io"path-1="did-spec-registries"path-2="#the-registration-process"href="https://w3c.github.io/did-spec-registries/#the-registration-process" >registry</a>
 of compliant specifications for DID Methods is maintained by a dedicated W3C
 working group, currently the <a path-0="w3c.github.io"path-1="did-core"path-2=""href="https://w3c.github.io/did-core/" >DID-core WG</a>, and
@@ -520,7 +547,7 @@ method/did:doc design. A good rule of thumb is to study each DID Method enough
 to understand what it is optimizing for, and find the optimizations that are
 most relevant for your project.</p>
 </blockquote>
-<p>This is, again, too large a question for a one-paragraph answer. But
+<p>This is way too large a question for a one-paragraph answer (see above). But
 understanding the requirements of a given use-case or problem space takes time
 and extensive research-- and neutrality. Try to read against the grain in
 marketing materials and arrive at your own conclusions about what different
@@ -594,10 +621,14 @@ identifier transitioning in either direction.</p>
 <h5 id="is-an-aid-the-same-as-a-scid"><a class="toc-anchor" href="#is-an-aid-the-same-as-a-scid" >§</a> Is an AID the same as a SCID?</h5>
 <p>An emerging category of DID-like things is AIDs, or <strong>Autonomous Identifiers</strong>,
 which do not depend on a verifiable data registry to be trustworthy, instead
-maintaining and deliverying their own “self-certifying” DID Document, and
-optionally an entire self-certifying <em>history</em> of that DID Document as well.
-These verbose, historical DID Documents can be conceived of as “microledgers,”as
-explained in this <a path-0="blog.identity.foundation"path-1="keri--for-every-did--a-microledger"path-2=""href="https://blog.identity.foundation/keri--for-every-did--a-microledger/" >DIF blog
+maintaining and deliverying their own “self-certifying” DID Document (or a
+DID-document-like object with similar contents). All AIDs are SCIDs, but not all
+SCIDs are AIDs: the property of “autonomy” means that it can be used alone and
+needs no outside corroboration or infrastructure to certify, which can entail
+more complex discovery mechanisms.</p>
+<p>Optionally, these AIDs might also feature an entire self-certifying <em>history</em> of
+that DID Document as well) These verbose, historical DID Documents can be
+conceived of as “microledgers,”as explained in this <a path-0="blog.identity.foundation"path-1="keri--for-every-did--a-microledger"path-2=""href="https://blog.identity.foundation/keri--for-every-did--a-microledger/" >DIF blog
 post</a>
 about the KERI Protocol. There are also other AID-based systems on the horizon
 outside of DIF, and even a kind of SCID-AID hybrid in the form of the
@@ -629,7 +660,7 @@ with mobile networks, etc etc.</p>
 AriesJS, <a path-0="Aries.NET"href="http://Aries.NET" ><span>Aries.NET</span></a>), each with different strengths and weaknesses and foci</li>
 <li>See the <a path-0="aries-interop.info"path-1=""href="https://aries-interop.info/" >Aries Interop Info site</a> for automated
 testing harness and results and see a good (BC-gov-focused) Discussion of
-Aries can be found
+Aries
 <a path-0="docs.google.com"path-1="document"path-2="d"path-3="1JmPh7X1-MNl_EuIVUodf1hWHTrt4vLvFT1N_lAjfoEQ"path-4="edit#heading=h.g1t45w61ipue"href="https://docs.google.com/document/d/1JmPh7X1-MNl_EuIVUodf1hWHTrt4vLvFT1N_lAjfoEQ/edit#heading=h.g1t45w61ipue" >here</a></li>
 <li>Microsoft’s Authenticator framework portal and
 <a path-0="github.com"path-1="decentralized-identity"path-2="interoperability"path-3="blob"path-4="master"path-5="agenda.md#agenda---16-dec-2020---usapac-time-1400-pt---vc-deep-dive-series-a-vc-focused-tour-of-the-authenticator-architecture-with-tim-capalli-msft"href="https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---16-dec-2020---usapac-time-1400-pt---vc-deep-dive-series-a-vc-focused-tour-of-the-authenticator-architecture-with-tim-capalli-msft" >overview</a>
@@ -668,13 +699,12 @@ use-cases, high-privacy use-cases, and large ecosystems that are homogenous in
 terms of decentralized identity tooling and formats.</p>
 <p>Importantly, much of the ambition and innovation of the Aries ecosystem is that
 it makes today’s client/server and HTTP-based architecture somewhat
-<em>optional</em>— over time, the ambition of of Aries is to be forward-compatible
-with more horizontal, more peer-to-peer, and differently-scalable architectures.
-This is no small feature! It does, however, require some complex and DID-centric
+<em>optional</em>— over time, the ambition of Aries is to be forward-compatible with
+more horizontal, more peer-to-peer, and differently-scalable architectures. This
+is no small feature! It does, however, require some complex and DID-centric
 <em>routing</em> mechanisms, which are perhaps the most complex part of DIDComm
-messaging.  Depending on the time-scale of your project, this kind of
-forward-compatibility might be a stitch in time, or an optional feature you
-can’t afford to support in the short term.</p>
+messaging and the biggest stumbling block for those coming from more
+conventional HTTP-centric work experience.</p>
 <h5 id="is-the-svip-program-a-framework"><a class="toc-anchor" href="#is-the-svip-program-a-framework" >§</a> Is the SVIP program a framework?</h5>
 <p>Not exactly-- the Silicon Valley Innovation Project and the Department of
 Homeland Security grants it administers are structured as an incubator for
@@ -700,13 +730,17 @@ discussed starting at minute 19.</p>
 <p>So far, verification of “foreign” VC formats (and “representations”) from other
 systems has been slow to be fully integrated into frameworks, but great progress
 is being made-- DIF is optimistic that this answer will have to be completely
-rewritten by 2022. DIF member Animo Solutions has built LD VC support into Aries
-Cloud Agent Python (and hopefully the other Aries agents will soon follow suit).
-Furthermore, DIF member <a path-0="bloom.co"path-1=""href="https://bloom.co/" >Bloom</a> has been driving some <a path-0="github.com"path-1="hellobloom"path-2="waci-demo"href="https://github.com/hellobloom/waci-demo" >WACI
-work</a> on top of the Presentation
+rewritten by 2022. DIF member Animo Solutions has built support for JSON-LD VCs
+into Aries Cloud Agent Python (<a path-0="youtu.be"path-1="LC0OXAir3Qw"href="https://youtu.be/LC0OXAir3Qw" >video tour here</a>),
+and hopefully the other Aries agents will soon follow suit.</p>
+<p>DIF member <a path-0="bloom.co"path-1=""href="https://bloom.co/" >Bloom</a> has been driving much of the <a path-0="github.com"path-1="hellobloom"path-2="waci-demo"href="https://github.com/hellobloom/waci-demo" >WACI
+work</a> extending the Presentation
 Exchange specification to facilitate the initiation and negotiation of
-exchanges, which is feeding into a new C&amp;C work item, which might well pave the
-way to full VC-HTTP-API support across frameworks.</p>
+exchanges, which is feeding into a new C&amp;C work item,
+<a path-0="github.com"path-1="decentralized-identity"path-2="waci-presentation-exchange"href="https://github.com/decentralized-identity/waci-presentation-exchange" >WACI-PEx</a>,
+which might well point the way towards a “convergence path” for full-featured
+VC-HTTP-API support across frameworks after presentation-exchange interop has
+been secured.</p>
 <h3 id="advanced-topics-framework-specific-tooling"><a class="toc-anchor" href="#advanced-topics-framework-specific-tooling" >§</a> Advanced Topics: Framework-specific Tooling</h3>
 <h5 id="what-exactly-is-a-connection-is-it-a-transport-is-it-ephemeral"><a class="toc-anchor" href="#what-exactly-is-a-connection-is-it-a-transport-is-it-ephemeral" >§</a> What exactly is a “connection”? Is it a transport? Is it ephemeral? 🟢</h5>
 <p><strong>“Connection”</strong> is very much an Aries-centric concept: it is an abstraction of
@@ -774,7 +808,7 @@ alignments and specifications will be a major task in the coming years.</p>
 <h3 id="diversity-of-vcs"><a class="toc-anchor" href="#diversity-of-vcs" >§</a> Diversity of VCs</h3>
 <h5 id="are-there-distinct-types-or-formats-of-vcs-are-they-incompatible"><a class="toc-anchor" href="#are-there-distinct-types-or-formats-of-vcs-are-they-incompatible" >§</a> Are there distinct “types” or “formats” of VCs? Are they incompatible? 🟢</h5>
 <p>There are 4 major “representations&quot;, which are not exactly “formats” in the
-sense that word documents or PDFs are a “file format,” but rather more like 4
+sense that MSWord documents or PDFs are a “file format,” but rather more like 4
 encoding systems from 4 different operating systems or file systems. They have
 slightly different relationships to external semantic anchoring, which makes
 translating <em>losslessly</em> between them or “roundtripping” a very tricky, but not
@@ -800,8 +834,11 @@ or overlook.</p>
 <p>That is…a big question-- read through the rest of this section and ask me
 again later. Suffice it to say you need to account for both the semantics and
 the syntax of a VC to translate between VC systems. If you are translating to or
-from JSON-LD systems or Aries systems, be sure to read those “Advanced Topics”
-sections as well before the “Advanced Topics: VC Translation” section.</p>
+from JSON-LD systems or Aries systems, be sure to read the <a href="#advanced-topics-json-ld" >Advanced Topics:
+JSON-LD</a> and <a href="#advanced-topics-framework-specific-tooling" >Advanced Topics:
+Aries</a> sections about before
+turning to the <a href="#advanced-topics-vc-translation" >Advanced Topics: VC
+Translation</a> section.</p>
 <h5 id="the-semantics-and-the-what-now-schemata-arent-enough"><a class="toc-anchor" href="#the-semantics-and-the-what-now-schemata-arent-enough" >§</a> The semantics and the what now? Schemata aren’t enough? 🟢</h5>
 <p>Traditional data schemata are used to express (and thus validate against that
 expression) the <strong>syntax</strong> of data objects-- the type, length, form,
@@ -1010,7 +1047,9 @@ Schema</a>
 include semantic information as well, which allows Verifiable Presentations
 derived from conformant VCs to create LD framing in the presentation process.
 For tutorials, examples, and up-to-date discussion about protocol upgrades, see
-the Aries RFC linked above.</p>
+the Aries
+<a path-0="github.com"path-1="hyperledger"path-2="aries-rfcs"path-3="blob"path-4="master"path-5="concepts"path-6="0250-rich-schemas"path-7="README.md"href="https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0250-rich-schemas/README.md" >RFC0250</a>
+.</p>
 <h5 id="how-are-credential-definitions-compatible-with-json-schema-and-json-ld-️️"><a class="toc-anchor" href="#how-are-credential-definitions-compatible-with-json-schema-and-json-ld-️️" >§</a> How are Credential Definitions compatible with JSON Schema and JSON-LD? 🟢️❓️</h5>
 <p>VCs are not only validated directly against JSON-LD or JSON Schema, but the
 CL-ZKP algorithms available in the Aries libraries use the CD and RS definitions
@@ -1077,8 +1116,8 @@ for a skimmable overview).  It’s not necessarily a bad thing that no
 cross-community concensus ever arose!</p>
 <h5 id="what-is-the-future-of-wallets-️"><a class="toc-anchor" href="#what-is-the-future-of-wallets-️" >§</a> What is the future of wallets? 🟡️🔥🔥</h5>
 <blockquote>
-<p>How many wallet should there be in the future? How many will there be in, say,
-2 or 10 or 20 years?**</p>
+<p>How many wallets should there be in the future? How many will there be in,
+say, 2 or 10 or 20 years?**</p>
 </blockquote>
 <p>I marked this question with two chilis because “browsers” were the battleground
 of Web 1.0 and “apps” were the battleground of Web 2.0, leaving many to
@@ -1117,6 +1156,12 @@ use of biometrics or mnemonics to prove, maintain, and exert control over a DID
 will likely need to be advanced and standardized before decentralized identity
 architectures can be brought to the huge fraction of the world’s population with
 low chances of owning a cryptographically enabled personal phone or computer.</p>
+<p>The most accurate answer, however, is that there is no singular “SSI” use case
+and thus no single set of requirements. Each use case has its own requirements,
+and each jurisdiction has its own definition of a “trustworthy” digital
+transaction (such as “levels of assurance” specifications), which determine the
+hardware requirements for different degrees of identity binding,
+non-repudiation, etc.</p>
 <h5 id="what-about-no-and-low-connectivity-environments"><a class="toc-anchor" href="#what-about-no-and-low-connectivity-environments" >§</a> What about no- and low-connectivity environments? 🟢</h5>
 <blockquote>
 <p>How do DIDs and VCs get used without a live internet connection for querying a
@@ -1157,7 +1202,9 @@ racket, and our <a path-0="www.notion.so"path-1="Banking-and-Finance-SIG-b2d528a
 Group</a>
 has had a number of speakers and discussions about the emerging field of
 SSI-powered “Know Your Customer”/compliance products for privacy-preserving
-financial transparency.</p>
+financial transparency and due diligence on identity binding. Being able to
+document your identity in a digital-first way is coming, but it’s anyone guess
+how or how soon!</p>
 <h2 id="trust-frameworks-and-ecosystems-layer-5"><a class="toc-anchor" href="#trust-frameworks-and-ecosystems-layer-5" >§</a> Trust Frameworks and Ecosystems (“<strong>Layer 5</strong>”)</h2>
 <p>Beyond individual apps and platforms, industry-wide and jurisdictional
 governance still imposes many requirements and harmonization processes.  We
@@ -1171,7 +1218,7 @@ as well as standardizations, longitudinal assesments, academic studies, impact
 reports, that kind of thing.  Even after all that is squared away and packaged
 up to adequately prepare regulators to do their work, they in turn take their
 own time to harmonize many different specialists and stakeholders, before they
-can present somethign to politicians, who have their own games to play and
+can present something to politicians, who have their own games to play and
 interests to align.  All the market forces in the world, perfectly aligned, can
 only speed these processes up so much.</p>
 <p>All that said, encryption has been around a long time, and personal data, and

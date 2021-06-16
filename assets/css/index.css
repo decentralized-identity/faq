@@ -790,6 +790,13 @@ pre[class*="language-"] {
   list-style: none;
 }
 
+ul.toc>li>a:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
 .toc ul {
   padding: 0 0 0 1em;
 }
