@@ -15,6 +15,16 @@ Participate:
 
 ------------------------------------
 
+At a glance:
+
+[Layer 0: Introductory Concepts](#introductory-concepts-layer-0)
+[Layer 1: Identifiers and Namespaces](#identifiers-and-namespaces-layer-1)
+[Layer 2: Agent Frameworks & Infrastructure](#agent-frameworks-infrastructure-layer-2)
+[Layer 3: Verifiable Credentials](#vc-infrastructure-layer-3)
+[Layer 4: Apps, Wallets, and UX](#apps-ux-and-wallets-layer-4)
+[Layer 5: Trust Frameworks and Ecosystems](#trust-frameworks-and-ecosystems-layer-5)
+[Layer X: Transversal Considerations: Architecture and Interoperability](#transversal-considerations-architecture-interop-layer-x)
+
 ## Usage guide: 
 
 ### How did I get here? Who are you?
