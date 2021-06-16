@@ -55,10 +55,10 @@ One strategy for learning is to read through in three separate passes, i.e.,
 expand and read all the 1-star questions first, then reload the page and do the
 same for all the 2-star questions, then the 3-stars. They are not sorted by
 level because they progress down rabbit holes, and are intended to be readable
-in various orders. If you don't understand the placement of chilis warning you
-about triggering, controversial topics, don't worry-- understanding the
-controversies is level 4.  When you not only understand why all those chili are
-there, but furthermore feel torn and sympathetic to all parties in each
+in various orders. If you don't understand why some topics get fire-emojis
+warning you about triggering, controversial topics, don't worry-- understanding
+the controversies is level 4.  When you not only understand why all those emojis
+are there, but furthermore feel torn and sympathetic to all parties in each
 controversy, you're at level 5-- and should maybe think about chairing a working
 group or joining one of the Steering Committees?
 
@@ -68,7 +68,8 @@ The high-level categories on the sidebar refer to a "layer cake" mental model
 which organizes the space of decentralized identity into interlocking and
 interdependent subsystems. This can be a little "inside baseball" at first, but
 with time, the utility and consequence of this layering should grow more
-intuitive and less arbitrary. Modeled on the It originated in the DIF
+intuitive and less arbitrary. Inspired by the classic [OSI layer
+model](https://en.wikipedia.org/wiki/OSI_model), it originated in the DIF
 Interoperability WG's months-long iterative discussion on interoperability and
 integration with centralized/industry-strandard prior art, which in turn built
 on Executive Director Rouven Heck's iteration on the
@@ -141,10 +142,10 @@ name it after Jorge Luis Borges if we made such a registry.)
 
 ##### What is a DID "prefix"? 🟢
 
-Each [[ref:DID]] is prefixed with a reference to, and only guaranteed to useful,
-meaningful, and reliable within, one DID namespace. If you come across a DID in
-the wild, this prefix makes it easy to identify its origin and where to go to
-"use" it for fetching a DID Document.  A DID from the Sovrin network, for
+Each [[ref:DID]] is prefixed with a reference to, and only guaranteed to be
+useful, meaningful, and reliable within, one DID namespace. If you come across a
+DID in the wild, this prefix makes it easy to identify its origin and where to
+go to "use" it for fetching a DID Document.  A DID from the Sovrin network, for
 example, begins with "did:sov:...", and one from the Veres One network begins
 with "did:v1:..." Each "namespace" (addressing system) is navigated with and
 governed by a "DID Method." Some methods have multiple networks/namespaces, but
@@ -310,8 +311,8 @@ is a necessary but insufficient means to that end; we do not want to
 overpromise, so we consider any good-faith effort at decentralization that
 relies on the building blocks of [[ref:DIDs]] and/or VCs to be within our scope
 and remit. We are a technology organization, so our boundaries are set by the
-standardization done to date centered on the W3C specifications, not by
-ideological definitions.
+standardization done to date centered on the core W3C specifications for
+[[ref:DIDs]] and [[ref:VCs]], not by ideological definitions.
 
 ##### Is *decentralized* identity different from *self-sovereign* identity? 🟡🔥
 
@@ -424,11 +425,13 @@ particularly good place for such feedback.,)
 > maintained by volunteers from the W3C-CCG, you can just read it! There is no
 > membership fee, gatekeeper, or velvet rope.
 
-All methods are expected to be maintainers of systems and infrastructure that
-are built on top of them. They are each specified by a published, registered,
-and ideally well-maintained **specification**. This specification explains how
-to validate a [[ref:DID]] (namespace rules), where to query and what to expect
-back when resolving a DID, etc. The
+All the rules and algorithms that make a method work are expected to be
+maintained and documented over time by the maintainers of the systems and
+infrastructure that are built on top of them, whether commercial, non-profit, or
+radically decentralized. These rules and algorithms are spelled out by a
+published, registered, and ideally well-maintained **specification**. This
+specification explains how to validate a [[ref:DID]] (namespace rules), where to
+query and what to expect back when resolving a DID, etc. The
 [registry](https://w3c.github.io/did-spec-registries/#the-registration-process)
 of compliant specifications for DID Methods is maintained by a dedicated W3C
 working group, currently the [DID-core WG](https://w3c.github.io/did-core/), and
@@ -517,7 +520,7 @@ method/did:doc design. A good rule of thumb is to study each DID Method enough
 to understand what it is optimizing for, and find the optimizations that are 
 most relevant for your project.
 
-This is, again, too large a question for a one-paragraph answer. But
+This is way too large a question for a one-paragraph answer (see above). But
 understanding the requirements of a given use-case or problem space takes time
 and extensive research-- and neutrality. Try to read against the grain in
 marketing materials and arrive at your own conclusions about what different
@@ -606,10 +609,15 @@ identifier transitioning in either direction.
 
 An emerging category of DID-like things is AIDs, or **Autonomous Identifiers**,
 which do not depend on a verifiable data registry to be trustworthy, instead
-maintaining and deliverying their own "self-certifying" DID Document, and
-optionally an entire self-certifying *history* of that DID Document as well.
-These verbose, historical DID Documents can be conceived of as “microledgers,”as
-explained in this [DIF blog
+maintaining and deliverying their own "self-certifying" DID Document (or a
+DID-document-like object with similar contents). All AIDs are SCIDs, but not all
+SCIDs are AIDs: the property of "autonomy" means that it can be used alone and
+needs no outside corroboration or infrastructure to certify, which can entail
+more complex discovery mechanisms.
+
+Optionally, these AIDs might also feature an entire self-certifying *history* of
+that DID Document as well) These verbose, historical DID Documents can be
+conceived of as “microledgers,”as explained in this [DIF blog
 post](https://blog.identity.foundation/keri--for-every-did--a-microledger/)
 about the KERI Protocol. There are also other AID-based systems on the horizon
 outside of DIF, and even a kind of SCID-AID hybrid in the form of the
@@ -649,7 +657,7 @@ Today's major frameworks are all well-documented and contain SDKs, improvement p
   AriesJS, Aries.NET), each with different strengths and weaknesses and foci 
 - See the [Aries Interop Info site](https://aries-interop.info/) for automated
   testing harness and results and see a good (BC-gov-focused) Discussion of
-  Aries can be found
+  Aries 
   [here](https://docs.google.com/document/d/1JmPh7X1-MNl_EuIVUodf1hWHTrt4vLvFT1N_lAjfoEQ/edit#heading=h.g1t45w61ipue)
 - Microsoft's Authenticator framework portal and
   [overview](https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---16-dec-2020---usapac-time-1400-pt---vc-deep-dive-series-a-vc-focused-tour-of-the-authenticator-architecture-with-tim-capalli-msft)
@@ -697,13 +705,12 @@ terms of decentralized identity tooling and formats.
 
 Importantly, much of the ambition and innovation of the Aries ecosystem is that
 it makes today's client/server and HTTP-based architecture somewhat
-*optional*--- over time, the ambition of of Aries is to be forward-compatible
-with more horizontal, more peer-to-peer, and differently-scalable architectures.
-This is no small feature! It does, however, require some complex and DID-centric
+*optional*--- over time, the ambition of Aries is to be forward-compatible with
+more horizontal, more peer-to-peer, and differently-scalable architectures. This
+is no small feature! It does, however, require some complex and DID-centric
 *routing* mechanisms, which are perhaps the most complex part of DIDComm
-messaging.  Depending on the time-scale of your project, this kind of
-forward-compatibility might be a stitch in time, or an optional feature you
-can't afford to support in the short term.
+messaging and the biggest stumbling block for those coming from more
+conventional HTTP-centric work experience.
 
 ##### Is the SVIP program a framework?
 
@@ -735,13 +742,18 @@ discussed starting at minute 19.
 So far, verification of "foreign" VC formats (and "representations") from other
 systems has been slow to be fully integrated into frameworks, but great progress
 is being made-- DIF is optimistic that this answer will have to be completely
-rewritten by 2022. DIF member Animo Solutions has built LD VC support into Aries
-Cloud Agent Python (and hopefully the other Aries agents will soon follow suit).
-Furthermore, DIF member [Bloom](https://bloom.co/) has been driving some [WACI
-work](https://github.com/hellobloom/waci-demo) on top of the Presentation
+rewritten by 2022. DIF member Animo Solutions has built support for JSON-LD VCs
+into Aries Cloud Agent Python ([video tour here](https://youtu.be/LC0OXAir3Qw)),
+and hopefully the other Aries agents will soon follow suit. 
+
+DIF member [Bloom](https://bloom.co/) has been driving much of the [WACI
+work](https://github.com/hellobloom/waci-demo) extending the Presentation
 Exchange specification to facilitate the initiation and negotiation of
-exchanges, which is feeding into a new C&C work item, which might well pave the
-way to full VC-HTTP-API support across frameworks.
+exchanges, which is feeding into a new C&C work item,
+[WACI-PEx](https://github.com/decentralized-identity/waci-presentation-exchange),
+which might well point the way towards a "convergence path" for full-featured
+VC-HTTP-API support across frameworks after presentation-exchange interop has
+been secured.
 
 ### Advanced Topics: Framework-specific Tooling
 
@@ -828,7 +840,7 @@ alignments and specifications will be a major task in the coming years.
 ##### Are there distinct “types” or “formats” of VCs? Are they incompatible? 🟢
 
 There are 4 major “representations", which are not exactly “formats” in the
-sense that word documents or PDFs are a “file format,” but rather more like 4
+sense that MSWord documents or PDFs are a “file format,” but rather more like 4
 encoding systems from 4 different operating systems or file systems. They have
 slightly different relationships to external semantic anchoring, which makes
 translating *losslessly* between them or “roundtripping” a very tricky, but not
@@ -858,8 +870,11 @@ or overlook.
 That is...a big question-- read through the rest of this section and ask me
 again later. Suffice it to say you need to account for both the semantics and
 the syntax of a VC to translate between VC systems. If you are translating to or
-from JSON-LD systems or Aries systems, be sure to read those "Advanced Topics"
-sections as well before the "Advanced Topics: VC Translation" section.
+from JSON-LD systems or Aries systems, be sure to read the [Advanced Topics:
+JSON-LD](#advanced-topics-json-ld) and [Advanced Topics:
+Aries](#advanced-topics-framework-specific-tooling) sections about before
+turning to the [Advanced Topics: VC
+Translation](#advanced-topics-vc-translation) section.
 
 ##### The semantics and the what now? Schemata aren't enough? 🟢
 
@@ -1101,7 +1116,9 @@ Schema](https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0250-rich
 include semantic information as well, which allows Verifiable Presentations
 derived from conformant VCs to create LD framing in the presentation process.
 For tutorials, examples, and up-to-date discussion about protocol upgrades, see
-the Aries RFC linked above.
+the Aries
+[RFC0250](https://github.com/hyperledger/aries-rfcs/blob/master/concepts/0250-rich-schemas/README.md)
+.
 
 ##### How are Credential Definitions compatible with JSON Schema and JSON-LD? 🟢️❓️ 
 
@@ -1182,8 +1199,8 @@ cross-community concensus ever arose!
 
 ##### What is the future of wallets? 🟡️🔥🔥
 
-> How many wallet should there be in the future? How many will there be in, say,
-> 2 or 10 or 20 years?**
+> How many wallets should there be in the future? How many will there be in,
+> say, 2 or 10 or 20 years?**
 
 I marked this question with two chilis because "browsers" were the battleground
 of Web 1.0 and "apps" were the battleground of Web 2.0, leaving many to
@@ -1226,7 +1243,14 @@ agency of the "user" in software thinking), to give just one example, and the
 use of biometrics or mnemonics to prove, maintain, and exert control over a DID
 will likely need to be advanced and standardized before decentralized identity
 architectures can be brought to the huge fraction of the world's population with
-low chances of owning a cryptographically enabled personal phone or computer.  
+low chances of owning a cryptographically enabled personal phone or computer.
+
+The most accurate answer, however, is that there is no singular "SSI" use case
+and thus no single set of requirements. Each use case has its own requirements,
+and each jurisdiction has its own definition of a "trustworthy" digital
+transaction (such as "levels of assurance" specifications), which determine the
+hardware requirements for different degrees of identity binding,
+non-repudiation, etc.
 
 ##### What about no- and low-connectivity environments? 🟢
 
@@ -1275,9 +1299,9 @@ racket, and our [Finance and Banking Special Interest
 Group](https://www.notion.so/Banking-and-Finance-SIG-b2d528af578d44699aeb742ed47b81d2)
 has had a number of speakers and discussions about the emerging field of
 SSI-powered "Know Your Customer"/compliance products for privacy-preserving
-financial transparency.
-
-
+financial transparency and due diligence on identity binding. Being able to
+document your identity in a digital-first way is coming, but it's anyone guess
+how or how soon!
 
 ## Trust Frameworks and Ecosystems ("**Layer 5**")
 
@@ -1296,7 +1320,7 @@ as well as standardizations, longitudinal assesments, academic studies, impact
 reports, that kind of thing.  Even after all that is squared away and packaged
 up to adequately prepare regulators to do their work, they in turn take their
 own time to harmonize many different specialists and stakeholders, before they
-can present somethign to politicians, who have their own games to play and
+can present something to politicians, who have their own games to play and
 interests to align.  All the market forces in the world, perfectly aligned, can
 only speed these processes up so much.
 
