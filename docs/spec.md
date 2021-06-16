@@ -105,7 +105,7 @@ Src: [Hakan Yildiz, Technische Universität Berlin](https://github.com/decentral
 
 ##### What is a DID? 🟢
 
-> In short, it's an address on the internet that someone called a **subject** (you, a company, a device) can "own" and control directly, like a username but randomly generated. It can be used to find a connected "DID document" which is like a business card, providing extra information for finding or contacting or checking the signatures of that subject; that subject can update or remove that "listing" over time, directly.
+> In short, it's an address on the internet that someone called a **subject** (you, a company, a device) can "own" and control directly, like a username but randomly generated. It can be used to find a connected "DID document" which is like a business card, providing extra information for finding or checking the signatures of this subject. A subject can update or remove that "listing" over time, directly.
 
 These  identifiers are called "decentralized" because each is registered and
 resolved on autonomous "namespaces" (see below), which are often closely coupled
@@ -116,9 +116,8 @@ because these do not necessarily have to take the form of blockchains, clouds,
 networks, or anything else-- a VDR could be paper-based and still decentralized!
 (We would have to name it after Jorge Luis Borges if we made such a registry.)
 
-> Strictly speaking, a DID is a string that functions as an address, but sometimes
-people might use the term to refer both to the DID and the DID Document that you
-get when you use a "DID Method" to resolve it.  A DID without a DID Document is
+> Strictly speaking, a DID is a string that functions as an address. Sometimes
+people might use the term to refer _both_ to the DID _and_ the DID **Document**, When you use a "DID _Method_" to resolve the DID you get the associated DID Document.  A DID without a DID Document is
 like a dead end!
 
 ##### What is a DID "prefix"? 🟢
