@@ -6,7 +6,7 @@
         "spec_directory": "./docs",
         "output_path": "./",
         "logo": "logo.svg",
-        "logo_link": "https://github.com/csuwildcat/spec-up",
+        "logo_link": "https://github.com/decentralized-identity/faq",
         "source": {
           "host": "github",
           "account": "decentralized-identity",
