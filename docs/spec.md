@@ -7,6 +7,10 @@ DIF FAQ
 Editors:
 ~ [Juan Caballero](https://www.linkedin.com/in/juan-caballero)
 
+MVP Contributors (pre-v1):
+~ [Henk van Cann](https://github.com/henkvancann)
+~ [Snorre Lothar von Gohren Edwin](https://github.com/vongohren)
+
 Participate:
 ~ [GitHub repo](https://github.com/decentralized-identity/faq)
 ~ [Contribute by opening a PR here](https://github.com/decentralized-identity/faq/blob/main/docs/spec.md)

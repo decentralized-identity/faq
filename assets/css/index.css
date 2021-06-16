@@ -788,6 +788,10 @@ pre[class*="language-"] {
 .toc, .toc ul {
   margin: 0;
   list-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 .toc ul {
