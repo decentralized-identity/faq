@@ -354,7 +354,7 @@ standardization done to date centered on the core W3C specifications for
 
 ##### Is *decentralized* identity different from *self-sovereign* identity? 🟡🔥
 
-In short, Yes they are diffent. You can have a decentralized identifier system that is not self sovereign, 
+In short, Yes they are different. You can have a decentralized identifier system that is not self sovereign, 
 but you can't have a self sovereign identifier system that is (not de-) centralized.
 
 The two building blocks of [[ref:DIDs]] and VCs, which decentralize
