@@ -148,16 +148,16 @@ heirarchical systems like the KMS heirarchies of, say, [[ref:X.509]] systems.
 
 ##### What is a Verifiable Data Registry?
 
-A VDR is a general term for ways data can be verifiably registered. VDRs can be
+A Verifiable Data Registry (VDR) is a general term for ways data can be verifiably registered. VDRs can be
 thought of as abstractions of the publishing functions of some kind of
-decentralized registry: the entire readable/referenceable corpus of things
-published by, say, a blockchain is a VDR "on" that blockchain. The most common
+decentralized registry: the entire readable/referenceable corpus of things,
+published by for example a blockchain, is a VDR "on" that blockchain. The most common
 and commonly-discussed VDRs are in fact by-products (or products) of
 public-readable [[ref:DLTs]] like blockchains or [[ref:DAGs]] that, by publishing addressing
 records immutably, function as "verifiable data registries" for a specific kind
 of identifiers. In principle, however, the umbrella category of "VDRs" does not
 necessarily have to take the form of blockchains, clouds, networks, or anything
-else-- a VDR could be paper-based and still decentralized! (We would have to
+else-- a VDR could be paper based and still decentralized! (We would have to
 name it after Jorge Luis Borges if we made such a registry.)
 
 ##### What is a DID "prefix"? 🟢
@@ -165,7 +165,7 @@ name it after Jorge Luis Borges if we made such a registry.)
 Each [[ref:DID]] is prefixed with a reference to, and only guaranteed to be
 useful, meaningful, and reliable within, one DID namespace. If you come across a
 DID in the wild, this prefix makes it easy to identify its origin and where to
-go to "use" it for fetching a DID Document.  A DID from the Sovrin network, for
+go to "use" it for fetching a DID Document.  A DID from the _Sovrin_ network, for
 example, begins with "did:sov:...", and one from the Veres One network begins
 with "did:v1:..." Each "namespace" (addressing system) is navigated with and
 governed by a "DID Method." Some methods have multiple networks/namespaces, but
@@ -186,13 +186,17 @@ algorithms specific to one set of infrastructure such as a blockchain protocol
 governed elsewhere. Each "DID method" has unique characteristics and
 infrastructures, with particular strengths and weaknesses; even their security
 guarantees and privacy engineering vary widely, so it can be dangerous to assume
-they are all equal and interchangeable. Each is like a little internet unto
+they are all equal and interchangeable. Each is like a little internet onto
 itself!
 
 > Each "DID method" encodes and specifies a set of interdependent governance,
 > publication, and discovery mechanisms for DIDs in a given DID namespace.
 
 ##### What exactly is a "Namespace", in simple terms? 🟢
+
+> An example namespace is the 2-position country code, an instance could be US, UK, NL, ..
+> In an identity system, an identifier can be generalized to a namespace to provide
+> a systematic way of organizing identifiers for related resources and their attributes.
 
 **Namespace** here means a universe of possible names, each of which is unique
 and ideally as collision-free as possible, and in most cases completely opaque
