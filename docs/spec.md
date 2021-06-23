@@ -219,7 +219,7 @@ and Extract, Transform + Load (ETL) systems, to name a few. The [data model
 specification](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries)
 for VCs is governed in the [W3C](https://w3.org). They are like portable,
 free-floating data points, which are not exactly documents or files or "records"
-in the usual sense. They are signed and thus tamper-evident, and thus share much
+in the usual sense. They are signed and thus tamper evident, and thus share much
 of the verifiability of blockchain data or signed PDFs insofar as the signatures
 they contain can be properly verified by reference to the identities included
 inside the document. 
@@ -242,19 +242,25 @@ cryptocurrency address, an NFT, or many other kinds of digital assets) requires
 a private key, which isn't very secure or useful if copies of it are drifting
 around the open web like flotsam. For this reason, private keys are managed by
 specialized software generally called a "wallet" or an "authenticator", since
-they have to do complex, high-security operations to avoid leaking private keys
-while still producing unique signatures with those private keys every time proof
+they have to do complex, high-security operations to avoid leaking private keys.
+At the same time wallets are still able to produce unique signatures with those private keys every time proof
 is needed that they possess them (in different context, these private-key
 operations can be called "signing", "authentication", "interactive proof", etc).
 
 ![wallet ux meme](https://pbs.twimg.com/media/E1hhKZTWYAA2Eu_?format=jpg&name=small)
 
-In the identity context, however, a wallet can also store and present VCs, which
+**In the identity context** a wallet can also store and present VCs. VCs
 require proof of control of a private key to be considered verifiable at a given
 point in time. For this reason, cryptocurrency wallets (that only manage control
 keys for cryptocurrency accounts) are usually distinguished from identity
-wallets (that control keys for receiving and verifiably presenting verifiable
-credentials).  That said, there is no good reason one wallet couldn't do both,
+wallets. Identity wallets perform a wider range of tasks:
+- control keys for incepting identifiers,
+- rotates authoritative keys controlling identifiers, 
+- delegate control over identifiers, 
+- revoke identifiers 
+- receiving and verifiably presenting verifiable
+credentials).  
+That said, there is no good reason one wallet couldn't offer both sets of features,
 and some day soon they probably will! See the Layer 4 section for more detail on
 wallets in general and the Universal Wallet in particular, and Layer 5 for
 architectural questions. Heck, just CTRL-F and search for "wallet"!
