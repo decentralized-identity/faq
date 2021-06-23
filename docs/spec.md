@@ -293,7 +293,7 @@ tools needed. Truly decentralized communications can take off once these tools g
 
 ##### What is so *decentralized* about a VC? 🟢
 
-In short, Verifiable Credentials (VCs) are ideally verifiable and portable by anyone, anytime and anywhere. This makes VCs _decentralized_.
+In short, Verifiable Credentials (VCs) are ideally verifiable and portable by anyone, anytime and anywhere. The finetuning of rights is done by controllers of the VCs, who get to decide who sees what. This makes VCs _decentralized_.
 
 Let's zoom in on these two superpowers that VCs have:
 -  **verifiability**; which means they are
@@ -327,7 +327,7 @@ stakeholders or topologies represented, but this threesome is the core of the
 drama.
 
 > Importantly, *Issuers and Verifiers are variously firewalled* from one another
-in SSI thinking. If a verifier know too much about the issuer, or the issuer
+in SSI thinking. If a verifier knows too much about the issuer, or the issuer
 knew too much about which verifiers are seeing their credentials, all of this
 work and complexity would be hard to justify! That firewall is essential to the
 empowerment of the holder and/or subject.
