@@ -281,29 +281,32 @@ form of addressing system or namespace. How decentralized it is depends on the
 specific system, as they are all designed to make specific compromises and
 design choices.
 
-In the most decentralized of these, addresses can be
+In the most decentralized types of DID, addresses can be
 generated and/or registered confidentially by any party, as on public
-blockchains; in all, some amount of independence, confidentiality, and privacy
+blockchains. In all of these more decentralized types, some amount of independence, confidentiality, and privacy
 is guaranteed in the registration process. Regardless of how access to
 registration of them is gated, DIDs are like email addresses or URLs, except
 they return key material for encrypted communications and data operations. Thus,
 they enable decentralized communications and identity operations that might
-otherwise be hard to build from the ground up. At least, they will, once the
-tools DIF is fostering and promoting go mainstream and enable anyone with a DID
-to start using it in powerful ways.
+otherwise be hard to build from the ground up. It's work in progress. DIF is fostering and promoting the
+tools needed. Truly decentralized communications can take off once these tools go mainstream and enable anyone with a DID.
 
 ##### What is so *decentralized* about a VC? 🟢
 
-Verifiable Credentials have two superpowers-- **verifiability** (they are
+In short, Verifiable Credentials (VCs) are ideally verifiable and portable by anyone, anytime and anywhere. This makes VCs _decentralized_.
+
+Let's zoom in on these two superpowers that VCs have:
+-  **verifiability**; which means they are
 digitally signed in a tamperproof way, like a signed PDF, which can be verified
-independently of and privately from the signer) and **portability** (they are
+independently of and privately from the signer)
+- **portability**; they are
 designed to be interpretable outside of their original context, and contain
 mechanisms for reconstructing and interpreting that context independently as
 well).
 
 Think of VCs as decentralized data, or if you are coming from the blockchain
 world, as *off-chain* data. You might need to reference one or more verifiable
-data registries to fully verify, parse, and consume it, but in and of itself
+data registries to fully verify, parse, and consume it, but in - and of itself
 it's an atomic little unit of free-floating verifiable data, with long-lasting
 and autonomous meaning and value in it. Parsing it with reference to an
 immutable or public data source is not the same as needing to confirm its
