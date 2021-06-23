@@ -334,6 +334,8 @@ empowerment of the holder and/or subject.
 
 ##### Is *decentralized identity* a philosophy or a technology? 🟡🔥
 
+In short: both.
+
 Decentralization (or, in its more emphatic and radical form,
 re-decentralization) is a broad philosophy that sees distributing power and data
 more horizontally as a societal goal, an economic goal, and/or a technological
@@ -351,6 +353,9 @@ standardization done to date centered on the core W3C specifications for
 [[ref:DIDs]] and [[ref:VCs]], not by ideological definitions.
 
 ##### Is *decentralized* identity different from *self-sovereign* identity? 🟡🔥
+
+In short, Yes they are diffent. You can have a decentralized identifier system that is not self sovereign, 
+but you can't have a self sovereign identifier system that is (not de-) centralized.
 
 The two building blocks of [[ref:DIDs]] and VCs, which decentralize
 addressing/identifier systems and make data portable and verifiable, enable new,
