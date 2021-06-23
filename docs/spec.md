@@ -215,7 +215,7 @@ Thailand, etc etc.
 
 Verifiable Credentials combine properties and superpowers from many different
 mental models and forms of prior art: Linked Data, JSON Web Tokens, Ontologies,
-and ETL systems, to name a few. The [data model
+and Extract, Transform + Load (ETL) systems, to name a few. The [data model
 specification](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries)
 for VCs is governed in the [W3C](https://w3.org). They are like portable,
 free-floating data points, which are not exactly documents or files or "records"
