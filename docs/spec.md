@@ -1,4 +1,4 @@
-DIF FAQ
+DIF's Frequently Asked Questions about Decentralized Identity
 ==================
 
 **You Are Here (or should be):**
