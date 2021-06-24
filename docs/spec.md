@@ -148,17 +148,19 @@ heirarchical systems like the KMS heirarchies of, say, [[ref:X.509]] systems.
 
 ##### What is a Verifiable Data Registry?
 
-A Verifiable Data Registry (VDR) is a general term for ways data can be verifiably registered. VDRs can be
-thought of as abstractions of the publishing functions of some kind of
-decentralized registry: the entire readable/referenceable corpus of things,
-published by for example a blockchain, is a VDR "on" that blockchain. The most common
-and commonly-discussed VDRs are in fact by-products (or products) of
-public-readable [[ref:DLTs]] like blockchains or [[ref:DAGs]] that, by publishing addressing
-records immutably, function as "verifiable data registries" for a specific kind
-of identifiers. In principle, however, the umbrella category of "VDRs" does not
-necessarily have to take the form of blockchains, clouds, networks, or anything
-else-- a VDR could be paper based and still decentralized! (We would have to
-name it after Jorge Luis Borges if we made such a registry.)
+A Verifiable Data Registry (VDR) is a general term for ways data can be
+verifiably registered. VDRs can be thought of as abstractions of the publishing
+functions of some kind of decentralized registry: the entire
+readable/referenceable corpus of things, published by for example a blockchain,
+is a VDR "on" that blockchain. The most common and commonly-discussed VDRs are
+in fact by-products (or products) of public-readable [[ref:DLTs]] like
+blockchains or [[ref:DAGs]] that, by publishing addressing records immutably,
+function as "verifiable data registries" for a specific kind of identifiers. In
+principle, however, the umbrella category of "VDRs" does not necessarily have to
+take the form of blockchains, clouds, networks, or anything else-- a VDR could
+be paper-based and still be decentralized! (**We would have to name it after
+[Jorge Luis Borges](https://kwarc.info/teaching/TDM/Borges.pdf) if we made such
+a registry. __JC**)
 
 ##### What is a DID "prefix"? 🟢
 
