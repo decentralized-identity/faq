@@ -313,7 +313,7 @@ Let's zoom in on these two superpowers that VCs have:
 
 Think of VCs as decentralized data, or if you are coming from the blockchain
 world, as *off-chain* data. You might need to reference one or more verifiable
-data registries to fully verify, parse, and consume it, but in - and of itself
+data registries to fully verify, parse, and consume it, but in and of itself
 it's an atomic little unit of free-floating verifiable data, with long-lasting
 and autonomous meaning and value in it. Parsing it with reference to an
 immutable or public data source is not the same as needing to confirm its
