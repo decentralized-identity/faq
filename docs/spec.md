@@ -304,13 +304,12 @@ tools needed. Truly decentralized communications can take off once these tools g
 In short, Verifiable Credentials (VCs) are ideally verifiable and portable by anyone, anytime and anywhere. The finetuning of rights is done by controllers of the VCs, who get to decide who sees what. This makes VCs _decentralized_.
 
 Let's zoom in on these two superpowers that VCs have:
--  **verifiability**; which means they are
-digitally signed in a tamperproof way, like a signed PDF, which can be verified
-independently of and privately from the signer)
-- **portability**; they are
-designed to be interpretable outside of their original context, and contain
-mechanisms for reconstructing and interpreting that context independently as
-well).
+-  **verifiability**: which means they are digitally signed in a tamperproof
+   way, like a signed PDF, which can be verified independently of and privately
+   from the signer)
+- **portability**: they are designed to be interpretable outside of their
+  original context, and contain mechanisms for reconstructing and interpreting
+  that context independently as well).
 
 Think of VCs as decentralized data, or if you are coming from the blockchain
 world, as *off-chain* data. You might need to reference one or more verifiable
