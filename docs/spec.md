@@ -341,7 +341,7 @@ empowerment of the holder and/or subject.
 
 ##### Is *decentralized identity* a philosophy or a technology? 🟡🔥
 
-In short: both.
+In short: [both](https://youtu.be/DaM0UtQTLCs?t=116).
 
 Decentralization (or, in its more emphatic and radical form,
 re-decentralization) is a broad philosophy that sees distributing power and data
