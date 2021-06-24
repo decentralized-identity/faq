@@ -221,7 +221,7 @@ and Extract, Transform + Load (ETL) systems, to name a few. The [data model
 specification](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries)
 for VCs is governed in the [W3C](https://w3.org). They are like portable,
 free-floating data points, which are not exactly documents or files or "records"
-in the usual sense. They are signed and thus tamper evident, and thus share much
+in the usual sense. They are signed and thus tamper-evident, and thus share much
 of the verifiability of blockchain data or signed PDFs insofar as the signatures
 they contain can be properly verified by reference to the identities included
 inside the document. 
