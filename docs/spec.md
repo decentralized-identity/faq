@@ -255,17 +255,23 @@ operations can be called "signing", "authentication", "interactive proof", etc).
 require proof of control of a private key to be considered verifiable at a given
 point in time. For this reason, cryptocurrency wallets (that only manage control
 keys for cryptocurrency accounts) are usually distinguished from identity
-wallets. Identity wallets perform a wider range of tasks:
-- control keys for incepting identifiers,
-- rotates authoritative keys controlling identifiers, 
-- delegate control over identifiers, 
-- revoke identifiers 
-- receiving and verifiably presenting verifiable
-credentials).  
-That said, there is no good reason one wallet couldn't offer both sets of features,
-and some day soon they probably will! See the Layer 4 section for more detail on
-wallets in general and the Universal Wallet in particular, and Layer 5 for
-architectural questions. Heck, just CTRL-F and search for "wallet"!
+wallets. 
+
+Identity wallets perform a wider range of tasks. The most common of these are:
+- controlling keys for "incepting" (registering new) identifiers,
+- rotating "authoritative" keys that control long-lived identifiers, 
+- receiving and verifiably presenting verifiable credentials
+
+Less common features include":
+- delegating control over an identifier to another wallet or party, 
+- revoking or "canceling"/de-registering identifiers,
+- holding, presenting, delegating, and attenuating authorization tokens such as [ZCaps](https://w3c-ccg.github.io/zcap-ld/) or [UCans](https://blog.fission.codes/auth-without-backend/)
+
+
+All that said, there is no good reason one wallet couldn't offer both sets of
+features, and some day soon they probably will! See the Layer 4 section for more
+detail on wallets in general and the Universal Wallet in particular, and Layer 5
+for architectural questions. Heck, just CTRL-F and search for "wallet"!
 
 ### Core Concepts
 
