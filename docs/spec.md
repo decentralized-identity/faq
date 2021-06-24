@@ -1,4 +1,4 @@
-Frequently Asked Questions about Decentralized Identity
+Decentralized Identity FAQ
 ==================
 
 **You Are Here (or should be):**
@@ -21,8 +21,9 @@ Participate:
 
 This is the Decentralized Identity Foundation's general-purpose knowledgebase,
 which aims to help people at all levels of familiarity with our problem space
-quickly level-set and find the most useful links. Feel free to share links and
-"anchor links" to specific questions using the § symbol next to headings.
+quickly level-set and find the most useful links and ideas as they explore the
+space. Feel free to share links and "anchor links" to specific questions using
+the § symbol next to headings.
 
 Contents at a glance:
 
@@ -768,6 +769,17 @@ is being made-- DIF is optimistic that this answer will have to be completely
 rewritten by 2022. DIF member Animo Solutions has built support for JSON-LD VCs
 into Aries Cloud Agent Python ([video tour here](https://youtu.be/LC0OXAir3Qw)),
 and hopefully the other Aries agents will soon follow suit. 
+
+Another cross-framework breakthrough was the Aries community's participation in
+the Presentation Exchange specification, and the alignment of the relevant Aries
+RFCs to allow VC exchange between Aries systems and PresEx-based systems.  See
+[this blog
+post](https://medium.com/decentralized-identity/presentation-exchange-a-leap-toward-interoperability-for-the-decentralized-identity-ecosystem-3cca03ef53c5)
+on the PresEx editorial collaboration, and [this video
+walkthrough](https://youtu.be/uGmn0-xmMOw) of how you can implement PresEx using
+the newly-adopted RFCs in the AcaPy Aries framework (text documentation of the
+video's contents can be found
+[here](https://hackmd.io/xyqCzC50TEin1bxrnOihKg?view)).
 
 DIF member [Bloom](https://bloom.co/) has been driving much of the [WACI
 work](https://github.com/hellobloom/waci-demo) extending the Presentation
