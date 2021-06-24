@@ -188,7 +188,7 @@ algorithms specific to one set of infrastructure such as a blockchain protocol
 governed elsewhere. Each "DID method" has unique characteristics and
 infrastructures, with particular strengths and weaknesses; even their security
 guarantees and privacy engineering vary widely, so it can be dangerous to assume
-they are all equal and interchangeable. Each is like a little internet onto
+they are all equal and interchangeable. Each is like a little internet unto
 itself!
 
 > Each "DID method" encodes and specifies a set of interdependent governance,
