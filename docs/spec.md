@@ -149,24 +149,26 @@ heirarchical systems like the KMS heirarchies of, say, [[ref:X.509]] systems.
 
 ##### What is a Verifiable Data Registry?
 
-A VDR is a general term for ways data can be verifiably registered. VDRs can be
-thought of as abstractions of the publishing functions of some kind of
-decentralized registry: the entire readable/referenceable corpus of things
-published by, say, a blockchain is a VDR "on" that blockchain. The most common
-and commonly-discussed VDRs are in fact by-products (or products) of
-public-readable [[ref:DLTs]] like blockchains or [[ref:DAGs]] that, by publishing addressing
-records immutably, function as "verifiable data registries" for a specific kind
-of identifiers. In principle, however, the umbrella category of "VDRs" does not
-necessarily have to take the form of blockchains, clouds, networks, or anything
-else-- a VDR could be paper-based and still decentralized! (We would have to
-name it after Jorge Luis Borges if we made such a registry.)
+A Verifiable Data Registry (VDR) is a general term for ways data can be
+verifiably registered. VDRs can be thought of as abstractions of the publishing
+functions of some kind of decentralized registry: the entire
+readable/referenceable corpus of things, published by for example a blockchain,
+is a VDR "on" that blockchain. The most common and commonly-discussed VDRs are
+in fact by-products (or products) of public-readable [[ref:DLTs]] like
+blockchains or [[ref:DAGs]] that, by publishing addressing records immutably,
+function as "verifiable data registries" for a specific kind of identifiers. In
+principle, however, the umbrella category of "VDRs" does not necessarily have to
+take the form of blockchains, clouds, networks, or anything else-- a VDR could
+be paper-based and still be decentralized! (**We would have to name it after
+[Jorge Luis Borges](https://kwarc.info/teaching/TDM/Borges.pdf) if we made such
+a registry. __JC**)
 
 ##### What is a DID "prefix"? 🟢
 
 Each [[ref:DID]] is prefixed with a reference to, and only guaranteed to be
 useful, meaningful, and reliable within, one DID namespace. If you come across a
 DID in the wild, this prefix makes it easy to identify its origin and where to
-go to "use" it for fetching a DID Document.  A DID from the Sovrin network, for
+go to "use" it for fetching a DID Document.  A DID from the _Sovrin_ network, for
 example, begins with "did:sov:...", and one from the Veres One network begins
 with "did:v1:..." Each "namespace" (addressing system) is navigated with and
 governed by a "DID Method." Some methods have multiple networks/namespaces, but
@@ -195,6 +197,10 @@ itself!
 
 ##### What exactly is a "Namespace", in simple terms? 🟢
 
+> An example namespace is the 2-position country code, an instance could be US, UK, NL, ..
+> In an identity system, an identifier can be generalized to a namespace to provide
+> a systematic way of organizing identifiers for related resources and their attributes.
+
 **Namespace** here means a universe of possible names, each of which is unique
 and ideally as collision-free as possible, and in most cases completely opaque
 and/or non-human-readable. Namespaces can be private or public or have complex
@@ -212,7 +218,7 @@ Thailand, etc etc.
 
 Verifiable Credentials combine properties and superpowers from many different
 mental models and forms of prior art: Linked Data, JSON Web Tokens, Ontologies,
-and ETL systems, to name a few. The [data model
+and Extract, Transform + Load (ETL) systems, to name a few. The [data model
 specification](https://www.w3.org/TR/vc-data-model/#dfn-verifiable-data-registries)
 for VCs is governed in the [W3C](https://w3.org). They are like portable,
 free-floating data points, which are not exactly documents or files or "records"
@@ -239,22 +245,34 @@ cryptocurrency address, an NFT, or many other kinds of digital assets) requires
 a private key, which isn't very secure or useful if copies of it are drifting
 around the open web like flotsam. For this reason, private keys are managed by
 specialized software generally called a "wallet" or an "authenticator", since
-they have to do complex, high-security operations to avoid leaking private keys
-while still producing unique signatures with those private keys every time proof
+they have to do complex, high-security operations to avoid leaking private keys.
+At the same time wallets are still able to produce unique signatures with those private keys every time proof
 is needed that they possess them (in different context, these private-key
 operations can be called "signing", "authentication", "interactive proof", etc).
 
 ![wallet ux meme](https://pbs.twimg.com/media/E1hhKZTWYAA2Eu_?format=jpg&name=small)
 
-In the identity context, however, a wallet can also store and present VCs, which
+**In the identity context** a wallet can also store and present VCs. VCs
 require proof of control of a private key to be considered verifiable at a given
 point in time. For this reason, cryptocurrency wallets (that only manage control
 keys for cryptocurrency accounts) are usually distinguished from identity
-wallets (that control keys for receiving and verifiably presenting verifiable
-credentials).  That said, there is no good reason one wallet couldn't do both,
-and some day soon they probably will! See the Layer 4 section for more detail on
-wallets in general and the Universal Wallet in particular, and Layer 5 for
-architectural questions. Heck, just CTRL-F and search for "wallet"!
+wallets. 
+
+Identity wallets perform a wider range of tasks. The most common of these are:
+- controlling keys for "incepting" (registering new) identifiers,
+- rotating "authoritative" keys that control long-lived identifiers, 
+- receiving and verifiably presenting verifiable credentials
+
+Less common features include":
+- delegating control over an identifier to another wallet or party, 
+- revoking or "canceling"/de-registering identifiers,
+- holding, presenting, delegating, and attenuating authorization tokens such as [ZCaps](https://w3c-ccg.github.io/zcap-ld/) or [UCans](https://blog.fission.codes/auth-without-backend/)
+
+
+All that said, there is no good reason one wallet couldn't offer both sets of
+features, and some day soon they probably will! See the Layer 4 section for more
+detail on wallets in general and the Universal Wallet in particular, and Layer 5
+for architectural questions. Heck, just CTRL-F and search for "wallet"!
 
 ### Core Concepts
 
@@ -272,25 +290,27 @@ form of addressing system or namespace. How decentralized it is depends on the
 specific system, as they are all designed to make specific compromises and
 design choices.
 
-In the most decentralized of these, addresses can be
+In the most decentralized types of DID, addresses can be
 generated and/or registered confidentially by any party, as on public
-blockchains; in all, some amount of independence, confidentiality, and privacy
+blockchains. In all of these more decentralized types, some amount of independence, confidentiality, and privacy
 is guaranteed in the registration process. Regardless of how access to
 registration of them is gated, DIDs are like email addresses or URLs, except
 they return key material for encrypted communications and data operations. Thus,
 they enable decentralized communications and identity operations that might
-otherwise be hard to build from the ground up. At least, they will, once the
-tools DIF is fostering and promoting go mainstream and enable anyone with a DID
-to start using it in powerful ways.
+otherwise be hard to build from the ground up. It's work in progress. DIF is fostering and promoting the
+tools needed. Truly decentralized communications can take off once these tools go mainstream and enable anyone with a DID.
 
 ##### What is so *decentralized* about a VC? 🟢
 
-Verifiable Credentials have two superpowers-- **verifiability** (they are
-digitally signed in a tamperproof way, like a signed PDF, which can be verified
-independently of and privately from the signer) and **portability** (they are
-designed to be interpretable outside of their original context, and contain
-mechanisms for reconstructing and interpreting that context independently as
-well).
+In short, Verifiable Credentials (VCs) are ideally verifiable and portable by anyone, anytime and anywhere. The finetuning of rights is done by controllers of the VCs, who get to decide who sees what. This makes VCs _decentralized_.
+
+Let's zoom in on these two superpowers that VCs have:
+-  **verifiability**: which means they are digitally signed in a tamperproof
+   way, like a signed PDF, which can be verified independently of and privately
+   from the signer)
+- **portability**: they are designed to be interpretable outside of their
+  original context, and contain mechanisms for reconstructing and interpreting
+  that context independently as well).
 
 Think of VCs as decentralized data, or if you are coming from the blockchain
 world, as *off-chain* data. You might need to reference one or more verifiable
@@ -315,12 +335,14 @@ stakeholders or topologies represented, but this threesome is the core of the
 drama.
 
 > Importantly, *Issuers and Verifiers are variously firewalled* from one another
-in SSI thinking. If a verifier know too much about the issuer, or the issuer
+in SSI thinking. If a verifier knows too much about the issuer, or the issuer
 knew too much about which verifiers are seeing their credentials, all of this
 work and complexity would be hard to justify! That firewall is essential to the
 empowerment of the holder and/or subject.
 
 ##### Is *decentralized identity* a philosophy or a technology? 🟡🔥
+
+In short: [both](https://youtu.be/DaM0UtQTLCs?t=116).
 
 Decentralization (or, in its more emphatic and radical form,
 re-decentralization) is a broad philosophy that sees distributing power and data
@@ -339,6 +361,9 @@ standardization done to date centered on the core W3C specifications for
 [[ref:DIDs]] and [[ref:VCs]], not by ideological definitions.
 
 ##### Is *decentralized* identity different from *self-sovereign* identity? 🟡🔥
+
+In short, Yes they are different. You can have a decentralized identifier system that is not self sovereign, 
+but you can't have a self sovereign identifier system that is (not de-) centralized.
 
 The two building blocks of [[ref:DIDs]] and VCs, which decentralize
 addressing/identifier systems and make data portable and verifiable, enable new,
