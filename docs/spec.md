@@ -22,8 +22,9 @@ Participate:
 This is the Decentralized Identity Foundation's general-purpose knowledgebase,
 which aims to help people at all levels of familiarity with our problem space
 quickly level-set and find the most useful links and ideas as they explore the
-space. Feel free to share links and "anchor links" to specific questions using
-the § symbol next to headings.
+space. It is structures as a (very exhaustive) list of questions and answers.
+Feel free to share "anchor links" to specific questions using the § symbol next
+to individual questions or section/sub-section headings.
 
 Contents at a glance:
 
@@ -801,7 +802,7 @@ RFCs to allow VC exchange between Aries systems and PresEx-based systems.  See
 [this blog
 post](https://medium.com/decentralized-identity/presentation-exchange-a-leap-toward-interoperability-for-the-decentralized-identity-ecosystem-3cca03ef53c5)
 on the PresEx editorial collaboration, and [this video
-walkthrough](https://youtu.be/uGmn0-xmMOw) of how you can implement PresEx using
+walkthrough](https://youtu.be/UF-vmPpxDe0) of how you can implement PresEx using
 the newly-adopted RFCs in the AcaPy Aries framework (text documentation of the
 video's contents can be found
 [here](https://hackmd.io/xyqCzC50TEin1bxrnOihKg?view)).
