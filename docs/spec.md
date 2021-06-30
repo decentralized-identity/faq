@@ -90,7 +90,7 @@ The high-level categories on the sidebar refer to a "layer cake" mental model
 which organizes the space of decentralized identity into interlocking and
 interdependent subsystems. This can be a little "inside baseball" at first, but
 with time, the utility and consequence of this layering should grow more
-intuitive and less arbitrary. Inspired by the classic [OSI layer
+intuitive and less arbitrary. Inspired by the classic [OSI layer 
 model](https://en.wikipedia.org/wiki/OSI_model), it originated in the DIF
 Interoperability WG's months-long iterative discussion on interoperability and
 integration with centralized/industry-strandard prior art, which in turn built
