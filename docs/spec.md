@@ -184,7 +184,7 @@ be found [here](https://www.w3.org/TR/did-spec-registries/#did-methods).
 > it's not a very useful DID Method!
 
 Each DID is a publically-specified micro-protocol containing namespace rules,
-CRUD and resolution mechanics, references to all dependencies such as
+[[ref:CRUD]] and resolution mechanics, references to all dependencies such as
 standardized cryptographic signatures schemes, and sometimes even models and
 algorithms specific to one set of infrastructure such as a blockchain protocol
 governed elsewhere. Each "DID method" has unique characteristics and
@@ -407,7 +407,7 @@ identities and/or verifiable credentials at enterprise scale. If those
 identities and credentials are portable and interoperable, that’s decentralized
 enough for this decentralized identity foundation! But for many use-cases or
 ideologies, any "go-between" or mediation is too much, particularly when it
-comes to censorship-resistance or anonymity. 
+comes to censorship-resistance or anonymity.
 
 > IAM can be more or less decentralized, and decentralized tools can be used to
 > centralized ends. Technological decentralization doesn't guarantee
@@ -433,10 +433,10 @@ for verifiable credentials.
 
 ##### What’s the difference between a DOI or other “persistent identifier” and a DID? 🟡️
 
-> DOIs are static and centrally managed/overseen; DIDs are self-managed and
+> Digital Object Identifiers (DOIs) are static and centrally managed/overseen; DIDs are self-managed and
 > self-updateable.
 
-Digital Object Identifiers ([DOIs](https://www.doi.org/)) are the most famous
+[DOIs](https://www.doi.org/) are the most famous
 form of persistent identifier, and differ in two main aspects from decentralized
 identifiers: on the one hand, they are very centralized, in that one global
 registry of all DOIs is maintained and governed by a non-profit called the
@@ -445,9 +445,9 @@ International DOI Foundation or
 static in both senses of the word: they are neither updatable/reusable nor
 interactive, which are the two main superpowers of [[ref:DIDs]].
 
-There are, however, many more persistent identifiers, some of them less
+There are, however, many more persistent identifiers (also "PIDs"), some of them less
 centralized and some of them more interactive or dynamic. Indeed, a whole
-community working with such “PIDs” exist, primarily in the fields of library
+community working with such PIDs exist, primarily in the fields of library
 science, academic publishing, and other fields where unique identifiers and
 namespaces for opaque identifiers are of paramount importance. For more
 information about that other world, see Markus Sabadello’s article on our blog,
@@ -457,11 +457,11 @@ information about that other world, see Markus Sabadello’s article on our blog
 
 ##### Who governs each DID Method? 🟢
 
-Whoever creates a method and documents it is expected to register it if they
-want anyone to use it and consider it a method for broad use. There is no
+Whoever creates a method and documents, it is expected to register the method if they
+want anyone to use it and consider broad use. There is no
 central committee deciding what DID methods are legitimate or not-- each Method
 is responsible for its own specification, governance, and maintenance/evolution;
-registration is not evaluative, merely an aid to discovery and interoperability.
+[registration](https://w3c.github.io/did-spec-registries/) is not evaluative, merely an aid to discovery and interoperability.
 To get evaluative feedback or peer review before publishing a method, open
 standards venues like ours here at the DIF are the best place to compare notes
 and align on concepts. (Our [Identifiers and Discovery
@@ -480,8 +480,10 @@ maintained and documented over time by the maintainers of the systems and
 infrastructure that are built on top of them, whether commercial, non-profit, or
 radically decentralized. These rules and algorithms are spelled out by a
 published, registered, and ideally well-maintained **specification**. This
-specification explains how to validate a [[ref:DID]] (namespace rules), where to
-query and what to expect back when resolving a DID, etc. The
+specification explains 
+1. how to validate a [[ref:DID]] (namespace rules), 
+2. where to query and 
+3. what to expect back when resolving a DID, etc. The
 [registry](https://w3c.github.io/did-spec-registries/#the-registration-process)
 of compliant specifications for DID Methods is maintained by a dedicated W3C
 working group, currently the [DID-core WG](https://w3c.github.io/did-core/), and
@@ -535,7 +537,7 @@ subset of the forkable, open-source, community-maintained [Universal
 Resolver](https://medium.com/decentralized-identity/the-universal-resolver-infrastructure-395281d2b540)
 project at DIF. There is a more nascent [Universal
 Registrar](https://github.com/decentralized-identity/universal-registrar)
-project for information about how to “outsource” CRUD on foreign DID methods to
+project for information about how to “outsource” [[ref:CRUD]] on foreign DID methods to
 a trusted agent.
 
 ##### How do I pick between DID methods? 🟠️
