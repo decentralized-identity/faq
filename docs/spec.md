@@ -26,6 +26,8 @@ space. It is structures as a (very exhaustive) list of questions and answers.
 Feel free to share "anchor links" to specific questions using the § symbol next
 to individual questions or section/sub-section headings.
 
+SOME GIBBERISH DO NOT MERGE THIS PR
+
 Contents at a glance:
 
 - [Usage Guide](#usage-guide)
