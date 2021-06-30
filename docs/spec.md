@@ -583,7 +583,7 @@ method differ significantly:
 - Are VC’s completely “off-chain” or are hashes or pointers encoded in immutable
   storage of some kind?
 - Are VC’s revocable? How?
-- Does the DID layer support selective disclosure (including ZKP or specific
+- Does the DID layer support selective disclosure (including [[ref:ZKP]] or specific
   forms of ZKP)?
 - Does the DID layer include mechanisms for storing and referencing semantics
   (i.e. credential definitions)? Is it a required mechanism?
@@ -1068,7 +1068,7 @@ here-- how and when to produce each, and how to verify both.
 
 ##### What is ZKP? What is the difference between ZKP and “Selective Disclosure”? 🟡️
 
-Zero-Knowledge Proofs refers to a mathematical construct, which is at the heart
+Zero-Knowledge Proofs ([[ref:ZKP]]) refers to a mathematical construct, which is at the heart
 of many cryptographic systems such as the control privacy-preserving mechanisms
 in such "blinded transaction" blockchains as ZCash. It refers to mathematical or
 data operations, not to high-level protocols such as credential exchange or
@@ -1078,7 +1078,7 @@ Selective Disclosure, on the other hand, refers to real-world exchanges or
 information exchanges.  In the VC context, presenting information contained in a
 verifiable credential selectively, in a way that still allows the credential as
 a whole to be cryptographically proofed and verified, usually relies on some
-form of ZKP cryptography.  There are different styles of ZKP and different
+form of [[ref:ZKP]] cryptography.  There are different styles of ZKP and different
 styles of Selective Disclosure, so it helps to be precise about exactly which
 kind you are talking about, as they all have distinct properties and guarantees,
 scalability issues, etc. 
@@ -1186,7 +1186,7 @@ the Aries
 ##### How are Credential Definitions compatible with JSON Schema and JSON-LD? 🟢️❓️ 
 
 VCs are not only validated directly against JSON-LD or JSON Schema, but the
-CL-ZKP algorithms available in the Aries libraries use the CD and RS definitions
+CL-[[ref:ZKP]] algorithms available in the Aries libraries use the CD and RS definitions
 to allow for verifiable selective disclosure of subsets of credential data via
 “framing”-- this process requires the definition as one of the inputs, however,
 so Indy-conformant credential definitions must be used from the same Indy-based
@@ -1532,3 +1532,6 @@ today's data systems.
 
 [[def:x.509]]:
  ~ X.509 can refer to many things, but in general it is a standard for Public Key Infrastructure of the kind used both online for mTLS and HTTPS and offline for digital signatures of the type used by [[ref:eIDAS]]-compliant eSignature providers in Europe.  { [wiki](https://en.wikipedia.org/wiki/X.509) | [ITU specification](https://www.itu.int/rec/T-REC-X.509/en) }
+
+[[def:ZKP]]:
+~ In cryptography, a __zero-knowledge proof__ or zero-knowledge protocol is a method by which one party (the prover) can prove to another party (the verifier) that they know a value x, without conveying any information apart from the fact that they know the value x. The essence of zero-knowledge proofs is that it is trivial to prove that one possesses knowledge of certain information by simply revealing it; the challenge is to prove such possession without revealing the information itself or any additional information. More info on [Wikipedia](https://en.wikipedia.org/wiki/Zero-knowledge_proof)
