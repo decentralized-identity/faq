@@ -569,7 +569,7 @@ is available.
 
 > Certain use-cases are only possible given certain properties of a
 method/did:doc design. A good rule of thumb is to study each DID Method enough
-to understand what it is optimizing for, and find the optimizations that are 
+to understand **what it is optimizing for**, and find the optimizations that are 
 most relevant for your project.
 
 This is way too large a question for a one-paragraph answer (see above). But
@@ -609,8 +609,7 @@ Discovery](https://identity.foundation/working-groups/identifiers-discovery.html
 would be a good place to start. Skim the
 [minutes](https://github.com/decentralized-identity/identifiers-discovery/blob/main/agenda.md)
 of recent meetings for DID method design and specification topics, or just reach
-out to propose an agenda item at a future
-meeting.
+out to propose an agenda item at a future meeting.
 
 ### Advanced Topics: Beyond DIDs
 
