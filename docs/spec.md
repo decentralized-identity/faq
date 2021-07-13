@@ -457,11 +457,19 @@ information about that other world, see Markus Sabadello’s article on our blog
 
 ##### Who governs each DID Method? 🟢
 
-Whoever creates a method and documents, it is expected to register the method if they
-want anyone to use it and consider broad use. There is no
-central committee deciding what DID methods are legitimate or not-- each Method
-is responsible for its own specification, governance, and maintenance/evolution;
-[registration](https://w3c.github.io/did-spec-registries/) is not evaluative, merely an aid to discovery and interoperability.
+Whoever designs and documents a method is expected to both publish and maintain
+the method as a kind of "constitution" for the community of stakeholders using
+the method to manage their namespace.  The publisher(s) of the method is
+expected to register the method specification publicly if they want to promote
+(and simplify) broad use and interoperability. There is no central committee
+deciding what DID methods are legitimate or not-- each Method is responsible for
+its own specification, governance, and maintenance/evolution;
+[registration](https://w3c.github.io/did-spec-registries/) is not evaluative,
+merely an aid to discovery and interoperability. How future additions or
+revisions to a DID method will be made, in what venue and according to what
+governance rules, is an important thing for each DID Method to clarify, if not
+in the text of its specification than at least by reference.
+
 To get evaluative feedback or peer review before publishing a method, open
 standards venues like ours here at the DIF are the best place to compare notes
 and align on concepts. (Our [Identifiers and Discovery
