@@ -1069,7 +1069,7 @@ WG notes for more
 
 Yes! The VC spec is actually fairly open on this issue, and Markus Sabadello
 gave a [great
-presentation](https://github.com/decentralized-identity/interoperability/blob/master/agenda.md#agenda---3-feb-2021---useu-time-0600-pt---update-on-did-core-and-enterprise-ethereum-alliance-d-burnett-and-did-interop-fundamentals-markus-sabadello-and-guests)
+presentation](https://github.com/decentralized-identity/interoperability/blob/master/agenda2021.md#agenda---3-feb-2021---useu-time-0600-pt---update-on-did-core-and-enterprise-ethereum-alliance-d-burnett-and-did-interop-fundamentals-markus-sabadello-and-guests)
 at DIF Interop in January of 2021 laying out two major schools of prior art
 here-- how and when to produce each, and how to verify both.
 
