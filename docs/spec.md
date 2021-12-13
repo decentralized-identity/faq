@@ -1,4 +1,4 @@
-Decentralized Identity FAQ
+Decentralized Identity Knowledgebase
 ==================
 
 **You Are Here (or should be):**
