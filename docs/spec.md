@@ -15,7 +15,7 @@ Participate:
 ~ [GitHub repo](https://github.com/decentralized-identity/faq)
 ~ [Contribute by opening a PR here](https://github.com/decentralized-identity/faq/blob/main/docs/spec.md)
 ~ [File a bug](https://github.com/decentralized-identity/faq/issues)
-~ [Commit history](https://github.com/decentralized-identity/faq/commits/master)
+~ [Commit history](https://github.com/decentralized-identity/faq/commits/main)
 
 ------------------------------------
 
