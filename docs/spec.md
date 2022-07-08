@@ -1430,7 +1430,7 @@ organization, the Linux Foundation.  For further reading, see:
   a [Trust Framework Working
   Group](https://openidentityexchange.org/workgroups?action=view&Workgroup=455)
   that has released a [very thorough and comprehensive
-  guide](https://openidentityexchange.org/guide-trust-frameworks-interoperability)
+  guide](https://openidentityexchange.org/a-guide-to-trust-frameworks-for-smart-digital-id)
   to trust frameworks for identity software, and is incrementally expanding and
   revising it to include decentralized architectures alongside today's
   mainstream federated ones. See [this
