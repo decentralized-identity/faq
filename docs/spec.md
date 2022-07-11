@@ -22,7 +22,7 @@ Participate:
 This is the Decentralized Identity Foundation's general-purpose knowledgebase,
 which aims to help people at all levels of familiarity with our problem space
 quickly level-set and find the most useful links and ideas as they explore the
-space. It is structures as a (very exhaustive) list of questions and answers.
+space. It is structured as a (very exhaustive) list of questions and answers.
 Feel free to share "anchor links" to specific questions using the § symbol next
 to individual questions or section/sub-section headings.
 
